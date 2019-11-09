@@ -15,10 +15,7 @@ SEOTitle: Mr.Hedgehog KU's blog
 header-img: //o7bkkhiex.bkt.clouddn.com/lion-blur-bg.jpg
 email: ccc908925@gmail.com
 description: "刺蝟先生在 Github 上的部落格"
-keyword: 
-  - hedgehog 
-  - KU 
-  - Mr.Hedgehog # seo key words
+keyword: hedgehog,KU,Mr # seo key words
 
 favicon: # your favicon png
 # custom end
@@ -169,4 +166,4 @@ swiftype_key:
 # archive page title 
 archive:
     title: archives
-    description: 可以根据归档日期检索所有文件
+    description: 可以根據歸檔日期檢索所有文件
