@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        innerHTML 和 createElement 差異｜Mr.Hedgehog KU&#39;s blog
+        JS Events｜Mr.Hedgehog KU&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="https://hedgehogkucc.github.io/2019/11/09/2019-11-09-innerHTML和createElement差異/">
+    <link rel="canonical" href="https://hedgehogkucc.github.io/2019/11/11/2019-11-11-JS-Events/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -137,18 +137,15 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>innerHTML 和 createElement 差異</h1>
+                    <h1>JS Events</h1>
                     
                     <span class="meta">
                          作者 Peter KU
                         <span>
-                          日期 2019-11-09
+                          日期 2019-11-11
                          </span>
                     </span>
                     <div class="tags text-center">
-                        
-                        <a class="tag" href="/tags/#html"
-                           title="html">html</a>
                         
                         <a class="tag" href="/tags/#js"
                            title="js">js</a>
@@ -160,7 +157,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            innerHTML 和 createElement 差異
+            JS Events
         </span>
     </div>
 </header>
@@ -172,32 +169,68 @@
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
                 <h1 id="參考資源"><a href="#參考資源" class="headerlink" title="參考資源"></a>參考資源</h1><ul>
-<li><a href="https://ithelp.ithome.com.tw/articles/10202689" target="_blank" rel="noopener">DOM</a></li>
+<li><a href="https://www.w3schools.com/jsref/dom_obj_event.asp" target="_blank" rel="noopener">HTML DOM Events</a></li>
 </ul>
-<h2 id="什麼是-DOM"><a href="#什麼是-DOM" class="headerlink" title="什麼是 DOM"></a>什麼是 DOM</h2><p><code>DOM</code> 全名為 <code>Document Object Model</code> 中文翻譯為 <code>文件物件模型</code></p>
+<h2 id="event-物件-告知你當下物件資訊"><a href="#event-物件-告知你當下物件資訊" class="headerlink" title="event 物件 - 告知你當下物件資訊"></a>event 物件 - 告知你當下物件資訊</h2><p><code>clientX</code> <code>clientY</code> : 使用者點擊時的座標，可以試著點擊<strong><em>右上角</em></strong>和<strong><em>左下角</em></strong>觀察變化。</p>
+<p><a href="https://codepen.io/hedgehogkucc/pen/OJJEexW" target="_blank" rel="noopener">EX</a></p>
 <br>
 
-<h2 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h2><p><strong><em>方法</em></strong> : 組完字串後，傳進語法進行渲染</p>
-<p><strong><em>優點</em></strong> : 效能快</p>
-<p><strong><em>缺點</em></strong> : 資安風險 <code>XSS</code> (Cross-Site Scripting) , 要確保來源沒問題</p>
-<p><strong><em>特性</em></strong> : 將原本內容清空 , 再傳進我們寫的資料 !!! </p>
-<hr>
-
+<h2 id="addEventListener"><a href="#addEventListener" class="headerlink" title="addEventListener"></a>addEventListener</h2><p><strong>addEventListener</strong>(1,2,3)</p>
+<ul>
+<li>1 : 選擇事件 <code>click</code> <code>change</code></li>
+<li>2 : <code>function</code></li>
+<li>3 : <code>boolean</code> - 預設是 false</li>
+</ul>
+<p><a href="https://codepen.io/hedgehogkucc/pen/JjjZQpQ" target="_blank" rel="noopener">EX-1</a></p>
 <br>
 
-<p><strong>外層</strong>使用單引號 <code>&#39;&#39;</code></p>
-<p><strong>內層</strong>就要使用雙引號 <code>&quot;&quot;</code></p>
-<p><a href="https://codepen.io/hedgehogkucc/pen/QWWxxxK" target="_blank" rel="noopener">EX-1</a> 、 <a href="https://codepen.io/hedgehogkucc/pen/VwwddER" target="_blank" rel="noopener">EX-2</a> 、 <a href="https://codepen.io/hedgehogkucc/pen/jOOKKJB" target="_blank" rel="noopener">EX-3</a></p>
+<h2 id="綁定事件語法差異"><a href="#綁定事件語法差異" class="headerlink" title="綁定事件語法差異"></a>綁定事件語法差異</h2><p><code>onclick</code> : 同一個物件綁定多次，只會執行最後一次。</p>
+<p><code>addEventListener</code> : 同一個物件綁定多次，都會執行。</p>
+<p><a href="https://codepen.io/hedgehogkucc/pen/eYYKwMQ" target="_blank" rel="noopener">EX-2</a></p>
 <br>
 
-<h2 id="createElement"><a href="#createElement" class="headerlink" title="createElement"></a>createElement</h2><p><strong><em>方法</em></strong> : 以 <code>DOM</code> 節點來處理</p>
-<p><strong><em>優點</em></strong> : 安全性高</p>
-<p><strong><em>缺點</em></strong> : 效能差</p>
-<hr>
-
+<h2 id="Bubbling-amp-Capturing"><a href="#Bubbling-amp-Capturing" class="headerlink" title="Bubbling &amp; Capturing"></a>Bubbling &amp; Capturing</h2><p><code>false</code> : 從指定元素往外層 — <strong><em>事件氣泡 (Event Bubbling)</em></strong></p>
+<p><code>true</code> : 從外層找到指定元素 — <strong><em>事件捕捉 (Event Capturing)</em></strong></p>
+<p><a href="https://codepen.io/hedgehogkucc/pen/vYYrqog" target="_blank" rel="noopener">EX-3</a></p>
 <br>
 
-<p><a href="https://codepen.io/hedgehogkucc/pen/XWWYYwq" target="_blank" rel="noopener">EX-1</a>、<a href="https://codepen.io/hedgehogkucc/pen/XWWYBrY" target="_blank" rel="noopener">EX-2</a></p>
+<h2 id="stopPropagation"><a href="#stopPropagation" class="headerlink" title="stopPropagation"></a>stopPropagation</h2><p>解決元素重疊情況不在延伸尋找</p>
+<p><a href="https://codepen.io/hedgehogkucc/pen/qBBKeOb" target="_blank" rel="noopener">EX-4</a></p>
+<br>
+
+<h2 id="preventDefault"><a href="#preventDefault" class="headerlink" title="preventDefault"></a>preventDefault</h2><p>取消預設觸發行為</p>
+<p><a href="https://codepen.io/hedgehogkucc/pen/XWWYvdr" target="_blank" rel="noopener">EX-5</a></p>
+<br>
+
+<h2 id="event-target-nodeName"><a href="#event-target-nodeName" class="headerlink" title="event.target.nodeName"></a>event.target.nodeName</h2><p>抓取現在點擊了哪一個元素</p>
+<p><a href="https://codepen.io/hedgehogkucc/pen/BaaVXLx" target="_blank" rel="noopener">EX-6</a></p>
+<br>
+
+<h2 id="addEventListener-change"><a href="#addEventListener-change" class="headerlink" title="addEventListener - change"></a>addEventListener - change</h2><p>選單內容改變時，在下方秀出資料 ～</p>
+<p><a href="https://codepen.io/hedgehogkucc/pen/zYYagwG?editors=1111" target="_blank" rel="noopener">EX-7</a></p>
+<br>
+
+<h2 id="keydown、keyCode"><a href="#keydown、keyCode" class="headerlink" title="keydown、keyCode"></a>keydown、keyCode</h2><p>使用按鍵 1 2 3 4 5 來做到動畫效果</p>
+<p><a href="https://codepen.io/hedgehogkucc/pen/rNNKXJV" target="_blank" rel="noopener">Launch Rocket</a></p>
+<br>
+
+<h2 id="event-blur"><a href="#event-blur" class="headerlink" title="event - blur"></a>event - blur</h2><p><code>focus</code> : 所在焦點</p>
+<p><code>blur</code> : 離開焦點</p>
+<p>加入判斷出現 <code>空值</code> <code>中英字</code> <code>符號</code> 時給予 <code>alert</code> 提醒告知使用者</p>
+<p><a href="https://codepen.io/hedgehogkucc/pen/XWWYvPd" target="_blank" rel="noopener">顧客點餐</a></p>
+<br>
+
+<h2 id="event-mousemove"><a href="#event-mousemove" class="headerlink" title="event - mousemove"></a>event - mousemove</h2><p><code>querySelectorAll</code> : 傳回的是一個陣列</p>
+<p><a href="https://codepen.io/hedgehogkucc/pen/QWWBLQN" target="_blank" rel="noopener">Don’t touch square</a></p>
+<br>
+
+<h2 id="網頁座標-screen、page、client"><a href="#網頁座標-screen、page、client" class="headerlink" title="網頁座標 screen、page、client"></a>網頁座標 screen、page、client</h2><p><code>screen</code> : 整個螢幕解析度</p>
+<p><code>page</code> : 整個網頁的寬高</p>
+<p><code>client</code> : 瀏覽器視窗畫面的寬高</p>
+<p><a href="https://codepen.io/hedgehogkucc/pen/dyyjbQw" target="_blank" rel="noopener">EX-8</a></p>
+<br>
+
+<h2 id="事件監聽優化-從父元素來監聽子元素內容"><a href="#事件監聽優化-從父元素來監聽子元素內容" class="headerlink" title="事件監聽優化 - 從父元素來監聽子元素內容"></a>事件監聽優化 - 從父元素來監聽子元素內容</h2><p><a href="https://codepen.io/hedgehogkucc/pen/ZEEjpZb?editors=1111" target="_blank" rel="noopener">EX-9</a></p>
 
                 <hr>
                 
@@ -206,8 +239,8 @@
                     
                     
                     <li class="next">
-                        <a href="/2019/11/06/2019-11-06-建置部落格/" data-toggle="tooltip" data-placement="top"
-                           title="Hexo 建置部落格">Next Post &rarr;</a>
+                        <a href="/2019/11/09/2019-11-09-BOM-DOM-innerHTML-createElement/" data-toggle="tooltip" data-placement="top"
+                           title="BOM DOM innerHTML createElement">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -226,7 +259,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#參考資源"><span class="toc-text">參考資源</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什麼是-DOM"><span class="toc-text">什麼是 DOM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#innerHTML"><span class="toc-text">innerHTML</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#createElement"><span class="toc-text">createElement</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#參考資源"><span class="toc-text">參考資源</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#event-物件-告知你當下物件資訊"><span class="toc-text">event 物件 - 告知你當下物件資訊</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#addEventListener"><span class="toc-text">addEventListener</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#綁定事件語法差異"><span class="toc-text">綁定事件語法差異</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bubbling-amp-Capturing"><span class="toc-text">Bubbling &amp; Capturing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stopPropagation"><span class="toc-text">stopPropagation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#preventDefault"><span class="toc-text">preventDefault</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#event-target-nodeName"><span class="toc-text">event.target.nodeName</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#addEventListener-change"><span class="toc-text">addEventListener - change</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#keydown、keyCode"><span class="toc-text">keydown、keyCode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#event-blur"><span class="toc-text">event - blur</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#event-mousemove"><span class="toc-text">event - mousemove</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#網頁座標-screen、page、client"><span class="toc-text">網頁座標 screen、page、client</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件監聽優化-從父元素來監聽子元素內容"><span class="toc-text">事件監聽優化 - 從父元素來監聽子元素內容</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
@@ -247,9 +280,6 @@
                         <a href="/tags/">FEATURED TAGS</a>
                     </h5>
                     <div class="tags">
-                        
-                        <a class="tag" href="/tags/#html"
-                           title="html">html</a>
                         
                         <a class="tag" href="/tags/#js"
                            title="js">js</a>
