@@ -25,7 +25,7 @@ tags:
 
 `window.innerHeight` : 畫面顯示的高度
 
-[BOM-1](https://codepen.io/hedgehogkucc/pen/oNNyREP)、[BOM-2](https://codepen.io/hedgehogkucc/pen/zYYaQbj)
+[print、location、open](https://codepen.io/hedgehogkucc/pen/oNNyREP)、[innerHeight](https://codepen.io/hedgehogkucc/pen/zYYaQbj)
 
 <br>
 
