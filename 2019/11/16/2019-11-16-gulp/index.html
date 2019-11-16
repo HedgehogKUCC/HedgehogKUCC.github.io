@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        Gulp Quick Start｜Mr.Hedgehog KU&#39;s blog
+        Gulp｜Mr.Hedgehog KU&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="https://hedgehogkucc.github.io/2019/11/16/2019-11-16-gulp-quick-start/">
+    <link rel="canonical" href="https://hedgehogkucc.github.io/2019/11/16/2019-11-16-gulp/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -137,7 +137,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>Gulp Quick Start</h1>
+                    <h1>Gulp</h1>
                     
                     <span class="meta">
                          作者 Peter KU
@@ -157,7 +157,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            Gulp Quick Start
+            Gulp
         </span>
     </div>
 </header>
@@ -202,6 +202,30 @@
 
 <p>會看到 source 資料夾下的 index.html </p>
 <p>複製出一份到 public 資料夾下</p>
+<br>
+
+<h1 id="gulp-jade"><a href="#gulp-jade" class="headerlink" title="gulp-jade"></a>gulp-jade</h1><p><a href="https://www.npmjs.com/package/gulp-jade" target="_blank" rel="noopener">npm-jade</a></p>
+<h2 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save gulp-jade</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><ol>
+<li>將 <code>source</code> 的 <code>index.html</code> 刪除，新建 <code>index.jade</code></li>
+<li>將 <code>public</code> 資料夾刪除</li>
+</ol>
+<h3 id="gulpfile-js"><a href="#gulpfile-js" class="headerlink" title="gulpfile.js"></a>gulpfile.js</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> jade = <span class="built_in">require</span>(<span class="string">'gulp-jade'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'jade'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// var YOUR_LOCALS = &#123;&#125;;</span></span><br><span class="line"> </span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./source/**/*.jade'</span>)</span><br><span class="line">    .pipe(jade(&#123;</span><br><span class="line">      <span class="comment">// locals: YOUR_LOCALS</span></span><br><span class="line">      pretty: <span class="literal">true</span></span><br><span class="line">    &#125;))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./public/'</span>))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>因為 <code>gulp v4</code> 的關係請在 <code>gulp.src</code> 前面加上 <code>return</code></p>
+<p>不然會跳出以下訊息</p>
+<ul>
+<li>The following tasks did not complete: jade</li>
+<li>Did you forget to signal async completion?</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gulp jade</span><br></pre></td></tr></table></figure>
+
+<p>就會成功將 <code>.jade</code> 編譯成 <code>.html</code></p>
+<p><code>pretty: true</code> : 會將 <code>.html</code> 內容展開</p>
+<p>沒有加上 <code>pretty: true</code> 就會是 <strong><em>壓縮過後</em></strong> 的 <code>.html</code></p>
 
                 <hr>
                 
@@ -230,7 +254,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Gulp-Quick-Start"><span class="toc-text">Gulp - Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安裝環境"><span class="toc-text">安裝環境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#環境建置"><span class="toc-text">環境建置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#產生出一個-package-json"><span class="toc-text">產生出一個 package.json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安裝-gulp-4-x-x"><span class="toc-text">安裝 gulp 4.x.x</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新增-gulpfile-js"><span class="toc-text">新增 gulpfile.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#範例：-使用-task-複製文件至指定資料夾下"><span class="toc-text">範例： 使用 task 複製文件至指定資料夾下</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Gulp-Quick-Start"><span class="toc-text">Gulp - Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安裝環境"><span class="toc-text">安裝環境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#環境建置"><span class="toc-text">環境建置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#產生出一個-package-json"><span class="toc-text">產生出一個 package.json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安裝-gulp-4-x-x"><span class="toc-text">安裝 gulp 4.x.x</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新增-gulpfile-js"><span class="toc-text">新增 gulpfile.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#範例：-使用-task-複製文件至指定資料夾下"><span class="toc-text">範例： 使用 task 複製文件至指定資料夾下</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#gulp-jade"><span class="toc-text">gulp-jade</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安裝"><span class="toc-text">安裝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gulpfile-js"><span class="toc-text">gulpfile.js</span></a></li></ol></li></ol></li></ol>
                 </div>
             </div>
         </div>
