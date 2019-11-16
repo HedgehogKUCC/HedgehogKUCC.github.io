@@ -1,0 +1,85 @@
+---
+title: Gulp Quick Start
+date: 2019-11-16
+tags: gulp
+---
+
+# Gulp - Quick Start
+
+## 安裝環境
+
+1. [Node.js](https://nodejs.org/en/)
+
+2. gulp-cli
+
+```bash
+$ sudo npm install gulp-cli -g
+```
+
+<br>
+
+## 環境建置
+
+### 產生出一個 `package.json`
+
+```bash
+$ npm init
+```
+
+### 安裝 `gulp 4.x.x`
+
+```bash
+npm install --sava-dev gulp
+```
+
+### 新增 `gulpfile.js`
+
+新增資料夾 `source` 裡面在新增 `index.html`
+
+<br>
+
+## 範例： 使用 task 複製文件至指定資料夾下
+
+`gulpfile.js`
+
+```js
+var gulp = require('gulp');
+
+gulp.task('copyHTML', function () {
+  return gulp.src('./source/**/*.html')
+    .pipe(gulp.dest('./public/'))
+})
+```
+
+出現 `ReferenceError: primordials is not defined` [連結](https://stackoverflow.com/questions/55921442/how-to-fix-referenceerror-primordials-is-not-defined-in-node)
+
+原因是 `node v12.x.x` 和 `gulp v3.9.x`
+
+解決方法 (二擇一)
+
+1. node 降至 v11
+2. gulp 升至 v4
+
+本來使用 ***方法1*** 是由於課程使用 `gulp 3.9.1`
+
+但是發現 `解除安裝 Node` 太過麻煩
+
+所以改用 ***方法2***
+
+```bash
+$ gulp copyHTML
+```
+
+會看到 source 資料夾下的 index.html 
+
+複製出一份到 public 資料夾下
+
+
+
+
+
+
+
+
+
+
