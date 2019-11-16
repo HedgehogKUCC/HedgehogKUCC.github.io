@@ -22,7 +22,7 @@
         
     </title>
 
-    <link rel="canonical" href="https://hedgehogkucc.github.io/">
+    <link rel="canonical" href="https://hedgehogkucc.github.io/tags/gulp/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -43,8 +43,8 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="false
-" data-ishome = "true" >
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="true
+" data-ishome = "false" >
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -117,126 +117,6 @@
 <!-- Main Content -->
 
 
-<style>
-
-    .custom-haojen-container .post-preview:nth-of-type(1),
-    .custom-haojen-container .post-preview-poetry:nth-of-type(1) {
-        text-align: center;
-        background-repeat: no-repeat;
-        border-radius: 3px;
-        background-size: cover;
-        padding: 0;
-        height: 300px;
-        display: table;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.16);
-    }
-
-    /*去掉诗歌的背景图片*/
-    .custom-haojen-container .post-preview-poetry:nth-of-type(1) {
-        background-image: none !important;
-        background-color: rgba(255, 248, 220, 0.5);
-    }
-
-    .custom-haojen-container .post-preview:nth-child(1) h2,
-    .custom-haojen-container .post-preview:nth-child(1) .post-meta,
-    .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
-        text-shadow: 0 0 40px rgba(0, 0, 0, 1);
-        letter-spacing: 1px;
-        color: #fff;
-        margin-top: 0;
-        padding-left: 60px;
-        padding-right: 60px;
-    }
-
-    .custom-haojen-container .post-preview:nth-child(1) .post-meta {
-        font-size: .9em;
-        font-weight: 300;
-        margin-top: 0;
-    }
-
-    .custom-haojen-container .post-preview-poetry:nth-child(1) .post-subtitle {
-        letter-spacing: 6px;
-        font-size: 18px;
-        font-family: unset;
-        font-weight: 400;
-        color: rgba(0, 0, 0, .75)
-    }
-
-    /*不显示摘要*/
-    .custom-haojen-container .post-preview:nth-child(1) .post-content-preview {
-        display: none
-    }
-
-    /*只第一个显示背景图片*/
-    .custom-haojen-container .post-preview:not(:nth-child(1)) {
-        background-image: none !important;
-    }
-
-    /*第一个分界线去掉*/
-    .custom-haojen-container hr:nth-of-type(1) {
-        display: none;
-    }
-
-    /*主题*/
-    .custom-haojen-container .post-preview:nth-of-type(1) > a {
-        display: table-cell;
-        vertical-align: middle;
-    }
-
-    /*诗词标题*/
-    .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
-        font-size: 35px;
-        font-family: STKaiti;
-        color: rgba(0, 0, 0, .8);
-    }
-
-    .custom-haojen-container .post-preview-poetry:nth-of-type(1) .post-meta {
-        color: #0e2231;
-    }
-
-    @media (max-width: 768px) {
-        .custom-haojen-container .post-preview:nth-child(1) {
-            height: 240px;
-        }
-
-        .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
-            font-size: 28px !important;
-            margin-top: 0;
-        }
-
-        .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
-            font-size: 18px;
-            font-weight: 400;
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-        .custom-haojen-container .post-preview:nth-of-type(1) > a {
-            padding: 20px
-        }
-    }
-
-    /*手机屏幕*/
-    @media (max-width: 400px) {
-        .custom-haojen-container .post-preview:nth-child(1) {
-            height: 195px;
-        }
-
-        .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
-            font-size: 20px !important;
-        }
-
-        .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
-            font-size: 16px;
-        }
-
-        .custom-haojen-container .post-preview:nth-child(1) a {
-            padding: 30px 20px;
-        }
-    }
-</style>
-
 <!-- Page Header -->
 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
     <div class="row">
@@ -288,140 +168,6 @@ $ sudo npm install gulp-cli -g
 環境建置產生出一個 package.json$ npm init
 
 安裝 gulp 4.x.xnpm install --sava-dev g..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('')">
-    <a href="/2019/11/12/2019-11-12-localStorage/">
-        <h2 class="post-title">
-            localStorage
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2019-11-12
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                參考資源
-瀏覽器資料儲存
-localstorage
-
-setItem &amp; getItemEX-1
-
-
-JSON.stringify &amp; JSON.parselocalStorage 只保存 String 資料
-EX-2
-
-
-data-* 透過 dataset 讀取自訂資料EX-3..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('')">
-    <a href="/2019/11/11/2019-11-11-JS-Events/">
-        <h2 class="post-title">
-            JS Events
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2019-11-11
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                參考資源
-HTML DOM Events
-
-event 物件 - 告知你當下物件資訊clientX clientY : 使用者點擊時的座標，可以試著點擊右上角和左下角觀察變化。
-EX
-
-
-addEventListeneraddEventListener(1,2,3)
-
-1 : 選擇事件 clic..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('')">
-    <a href="/2019/11/09/2019-11-09-BOM-DOM-innerHTML-createElement/">
-        <h2 class="post-title">
-            BOM DOM innerHTML createElement
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2019-11-09
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                參考資源
-DOM
-BOM
-
-什麼是 DOM全名為 Document Object Model 中文翻譯為 文件物件模型
-
-
-什麼是 BOM全名為 Browser Object Model 中文翻譯為 瀏覽器物件模型
-window.outerHeight : 整個瀏覽器高度
-window.inne..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('')">
-    <a href="/2019/11/06/2019-11-06-建置部落格/">
-        <h2 class="post-title">
-            Hexo 建置部落格
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2019-11-06
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                
-參考資源
-youtube 教學
-使用 Hexo 建置網站
-Hexo - 前端也能建置部落格！佈署篇
-
-Step 1 - 安裝 Node.js
-
-Step 2 - 安裝 hexo-CLI可以讓 hexo 使用指令的工具
-Mac 前面會需要加上 sudo
-
-sudo : 代表給予最高權限來執行
-
-..
             </p>
         </div>
     </a>
