@@ -15,6 +15,8 @@ tags:
 
 全名為 `Document Object Model` 中文翻譯為 `文件物件模型`
 
+<!-- more -->
+
 <br>
 
 ## 什麼是 BOM

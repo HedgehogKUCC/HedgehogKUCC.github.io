@@ -9,6 +9,8 @@ tags: js
 - [瀏覽器資料儲存](https://yakimhsu.com/project/project_w7_storage.html)
 - [localstorage](https://ithelp.ithome.com.tw/articles/10195522)
 
+<!-- more -->
+
 ## setItem & getItem
 
 [EX-1](https://codepen.io/hedgehogkucc/pen/RwwBoaY?editors=1111)
