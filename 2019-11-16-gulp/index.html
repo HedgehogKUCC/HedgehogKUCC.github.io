@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://hedgehogkucc.github.io').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="安裝環境 Node.js  gulp-cli   $ sudo npm install gulp-cli -g">
+<meta name="keywords" content="gulp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gulp">
+<meta property="og:url" content="https:&#x2F;&#x2F;hedgehogkucc.github.io&#x2F;2019-11-16-gulp&#x2F;index.html">
+<meta property="og:site_name" content="Mr.Hedgehog KU">
+<meta property="og:description" content="安裝環境 Node.js  gulp-cli   $ sudo npm install gulp-cli -g">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-01-10T02:11:21.206Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://hedgehogkucc.github.io/2019-11-16-gulp/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Gulp | Mr.Hedgehog KU</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mr.Hedgehog KU</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="default">
+    <link itemprop="mainEntityOfPage" href="https://hedgehogkucc.github.io/2019-11-16-gulp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Peter KU">
+      <meta itemprop="description" content="刺蝟先生在 Github 上的部落格">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Hedgehog KU">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          Gulp
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-11-16 00:00:00" itemprop="dateCreated datePublished" datetime="2019-11-16T00:00:00+08:00">2019-11-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-10 10:11:21" itemprop="dateModified" datetime="2020-01-10T10:11:21+08:00">2020-01-10</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="安裝環境"><a href="#安裝環境" class="headerlink" title="安裝環境"></a>安裝環境</h2><ol>
+<li><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a></p>
+</li>
+<li><p>gulp-cli</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo npm install gulp-cli -g</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<br>
+
+<h2 id="環境建置"><a href="#環境建置" class="headerlink" title="環境建置"></a>環境建置</h2><h3 id="產生出一個-package-json"><a href="#產生出一個-package-json" class="headerlink" title="產生出一個 package.json"></a>產生出一個 <code>package.json</code></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm init</span><br></pre></td></tr></table></figure>
+
+<h3 id="安裝-gulp-4-x-x"><a href="#安裝-gulp-4-x-x" class="headerlink" title="安裝 gulp 4.x.x"></a>安裝 <code>gulp 4.x.x</code></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install --sava-dev gulp</span><br></pre></td></tr></table></figure>
+
+<h3 id="新增-gulpfile-js"><a href="#新增-gulpfile-js" class="headerlink" title="新增 gulpfile.js"></a>新增 <code>gulpfile.js</code></h3><p>新增資料夾 <code>source</code> 裡面在新增 <code>index.html</code></p>
+<br>
+
+<h2 id="範例：-使用-task-複製文件至指定資料夾下"><a href="#範例：-使用-task-複製文件至指定資料夾下" class="headerlink" title="範例： 使用 task 複製文件至指定資料夾下"></a>範例： 使用 task 複製文件至指定資料夾下</h2><p><code>gulpfile.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'copyHTML'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./source/**/*.html'</span>)</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./public/'</span>))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>出現 <code>ReferenceError: primordials is not defined</code> <a href="https://stackoverflow.com/questions/55921442/how-to-fix-referenceerror-primordials-is-not-defined-in-node" target="_blank" rel="noopener">連結</a></p>
+<p>原因是 <code>node v12.x.x</code> 和 <code>gulp v3.9.x</code></p>
+<p>解決方法 (二擇一)</p>
+<ol>
+<li>node 降至 v11</li>
+<li>gulp 升至 v4</li>
+</ol>
+<p>本來使用 <strong><em>方法1</em></strong> 是由於課程使用 <code>gulp 3.9.1</code></p>
+<p>但是發現 <code>解除安裝 Node</code> 太過麻煩</p>
+<p>所以改用 <strong><em>方法2</em></strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gulp copyHTML</span><br></pre></td></tr></table></figure>
+
+<p>會看到 source 資料夾下的 index.html </p>
+<p>複製出一份到 public 資料夾下</p>
+<br>
+
+<h1 id="gulp-jade"><a href="#gulp-jade" class="headerlink" title="gulp-jade"></a>gulp-jade</h1><p><a href="https://www.npmjs.com/package/gulp-jade" target="_blank" rel="noopener">npm-jade</a></p>
+<h2 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save gulp-jade</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><ol>
+<li>將 <code>source</code> 的 <code>index.html</code> 刪除，新建 <code>index.jade</code></li>
+<li>將 <code>public</code> 資料夾刪除</li>
+</ol>
+<h3 id="gulpfile-js"><a href="#gulpfile-js" class="headerlink" title="gulpfile.js"></a>gulpfile.js</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> jade = <span class="built_in">require</span>(<span class="string">'gulp-jade'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'jade'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// var YOUR_LOCALS = &#123;&#125;;</span></span><br><span class="line"> </span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./source/**/*.jade'</span>)</span><br><span class="line">    .pipe(jade(&#123;</span><br><span class="line">      <span class="comment">// locals: YOUR_LOCALS</span></span><br><span class="line">      pretty: <span class="literal">true</span></span><br><span class="line">    &#125;))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./public/'</span>))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>因為 <code>gulp v4</code> 的關係請在 <code>gulp.src</code> 前面加上 <code>return</code></p>
+<p>不然會跳出以下訊息</p>
+<ul>
+<li>The following tasks did not complete: jade</li>
+<li>Did you forget to signal async completion?</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gulp jade</span><br></pre></td></tr></table></figure>
+
+<p>就會成功將 <code>.jade</code> 編譯成 <code>.html</code></p>
+<p><code>pretty: true</code> : 會將 <code>.html</code> 內容展開</p>
+<p>沒有加上 <code>pretty: true</code> 就會是 <strong><em>壓縮過後</em></strong> 的 <code>.html</code></p>
+<br>
+
+<h1 id="gulp-sass"><a href="#gulp-sass" class="headerlink" title="gulp-sass"></a>gulp-sass</h1><p><a href="https://www.npmjs.com/package/gulp-sass" target="_blank" rel="noopener">npm-sass</a></p>
+<h2 id="安裝-1"><a href="#安裝-1" class="headerlink" title="安裝"></a>安裝</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save gulp-sass</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Quick-Start-1"><a href="#Quick-Start-1" class="headerlink" title="Quick Start"></a>Quick Start</h2><p><code>source</code> 資料夾下 新增 <code>scss</code> 資料夾 裡面再 新增 <code>all.scss</code></p>
+<p><code>all.scss</code></p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="variable">$primary-color</span>: red;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="variable">$primary-color</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><code>gulpfile.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> sass = <span class="built_in">require</span>(<span class="string">'gulp-sass'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'sass'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./source/scss/**/*.scss'</span>)</span><br><span class="line">    .pipe(sass().on(<span class="string">'error'</span>, sass.logError))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./public/css/'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gulp sass</span><br></pre></td></tr></table></figure>
+
+<p>看有沒有將 <code>.scss</code> 編譯出 <code>.css</code></p>
+<br>
+
+<h2 id="gulp-watch-amp-gulp-series-amp-gulp-parallel"><a href="#gulp-watch-amp-gulp-series-amp-gulp-parallel" class="headerlink" title="gulp.watch &amp; gulp.series &amp; gulp.parallel"></a>gulp.watch &amp; gulp.series &amp; gulp.parallel</h2><p><code>gulpfile.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.watch(<span class="string">'./source/scss/**/*.scss'</span>, [<span class="string">'sass'</span>] );</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>使用上面這段程式碼會出現錯誤 <a href="https://stackoverflow.com/questions/39665773/gulp-error-watch-task-has-to-be-a-function" target="_blank" rel="noopener">連結</a></p>
+<p><code>Error: watching ./source/scss/**/*.scss: watch task has to be a function (optionally generated by using gulp.parallel or gulp.series)</code></p>
+<p>這是因為 <code>gulp v4</code> 增加了 <code>gulp.parallel</code> 和 <code>gulp.series</code> 兩個方法</p>
+<p>修改成下方</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.watch(<span class="string">'./source/scss/**/*.scss'</span>, gulp.series(<span class="string">'sass'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>在執行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gulp watch</span><br></pre></td></tr></table></figure>
+
+<p>嘗試將 <code>all.scss</code> 裡面的 <code>red</code> 改成 <code>blue</code> 看有沒有編譯成功出在 <code>all.css</code></p>
+<p>會是這樣呈現如下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ gulp watch</span><br><span class="line">[11:44:50] Using gulpfile ~/Desktop/DemoGulp/gulpfile.js</span><br><span class="line">[11:44:50] Starting &apos;watch&apos;...</span><br><span class="line">[11:44:59] Starting &apos;sass&apos;...</span><br><span class="line">[11:44:59] Finished &apos;sass&apos; after 24 ms</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><code>gulp.parallel</code> : 同時執行</p>
+<p><code>gulp.series</code> : 依序執行</p>
+<p><strong>這兩個方法可以一起搭配使用 !!!</strong></p>
+<br>
+
+<h2 id="整合-jade-sass-watch"><a href="#整合-jade-sass-watch" class="headerlink" title="整合 jade sass watch"></a>整合 jade sass watch</h2><p><code>gulpfile.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.watch(<span class="string">'./source/scss/**/*.scss'</span>, gulp.series(<span class="string">'sass'</span>));</span><br><span class="line">  gulp.watch(<span class="string">'./source/**/*.jade'</span>, gulp.series(<span class="string">'jade'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'default'</span>, </span><br><span class="line">  gulp.parallel(<span class="string">'jade'</span>, <span class="string">'sass'</span>, <span class="string">'watch'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>在 <code>terminal</code> 直接輸入 <code>gulp</code> Enter </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gulp</span><br></pre></td></tr></table></figure>
+
+<p>就會開始同時執行 <code>gulp.task &#39;default&#39;</code> 裡面的其它任務</p>
+<br>
+
+<h2 id="gulp-plumber"><a href="#gulp-plumber" class="headerlink" title="gulp-plumber"></a>gulp-plumber</h2><p><a href="https://www.npmjs.com/package/gulp-plumber" target="_blank" rel="noopener">npm-plumber</a></p>
+<p>避免在監控 (watch) 時，因為出現錯誤而停止了整個監控 !</p>
+<p>但是在 <code>gulp v4</code>，我現在還沒加上就已經有這個功能了。</p>
+<p>現階段還是照著教學加上去</p>
+<h3 id="安裝-2"><a href="#安裝-2" class="headerlink" title="安裝"></a>安裝</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save gulp-plumber</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>在 <code>gulp.src</code> 後面都加上 <code>.pipe(plumber())</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">gulp.task(<span class="string">'jade'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./source/**/*.jade'</span>)</span><br><span class="line">    .pipe(plumber())</span><br><span class="line">    .pipe(jade(&#123;</span><br><span class="line">      pretty: <span class="literal">true</span></span><br><span class="line">    &#125;))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./public/'</span>))</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'sass'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./source/scss/**/*.scss'</span>)</span><br><span class="line">    .pipe(plumber())</span><br><span class="line">    .pipe(sass().on(<span class="string">'error'</span>, sass.logError))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./public/css/'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h1 id="更高明的-CSS-優化流程"><a href="#更高明的-CSS-優化流程" class="headerlink" title="更高明的 CSS 優化流程"></a>更高明的 CSS 優化流程</h1><h2 id="gulp-postcss-amp-autoprefixer"><a href="#gulp-postcss-amp-autoprefixer" class="headerlink" title="gulp-postcss &amp; autoprefixer"></a>gulp-postcss &amp; autoprefixer</h2><p><a href="https://www.npmjs.com/package/gulp-postcss" target="_blank" rel="noopener">npm-postcss</a></p>
+<p><a href="https://www.npmjs.com/package/autoprefixer" target="_blank" rel="noopener">npm-autoprefixer</a></p>
+<p><a href="https://github.com/browserslist/browserslist" target="_blank" rel="noopener">Browserslist</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save gulp-postcss autoprefixer</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p><code>all.scss</code></p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.card</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: rotate(<span class="number">120deg</span>);</span><br><span class="line">  <span class="attribute">filter</span>: blur(<span class="number">3px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><code>gulpfile.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> postcss = <span class="built_in">require</span>(<span class="string">'gulp-postcss'</span>);</span><br><span class="line"><span class="keyword">var</span> autoprefixer = <span class="built_in">require</span>(<span class="string">'autoprefixer'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'sass'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> plugins = [</span><br><span class="line">    autoprefixer(&#123; <span class="attr">browsers</span>: [<span class="string">'last 3 version'</span>, <span class="string">'&gt; 5%'</span>, <span class="string">'ie 6-8'</span>] &#125;)</span><br><span class="line">  ];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./source/scss/**/*.scss'</span>)</span><br><span class="line">    .pipe(plumber())</span><br><span class="line">    .pipe(sass().on(<span class="string">'error'</span>, sass.logError))</span><br><span class="line">    <span class="comment">// 編譯完成 CSS</span></span><br><span class="line"></span><br><span class="line">    .pipe(postcss(plugins))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./public/css/'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>執行時會出現以下錯誤</p>
+<pre><code>Replace Autoprefixer browsers option to Browserslist config.
+
+Use browserslist key in package.json or .browserslistrc file.
+
+Using browsers option cause some error. Browserslist config 
+
+can be used for Babel, Autoprefixer, postcss-normalize and other tools.
+
+----------------------------------------------------------------------------
+*                                                                          *
+*   If you really need to use option, rename it to overrideBrowserslist.   *
+*                                                                          *
+----------------------------------------------------------------------------
+
+  Learn more at:
+
+    https://github.com/browserslist/browserslist#readme
+
+    https://twitter.com/browserslist</code></pre><br>
+
+<p>將 <code>browsers</code> 修改為 <code>overrideBrowserslist</code> 就可以囉</p>
+<br>
+
+<p>執行 <code>$ gulp</code> 會發現 <code>all.css</code> 有加上前綴詞</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.card</span> &#123;</span><br><span class="line">  <span class="attribute">-webkit-transform</span>: <span class="built_in">rotate</span>(120deg);</span><br><span class="line">      <span class="attribute">-ms-transform</span>: <span class="built_in">rotate</span>(120deg);</span><br><span class="line">          <span class="attribute">transform</span>: <span class="built_in">rotate</span>(120deg);</span><br><span class="line">  <span class="attribute">-webkit-filter</span>: <span class="built_in">blur</span>(3px);</span><br><span class="line">          <span class="attribute">filter</span>: <span class="built_in">blur</span>(3px); &#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="官方建議配置"><a href="#官方建議配置" class="headerlink" title="官方建議配置"></a>官方建議配置</h3><p><code>package.json</code></p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">"browserslist": [</span><br><span class="line">    "last 3 version",</span><br><span class="line">    "&gt; 5%",</span><br><span class="line">    <span class="string">"IE 10"</span></span><br><span class="line">  ]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><code>gulpfile.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">gulp.task(<span class="string">'sass'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// var plugins = [</span></span><br><span class="line">  <span class="comment">//   autoprefixer(&#123; overrideBrowserslist: [ 'last 3 version', '&gt; 5%', 'ie 6-8' ] &#125;)</span></span><br><span class="line">  <span class="comment">// ];</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./source/scss/**/*.scss'</span>)</span><br><span class="line">    .pipe(plumber())</span><br><span class="line">    .pipe(sass().on(<span class="string">'error'</span>, sass.logError))</span><br><span class="line">    <span class="comment">// 編譯完成 CSS</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// .pipe(postcss(plugins))</span></span><br><span class="line">    .pipe(postcss( [autoprefixer()] ))  <span class="comment">// 直接引入 autoprefixer</span></span><br><span class="line">    </span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./public/css/'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h1 id="gulp-load-plugins"><a href="#gulp-load-plugins" class="headerlink" title="gulp-load-plugins"></a>gulp-load-plugins</h1><p><a href="https://www.npmjs.com/package/gulp-load-plugins" target="_blank" rel="noopener">npm-gulp-load-plugins</a></p>
+<h2 id="安裝-3"><a href="#安裝-3" class="headerlink" title="安裝"></a>安裝</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save gulp-load-plugins</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置-1"><a href="#配置-1" class="headerlink" title="配置"></a>配置</h3><p><code>gulpfile.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> $ = <span class="built_in">require</span>(<span class="string">'gulp-load-plugins'</span>)();</span><br></pre></td></tr></table></figure>
+
+<p>刪除</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> jade = <span class="built_in">require</span>(<span class="string">'gulp-jade'</span>);</span><br><span class="line"><span class="keyword">var</span> sass = <span class="built_in">require</span>(<span class="string">'gulp-sass'</span>);</span><br><span class="line"><span class="keyword">var</span> plumber = <span class="built_in">require</span>(<span class="string">'gulp-plumber'</span>);</span><br><span class="line"><span class="keyword">var</span> postcss = <span class="built_in">require</span>(<span class="string">'gulp-postcss'</span>);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>將有使用到的套件前面加上 <code>$.</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">gulp.task(<span class="string">'jade'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./source/**/*.jade'</span>)</span><br><span class="line">    .pipe($.plumber())</span><br><span class="line">    .pipe($.jade(&#123;</span><br><span class="line">      pretty: <span class="literal">true</span></span><br><span class="line">    &#125;))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./public/'</span>))</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'sass'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./source/scss/**/*.scss'</span>)</span><br><span class="line">    .pipe($.plumber())</span><br><span class="line">    .pipe($.sass().on(<span class="string">'error'</span>, $.sass.logError))</span><br><span class="line">    .pipe($.postcss( [autoprefixer()] ))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./public/css/'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>記得在 <code>$ gulp</code> 測試看看有無錯誤</p>
+<br>
+
+<h1 id="gulp-babel"><a href="#gulp-babel" class="headerlink" title="gulp-babel"></a>gulp-babel</h1><p><a href="https://www.npmjs.com/package/gulp-babel" target="_blank" rel="noopener">npm-babel</a></p>
+<h2 id="安裝-4"><a href="#安裝-4" class="headerlink" title="安裝"></a>安裝</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save gulp-babel @babel/core @babel/preset-env</span><br><span class="line">$ npm install --save gulp-concat gulp-sourcemaps</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="配置-2"><a href="#配置-2" class="headerlink" title="配置"></a>配置</h3><p><code>source</code> 資料夾下 新增 <code>all.js</code> <code>all2.js</code></p>
+<p>all.js</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> newFun = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'a'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">newFun();</span><br></pre></td></tr></table></figure>
+
+<p>all2.js</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> newFun2 = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'b'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">newFun2();</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><code>gulpfile.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">gulp.task(<span class="string">'babel'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./source/js/**/*.js'</span>)</span><br><span class="line">    .pipe($.babel(&#123;</span><br><span class="line">      presets: [<span class="string">'@babel/env'</span>]</span><br><span class="line">    &#125;))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./public/js/'</span>))</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.watch(<span class="string">'./source/scss/**/*.scss'</span>, gulp.series(<span class="string">'sass'</span>));</span><br><span class="line">  gulp.watch(<span class="string">'./source/**/*.jade'</span>, gulp.series(<span class="string">'jade'</span>));</span><br><span class="line">  gulp.watch(<span class="string">'./source/**/*.js'</span>, gulp.series(<span class="string">'babel'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'default'</span>, </span><br><span class="line">  gulp.parallel(<span class="string">'jade'</span>, <span class="string">'sass'</span>, <span class="string">'babel'</span>, <span class="string">'watch'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="gulp-concat"><a href="#gulp-concat" class="headerlink" title="gulp-concat"></a>gulp-concat</h3><p>會將 <code>source &gt; js</code> 裡面的兩隻 <code>.js</code> 合併為一個 </p>
+<p><code>gulpfile.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">gulp.task(<span class="string">'babel'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./source/js/**/*.js'</span>)</span><br><span class="line">    .pipe($.babel(&#123;</span><br><span class="line">      presets: [<span class="string">'@babel/env'</span>]</span><br><span class="line">    &#125;))</span><br><span class="line">    .pipe($.concat(<span class="string">'all.js'</span>))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./public/js/'</span>))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="gulp-sourcemaps"><a href="#gulp-sourcemaps" class="headerlink" title="gulp-sourcemaps"></a>gulp-sourcemaps</h3><p>會將內容正確顯示出沒有合併前的檔案位置</p>
+<p><code>gulpfile.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">gulp.task(<span class="string">'babel'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./source/js/**/*.js'</span>)</span><br><span class="line">    .pipe($.sourcemaps.init())</span><br><span class="line">    .pipe($.babel(&#123;</span><br><span class="line">      presets: [<span class="string">'@babel/env'</span>]</span><br><span class="line">    &#125;))</span><br><span class="line">    .pipe($.concat(<span class="string">'all.js'</span>))</span><br><span class="line">    .pipe($.sourcemaps.write(<span class="string">'.'</span>))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./public/js/'</span>))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="Bower-前端套件管理"><a href="#Bower-前端套件管理" class="headerlink" title="Bower - 前端套件管理"></a>Bower - 前端套件管理</h1><p><a href="https://www.npmjs.com/package/bower" target="_blank" rel="noopener">npm-bower</a></p>
+<h2 id="安裝-5"><a href="#安裝-5" class="headerlink" title="安裝"></a>安裝</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo npm install -g bower</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h1 id="gulp-與-bower-流程串接"><a href="#gulp-與-bower-流程串接" class="headerlink" title="gulp 與 bower 流程串接"></a>gulp 與 bower 流程串接</h1><h2 id="安裝-main-bower-files"><a href="#安裝-main-bower-files" class="headerlink" title="安裝 main-bower-files"></a>安裝 main-bower-files</h2><p><a href="https://www.npmjs.com/package/main-bower-files" target="_blank" rel="noopener">main-bower-files</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save main-bower-files</span><br></pre></td></tr></table></figure>
+
+<h2 id="安裝-jquery-amp-bootstrap"><a href="#安裝-jquery-amp-bootstrap" class="headerlink" title="安裝 jquery &amp; bootstrap"></a>安裝 jquery &amp; bootstrap</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ bower install --save jquery</span><br><span class="line">$ npm install --save bootstrap</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="配置-3"><a href="#配置-3" class="headerlink" title="配置"></a>配置</h2><p>將 <code>jquery.js</code> 另存在這個地方 <code>./.tmp/vendors</code></p>
+<p><code>gulpfile.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">gulp.task(<span class="string">'bower'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(mainBowerFiles())</span><br><span class="line">      .pipe(gulp.dest(<span class="string">'./.tmp/vendors'</span>))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="合併-bootstrap-amp-jquery-的-js"><a href="#合併-bootstrap-amp-jquery-的-js" class="headerlink" title="合併 bootstrap &amp; jquery 的 js"></a>合併 bootstrap &amp; jquery 的 js</h2><p><code>gulpfile.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">gulp.task(<span class="string">'vendorJs'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src([</span><br><span class="line">    <span class="string">'./.tmp/vendors/**/*.js'</span>,</span><br><span class="line">    <span class="string">'./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'</span></span><br><span class="line">  ])</span><br><span class="line">  .pipe($.concat(<span class="string">'vendors.js'</span>))</span><br><span class="line">  .pipe(gulp.dest(<span class="string">'./public/js/'</span>))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="gulp-order"><a href="#gulp-order" class="headerlink" title="gulp-order"></a>gulp-order</h2><p>外部載入的套件如果需要排序 <a href="https://www.npmjs.com/package/gulp-order" target="_blank" rel="noopener">gulp-order</a></p>
+<p>像是 <code>Bootstrap</code> 與 <code>jQuery</code> 會有前後相依的需求</p>
+<p><code>gulpfile.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">gulp.task(<span class="string">'vendorJs'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src([</span><br><span class="line">    <span class="string">'./.tmp/vendors/**/*.js'</span>,</span><br><span class="line">    <span class="string">'./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'</span></span><br><span class="line">  ])</span><br><span class="line">  .pipe($.order([</span><br><span class="line">    <span class="string">'jquery.js'</span>,</span><br><span class="line">    <span class="string">'bootstrap.js'</span></span><br><span class="line">  ]))</span><br><span class="line">  .pipe($.concat(<span class="string">'vendors.js'</span>))</span><br><span class="line">  .pipe(gulp.dest(<span class="string">'./public/js/'</span>))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h1 id="browser-sync"><a href="#browser-sync" class="headerlink" title="browser-sync"></a>browser-sync</h1><p><a href="https://browsersync.io/docs/gulp" target="_blank" rel="noopener">Browsersync + Gulp.js</a></p>
+<h2 id="安裝-6"><a href="#安裝-6" class="headerlink" title="安裝"></a>安裝</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save browser-sync</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="配置-4"><a href="#配置-4" class="headerlink" title="配置"></a>配置</h3><p><code>gulpfile.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> browserSync = <span class="built_in">require</span>(<span class="string">'browser-sync'</span>).create();</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'browser-sync'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  browserSync.init(&#123;</span><br><span class="line">      server: &#123;</span><br><span class="line">          baseDir: <span class="string">"./public"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      reloadDebounce: <span class="number">2000</span>  <span class="comment">// 延遲 2秒重置</span></span><br><span class="line">  &#125;);</span><br><span class="line">  gulp.watch(<span class="string">"./source/scss/**/*.scss"</span>, gulp.series(<span class="string">'sass'</span>));</span><br><span class="line">  gulp.watch(<span class="string">'./source/**/*.js'</span>, gulp.series(<span class="string">'babel'</span>));</span><br><span class="line">  gulp.watch(<span class="string">"./source/**/*.jade"</span>, gulp.series(<span class="string">'jade'</span>)).on(<span class="string">'change'</span>, browserSync.reload);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>還有在 <code>gulp.task([&#39;jade&#39;, &#39;sass&#39;, &#39;babel&#39;])</code> 的 <code>.pipe(gulp.dest(&#39;./public/&#39;))</code> 後面加上</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">.pipe(browserSync.stream());</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h1 id="壓縮優化程式碼"><a href="#壓縮優化程式碼" class="headerlink" title="壓縮優化程式碼"></a>壓縮優化程式碼</h1><h2 id="安裝-7"><a href="#安裝-7" class="headerlink" title="安裝"></a>安裝</h2><p><a href="https://www.npmjs.com/package/gulp-clean-css" target="_blank" rel="noopener">cleanCss</a>、<a href="https://www.npmjs.com/package/gulp-uglify" target="_blank" rel="noopener">uglify</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save gulp-clean-css gulp-uglify</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="配置-gulpfile-js"><a href="#配置-gulpfile-js" class="headerlink" title="配置 gulpfile.js"></a>配置 gulpfile.js</h3><ul>
+<li><code>.pipe($.cleanCss())</code></li>
+<li><code>.pipe($.uglify())</code></li>
+<li><a href="https://github.com/mishoo/UglifyJS2#compress-options" target="_blank" rel="noopener">compress</a></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">gulp.task(<span class="string">'sass'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./source/scss/**/*.scss'</span>)</span><br><span class="line">    .pipe($.plumber())</span><br><span class="line">    .pipe($.sourcemaps.init())</span><br><span class="line">    .pipe($.sass().on(<span class="string">'error'</span>, $.sass.logError))</span><br><span class="line">    .pipe($.postcss( [autoprefixer()] ))</span><br><span class="line">    .pipe($.cleanCss())</span><br><span class="line">    .pipe($.sourcemaps.write(<span class="string">'.'</span>))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./public/css/'</span>))</span><br><span class="line">    .pipe(browserSync.stream());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'babel'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./source/js/**/*.js'</span>)</span><br><span class="line">    .pipe($.plumber())</span><br><span class="line">    .pipe($.sourcemaps.init())</span><br><span class="line">    .pipe($.babel(&#123;</span><br><span class="line">      presets: [<span class="string">'@babel/env'</span>]</span><br><span class="line">    &#125;))</span><br><span class="line">    .pipe($.concat(<span class="string">'all.js'</span>))</span><br><span class="line">    .pipe($.uglify(&#123;</span><br><span class="line">      compress: &#123;</span><br><span class="line">        drop_console: <span class="literal">true</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;))</span><br><span class="line">    .pipe($.sourcemaps.write(<span class="string">'.'</span>))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./public/js/'</span>))</span><br><span class="line">    .pipe(browserSync.stream());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'vendorJs'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src([</span><br><span class="line">    <span class="string">'./.tmp/vendors/**/*.js'</span>,</span><br><span class="line">    <span class="string">'./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'</span></span><br><span class="line">  ])</span><br><span class="line">  .pipe($.order([</span><br><span class="line">    <span class="string">'jquery.js'</span>,</span><br><span class="line">    <span class="string">'bootstrap.js'</span></span><br><span class="line">  ]))</span><br><span class="line">  .pipe($.concat(<span class="string">'vendors.js'</span>))</span><br><span class="line">  .pipe($.uglify())</span><br><span class="line">  .pipe(gulp.dest(<span class="string">'./public/js/'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/gulp/" rel="tag"># gulp</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019-11-12-localStorage/" rel="prev" title="localStorage">
+      <i class="fa fa-chevron-left"></i> localStorage
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019-11-17-gulp%E9%80%B2%E9%9A%8E/" rel="next" title="Gulp 進階">
+      Gulp 進階 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝環境"><span class="nav-number">1.</span> <span class="nav-text">安裝環境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#環境建置"><span class="nav-number">2.</span> <span class="nav-text">環境建置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#產生出一個-package-json"><span class="nav-number">2.1.</span> <span class="nav-text">產生出一個 package.json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝-gulp-4-x-x"><span class="nav-number">2.2.</span> <span class="nav-text">安裝 gulp 4.x.x</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新增-gulpfile-js"><span class="nav-number">2.3.</span> <span class="nav-text">新增 gulpfile.js</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#範例：-使用-task-複製文件至指定資料夾下"><span class="nav-number">3.</span> <span class="nav-text">範例： 使用 task 複製文件至指定資料夾下</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gulp-jade"><span class="nav-number"></span> <span class="nav-text">gulp-jade</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝"><span class="nav-number">1.</span> <span class="nav-text">安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">2.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gulpfile-js"><span class="nav-number">2.1.</span> <span class="nav-text">gulpfile.js</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gulp-sass"><span class="nav-number"></span> <span class="nav-text">gulp-sass</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-1"><span class="nav-number">1.</span> <span class="nav-text">安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start-1"><span class="nav-number">2.</span> <span class="nav-text">Quick Start</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gulp-watch-amp-gulp-series-amp-gulp-parallel"><span class="nav-number">3.</span> <span class="nav-text">gulp.watch &amp; gulp.series &amp; gulp.parallel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整合-jade-sass-watch"><span class="nav-number">4.</span> <span class="nav-text">整合 jade sass watch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gulp-plumber"><span class="nav-number">5.</span> <span class="nav-text">gulp-plumber</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝-2"><span class="nav-number">5.1.</span> <span class="nav-text">安裝</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更高明的-CSS-優化流程"><span class="nav-number"></span> <span class="nav-text">更高明的 CSS 優化流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#gulp-postcss-amp-autoprefixer"><span class="nav-number">1.</span> <span class="nav-text">gulp-postcss &amp; autoprefixer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">1.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#官方建議配置"><span class="nav-number">1.2.</span> <span class="nav-text">官方建議配置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gulp-load-plugins"><span class="nav-number"></span> <span class="nav-text">gulp-load-plugins</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-3"><span class="nav-number">1.</span> <span class="nav-text">安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-1"><span class="nav-number">1.1.</span> <span class="nav-text">配置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gulp-babel"><span class="nav-number"></span> <span class="nav-text">gulp-babel</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-4"><span class="nav-number">1.</span> <span class="nav-text">安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-2"><span class="nav-number">1.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gulp-concat"><span class="nav-number">1.2.</span> <span class="nav-text">gulp-concat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gulp-sourcemaps"><span class="nav-number">1.3.</span> <span class="nav-text">gulp-sourcemaps</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bower-前端套件管理"><span class="nav-number"></span> <span class="nav-text">Bower - 前端套件管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-5"><span class="nav-number">1.</span> <span class="nav-text">安裝</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gulp-與-bower-流程串接"><span class="nav-number"></span> <span class="nav-text">gulp 與 bower 流程串接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-main-bower-files"><span class="nav-number">1.</span> <span class="nav-text">安裝 main-bower-files</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-jquery-amp-bootstrap"><span class="nav-number">2.</span> <span class="nav-text">安裝 jquery &amp; bootstrap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-3"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#合併-bootstrap-amp-jquery-的-js"><span class="nav-number">4.</span> <span class="nav-text">合併 bootstrap &amp; jquery 的 js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gulp-order"><span class="nav-number">5.</span> <span class="nav-text">gulp-order</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#browser-sync"><span class="nav-number"></span> <span class="nav-text">browser-sync</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-6"><span class="nav-number">1.</span> <span class="nav-text">安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-4"><span class="nav-number">1.1.</span> <span class="nav-text">配置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#壓縮優化程式碼"><span class="nav-number"></span> <span class="nav-text">壓縮優化程式碼</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-7"><span class="nav-number">1.</span> <span class="nav-text">安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-gulpfile-js"><span class="nav-number">1.1.</span> <span class="nav-text">配置 gulpfile.js</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Peter KU</p>
+  <div class="site-description" itemprop="description">刺蝟先生在 Github 上的部落格</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/HedgehogKUCC" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;HedgehogKUCC" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Peter KU</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

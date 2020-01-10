@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://hedgehogkucc.github.io').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="依據開發環境調整輸出內容minimist、gulp-if 安裝$ npm install --save minimist gulp-if">
+<meta name="keywords" content="gulp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gulp 進階">
+<meta property="og:url" content="https:&#x2F;&#x2F;hedgehogkucc.github.io&#x2F;2019-11-17-gulp%E9%80%B2%E9%9A%8E&#x2F;index.html">
+<meta property="og:site_name" content="Mr.Hedgehog KU">
+<meta property="og:description" content="依據開發環境調整輸出內容minimist、gulp-if 安裝$ npm install --save minimist gulp-if">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-01-10T02:11:21.207Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://hedgehogkucc.github.io/2019-11-17-gulp%E9%80%B2%E9%9A%8E/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Gulp 進階 | Mr.Hedgehog KU</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mr.Hedgehog KU</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="default">
+    <link itemprop="mainEntityOfPage" href="https://hedgehogkucc.github.io/2019-11-17-gulp%E9%80%B2%E9%9A%8E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Peter KU">
+      <meta itemprop="description" content="刺蝟先生在 Github 上的部落格">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Hedgehog KU">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          Gulp 進階
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-11-17 00:00:00" itemprop="dateCreated datePublished" datetime="2019-11-17T00:00:00+08:00">2019-11-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-10 10:11:21" itemprop="dateModified" datetime="2020-01-10T10:11:21+08:00">2020-01-10</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="依據開發環境調整輸出內容"><a href="#依據開發環境調整輸出內容" class="headerlink" title="依據開發環境調整輸出內容"></a>依據開發環境調整輸出內容</h2><p><a href="https://www.npmjs.com/package/minimist" target="_blank" rel="noopener">minimist</a>、<a href="https://www.npmjs.com/package/gulp-if" target="_blank" rel="noopener">gulp-if</a></p>
+<h3 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save minimist gulp-if</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<br>
+
+<h3 id="配置-gulpfile-js"><a href="#配置-gulpfile-js" class="headerlink" title="配置 gulpfile.js"></a>配置 gulpfile.js</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> minimist = <span class="built_in">require</span>(<span class="string">'minimist'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> envOptions = &#123;</span><br><span class="line">  string: <span class="string">'env'</span>,</span><br><span class="line">  <span class="keyword">default</span>: &#123; <span class="attr">env</span>: <span class="string">'develop'</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> options = minimist(process.argv.slice(<span class="number">2</span>), envOptions);</span><br><span class="line"><span class="built_in">console</span>.log(options);</span><br><span class="line"></span><br><span class="line"><span class="comment">// sass</span></span><br><span class="line">.pipe($.<span class="keyword">if</span>(options.env === <span class="string">'production'</span>, $.cleanCss()))</span><br><span class="line"></span><br><span class="line"><span class="comment">// babel</span></span><br><span class="line">.pipe($.<span class="keyword">if</span>(options.env === <span class="string">'production'</span>, $.uglify(&#123;</span><br><span class="line">      compress: &#123;</span><br><span class="line">        drop_console: <span class="literal">true</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)))</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="輸出判斷"><a href="#輸出判斷" class="headerlink" title="輸出判斷"></a>輸出判斷</h3><p><code>develop</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gulp</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><code>production</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gulp --env production</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h1 id="釋出開發成品"><a href="#釋出開發成品" class="headerlink" title="釋出開發成品"></a>釋出開發成品</h1><p><a href="https://www.npmjs.com/package/gulp-clean" target="_blank" rel="noopener">gulp-clean</a></p>
+<h2 id="安裝-1"><a href="#安裝-1" class="headerlink" title="安裝"></a>安裝</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save gulp-clean</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置-gulpfile-js-1"><a href="#配置-gulpfile-js-1" class="headerlink" title="配置 gulpfile.js"></a>配置 gulpfile.js</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">gulp.task(<span class="string">'clean'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src([<span class="string">'./.tmp'</span>, <span class="string">'./public'</span>], &#123;<span class="attr">read</span>: <span class="literal">false</span>, <span class="attr">allowEmpty</span>: <span class="literal">true</span>&#125;)</span><br><span class="line">      .pipe($.clean());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'build'</span>,</span><br><span class="line">  gulp.series(</span><br><span class="line">    <span class="string">'clean'</span>,</span><br><span class="line">    gulp.parallel(<span class="string">'jade'</span>, <span class="string">'sass'</span>, <span class="string">'babel'</span>, <span class="string">'bower'</span>),</span><br><span class="line">    <span class="string">'vendorJs'</span></span><br><span class="line">  )</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>如果沒加上 <code>allowEmpty: true</code></p>
+<pre><code>會發生 clean ERROR 如下:
+
+Error: File not found with singular glob: /Users/kucc/Desktop/DemoGulp/.tmp (if this was purposeful, use `allowEmpty` option)</code></pre><br>
+
+<h1 id="圖片壓縮技巧"><a href="#圖片壓縮技巧" class="headerlink" title="圖片壓縮技巧"></a>圖片壓縮技巧</h1><p><a href="https://www.npmjs.com/package/gulp-imagemin" target="_blank" rel="noopener">imagemin</a></p>
+<h2 id="安裝-2"><a href="#安裝-2" class="headerlink" title="安裝"></a>安裝</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save gulp-imagemin</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置-gulpfile-js-2"><a href="#配置-gulpfile-js-2" class="headerlink" title="配置 gulpfile.js"></a>配置 gulpfile.js</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">gulp.task(<span class="string">'image-min'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./source/images/*'</span>)</span><br><span class="line">    .pipe($.<span class="keyword">if</span>(options.env === <span class="string">'production'</span>, $.imagemin()))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./public/images/'</span>))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>圖片如果已經壓縮過，那這個功能的效用就發揮不大 ~</p>
+<br>
+
+<h1 id="一鍵部署到-Github-Pages"><a href="#一鍵部署到-Github-Pages" class="headerlink" title="一鍵部署到 Github Pages"></a>一鍵部署到 Github Pages</h1><p><a href="https://www.npmjs.com/package/gulp-gh-pages" target="_blank" rel="noopener">gulp-gh-pages</a></p>
+<h2 id="安裝-3"><a href="#安裝-3" class="headerlink" title="安裝"></a>安裝</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save gulp-gh-pages</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置-gulpfile-js-3"><a href="#配置-gulpfile-js-3" class="headerlink" title="配置 gulpfile.js"></a>配置 gulpfile.js</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">gulp.task(<span class="string">'d'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./public/**/*'</span>)</span><br><span class="line">    .pipe($.ghPages());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h1 id="npm-install-中-–save-和-–save-dev-差異"><a href="#npm-install-中-–save-和-–save-dev-差異" class="headerlink" title="npm install 中 –save 和 –save-dev 差異"></a>npm install 中 –save 和 –save-dev 差異</h1><h2 id="只安裝-dependencies-中套件"><a href="#只安裝-dependencies-中套件" class="headerlink" title="只安裝 dependencies 中套件"></a>只安裝 dependencies 中套件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --only=prod</span><br></pre></td></tr></table></figure>
+
+<p>只安裝 <code>devDependencies</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --only=dev</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="只保留-dependencies-中套件"><a href="#只保留-dependencies-中套件" class="headerlink" title="只保留 dependencies 中套件"></a>只保留 dependencies 中套件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm prune --prod</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/gulp/" rel="tag"># gulp</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019-11-16-gulp/" rel="prev" title="Gulp">
+      <i class="fa fa-chevron-left"></i> Gulp
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#依據開發環境調整輸出內容"><span class="nav-number">1.</span> <span class="nav-text">依據開發環境調整輸出內容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝"><span class="nav-number">1.1.</span> <span class="nav-text">安裝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-gulpfile-js"><span class="nav-number">1.2.</span> <span class="nav-text">配置 gulpfile.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#輸出判斷"><span class="nav-number">1.3.</span> <span class="nav-text">輸出判斷</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#釋出開發成品"><span class="nav-number"></span> <span class="nav-text">釋出開發成品</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-1"><span class="nav-number">1.</span> <span class="nav-text">安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-gulpfile-js-1"><span class="nav-number">1.1.</span> <span class="nav-text">配置 gulpfile.js</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#圖片壓縮技巧"><span class="nav-number"></span> <span class="nav-text">圖片壓縮技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-2"><span class="nav-number">1.</span> <span class="nav-text">安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-gulpfile-js-2"><span class="nav-number">1.1.</span> <span class="nav-text">配置 gulpfile.js</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一鍵部署到-Github-Pages"><span class="nav-number"></span> <span class="nav-text">一鍵部署到 Github Pages</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-3"><span class="nav-number">1.</span> <span class="nav-text">安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-gulpfile-js-3"><span class="nav-number">1.1.</span> <span class="nav-text">配置 gulpfile.js</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#npm-install-中-–save-和-–save-dev-差異"><span class="nav-number"></span> <span class="nav-text">npm install 中 –save 和 –save-dev 差異</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#只安裝-dependencies-中套件"><span class="nav-number">1.</span> <span class="nav-text">只安裝 dependencies 中套件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#只保留-dependencies-中套件"><span class="nav-number">2.</span> <span class="nav-text">只保留 dependencies 中套件</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Peter KU</p>
+  <div class="site-description" itemprop="description">刺蝟先生在 Github 上的部落格</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/HedgehogKUCC" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;HedgehogKUCC" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Peter KU</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
