@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://hedgehogkucc.github.io').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="keywords" content="js,w3HexSchool">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 測驗考題 - 1">
+<meta property="og:url" content="https:&#x2F;&#x2F;hedgehogkucc.github.io&#x2F;2020-02-03-JavaScript%20%E6%B8%AC%E9%A9%97%E8%80%83%E9%A1%8C%20-%201&#x2F;index.html">
+<meta property="og:site_name" content="Mr.Hedgehog KU">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https:&#x2F;&#x2F;upload.cc&#x2F;i1&#x2F;2020&#x2F;02&#x2F;03&#x2F;LDxVlh.jpg">
+<meta property="og:updated_time" content="2020-02-03T14:29:06.149Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;upload.cc&#x2F;i1&#x2F;2020&#x2F;02&#x2F;03&#x2F;LDxVlh.jpg">
+
+<link rel="canonical" href="https://hedgehogkucc.github.io/2020-02-03-JavaScript%20%E6%B8%AC%E9%A9%97%E8%80%83%E9%A1%8C%20-%201/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>JavaScript 測驗考題 - 1 | Mr.Hedgehog KU</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mr.Hedgehog KU</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="default">
+    <link itemprop="mainEntityOfPage" href="https://hedgehogkucc.github.io/2020-02-03-JavaScript%20%E6%B8%AC%E9%A9%97%E8%80%83%E9%A1%8C%20-%201/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Peter KU">
+      <meta itemprop="description" content="刺蝟先生在 Github 上的部落格">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Hedgehog KU">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          JavaScript 測驗考題 - 1
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-02-03 00:00:00 / Modified: 22:29:06" itemprop="dateCreated datePublished" datetime="2020-02-03T00:00:00+08:00">2020-02-03</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <img src="https://upload.cc/i1/2020/02/03/LDxVlh.jpg" width="1024" alt="JavaScript 核心測驗考題" />
+
+<a id="more"></a>
+
+<h1 id="JavaScript-核心測驗考題"><a href="#JavaScript-核心測驗考題" class="headerlink" title="JavaScript 核心測驗考題"></a>JavaScript 核心測驗考題</h1><h2 id="變數、作用域、提升"><a href="#變數、作用域、提升" class="headerlink" title="變數、作用域、提升"></a>變數、作用域、提升</h2><h3 id="測驗：請問結果為？"><a href="#測驗：請問結果為？" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">a();</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>0</li>
+<li>undefined</li>
+<li>error</li>
+</ol>
+</blockquote>
+<br>
+
+<p>解答：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 創造</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 執行</span></span><br><span class="line">a = <span class="number">0</span>;  <span class="comment">// 這步驟就會把 函式 給覆蓋掉</span></span><br><span class="line">a();    <span class="comment">// 這裡其實是 a = 0</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="表達式、陳述式"><a href="#表達式、陳述式" class="headerlink" title="表達式、陳述式"></a>表達式、陳述式</h2><h3 id="測驗：請問結果為？-1"><a href="#測驗：請問結果為？-1" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = (y = <span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(x);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>10</li>
+<li>undefined</li>
+</ol>
+</blockquote>
+<br>
+
+<p>解答：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">(y = <span class="number">10</span>)  <span class="comment">// 這是一個表達式，括號優先執行所以回傳為 10，這個值就賦予到 x。</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="額外問題：y-是什麼？"><a href="#額外問題：y-是什麼？" class="headerlink" title="額外問題：y 是什麼？"></a>額外問題：y 是什麼？</h3><pre><code>1. 被宣告的變數
+2. 未宣告的全域變數
+3. () 內的區域變數</code></pre><br>
+
+<p>解答：</p>
+<pre><code>y 沒有用 var 宣告，所以不是被宣告變數。
+() 不是一個函式，所以不是區域變數。</code></pre><br>
+
+<h3 id="測驗：請問結果為？-2"><a href="#測驗：請問結果為？-2" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">  a: <span class="number">10</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = a.a = a.a * a.a;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>10</li>
+<li>100</li>
+</ol>
+</blockquote>
+<br>
+
+<p>解答：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 不要使用連續賦值</span></span><br><span class="line"><span class="comment">// 這是一個表達式，會回傳值並賦值於 var b。</span></span><br><span class="line">a.a = a.a * a.a</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="測驗：請問結果為？-3"><a href="#測驗：請問結果為？-3" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">  a: <span class="number">10</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(a, <span class="string">'a'</span>, &#123;</span><br><span class="line">  writable: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = a.a = a.a * a.a;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>10</li>
+<li>100</li>
+</ol>
+</blockquote>
+<br>
+
+<p>解答：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 會讓 a 物件 裡面的 'a' 屬性的值不能再被賦值</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(a, <span class="string">'a'</span>, &#123;</span><br><span class="line">  writable: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="測驗：請問結果為？-4"><a href="#測驗：請問結果為？-4" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> newList = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].push(<span class="number">4</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newList.push(<span class="number">5</span>));</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>[1, 2, 3, 4, 5]</li>
+<li>[1, 2, 3, 5]</li>
+<li>[1, 2, 3, 4]</li>
+<li>Error</li>
+</ol>
+</blockquote>
+<br>
+
+<p>解答：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 這是表達式，回傳值為 4</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].push(<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 正確寫法</span></span><br><span class="line"><span class="keyword">var</span> newList = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">newList.push(<span class="number">4</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newList.push(<span class="number">5</span>));   <span class="comment">// 5</span></span><br><span class="line"><span class="built_in">console</span>.log(newList);           <span class="comment">// [1, 2, 3, 4, 5]</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="變數"><a href="#變數" class="headerlink" title="變數"></a>變數</h2><ul>
+<li>未宣告的變數會成為全域變數</li>
+<li><strong>屬性</strong> 可以被刪除，<strong>變數</strong> 則無法</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">b = <span class="number">2</span>;    <span class="comment">// window 下的屬性</span></span><br><span class="line"><span class="keyword">delete</span> a; <span class="comment">// false</span></span><br><span class="line"><span class="keyword">delete</span> b; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="函式內的變數一定要宣告，才可以避免汙染到全域！"><a href="#函式內的變數一定要宣告，才可以避免汙染到全域！" class="headerlink" title="函式內的變數一定要宣告，才可以避免汙染到全域！"></a>函式內的變數一定要宣告，才可以避免汙染到全域！</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 錯誤寫法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  b = <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br><span class="line"><span class="built_in">console</span>.log(b);   <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 正確寫法</span></span><br><span class="line"><span class="comment">// 有宣告 var 就只會在函式作用域中</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br><span class="line"><span class="built_in">console</span>.log(b);   <span class="comment">// Uncaught ReferenceError: b is not defined</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="測驗：請問結果為？-5"><a href="#測驗：請問結果為？-5" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = b = <span class="number">3</span>;</span><br><span class="line">&#125;());</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> b);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>undefined, number</li>
+<li>number, number</li>
+</ol>
+</blockquote>
+<br>
+
+<p>解答：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 因為函式內有宣告 var a 所以外層讀不到值</span></span><br><span class="line"><span class="comment">// 又因為 typeof 保護機制，所以會顯示為 undefined。</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);    <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="額外補充"><a href="#額外補充" class="headerlink" title="額外補充"></a>額外補充</h4><p>將 <code>typeof</code> 刪除後重新執行，因為程式是逐行執行，</p>
+<p>所以在 <code>console.log(a);</code> 會報錯就停住了。</p>
+<p><code>console.log(b);</code> 就不會執行！</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = b = <span class="number">3</span>;</span><br><span class="line">&#125;());</span><br><span class="line"><span class="built_in">console</span>.log(a);   <span class="comment">// Uncaught ReferenceError: a is not defined</span></span><br><span class="line"><span class="built_in">console</span>.log(b);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="測驗：請問結果為？-6"><a href="#測驗：請問結果為？-6" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="keyword">var</span> b;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  a = b = <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">var</span> b;</span><br><span class="line">&#125;());</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> b);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>undefined, number</li>
+<li>number, number</li>
+<li>number, undefined</li>
+</ol>
+</blockquote>
+<br>
+
+<h2 id="ASI"><a href="#ASI" class="headerlink" title="ASI"></a>ASI</h2><p>ASI：自動插入分號</p>
+<p>ex: <code>continue</code>, <code>return</code>, <code>break</code>, <code>throw</code> 後方自動補上分號</p>
+<p><a href="https://www.udemy.com/course/javascript-adv/learn/lecture/15793656#questions" target="_blank" rel="noopener">不會發生 ASI</a></p>
+<br>
+
+<h3 id="測驗：請問結果為？-7"><a href="#測驗：請問結果為？-7" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line">  ,b = <span class="number">2</span></span><br><span class="line"><span class="keyword">delete</span> a;</span><br><span class="line"><span class="keyword">delete</span> b;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a,<span class="keyword">typeof</span> b);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>number, undefined</li>
+<li>number, number</li>
+<li>undefined, undefined</li>
+</ol>
+</blockquote>
+<br>
+
+<h3 id="測驗：請問結果為？-8"><a href="#測驗：請問結果為？-8" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a)</span><br><span class="line">&#125;())</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>10</li>
+<li>10 is not a function</li>
+</ol>
+</blockquote>
+<br>
+
+<p>解答：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 括號 前面不會自動加入分號</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a)</span><br><span class="line">&#125;())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 正確寫法</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a)  <span class="comment">// 10</span></span><br><span class="line">&#125;())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 正確寫法</span></span><br><span class="line"><span class="comment">// 或者在 IIFE 前面都加上 ;</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">;(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a)  <span class="comment">// 10</span></span><br><span class="line">&#125;())</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="測驗：請問結果為？-9"><a href="#測驗：請問結果為？-9" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">nums</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span></span><br><span class="line">  (a &gt; b)</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'a is bigger'</span>)</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'b is bigger'</span>)</span><br><span class="line">  <span class="keyword">return</span></span><br><span class="line">  a + b</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(nums(<span class="number">4</span>, <span class="number">2</span>))</span><br><span class="line"><span class="built_in">console</span>.log(nums(<span class="number">1</span>, <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>a is bigger, 6 and b is bigger, 3</li>
+<li>a is bigger, undefined and b is bigger, undefined</li>
+<li>undefined and undefined</li>
+<li>SyntaxError</li>
+</ol>
+</blockquote>
+<br>
+
+<p>圖片來源： <a href="https://pngtree.com/free-backgrounds" target="_blank" rel="noopener">free background photos from pngtree.com</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/js/" rel="tag"># js</a>
+              <a href="/tags/w3HexSchool/" rel="tag"># w3HexSchool</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019-11-17-gulp%E9%80%B2%E9%9A%8E/" rel="prev" title="Gulp 進階">
+      <i class="fa fa-chevron-left"></i> Gulp 進階
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-核心測驗考題"><span class="nav-number">1.</span> <span class="nav-text">JavaScript 核心測驗考題</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#變數、作用域、提升"><span class="nav-number">1.1.</span> <span class="nav-text">變數、作用域、提升</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#測驗：請問結果為？"><span class="nav-number">1.1.1.</span> <span class="nav-text">測驗：請問結果為？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表達式、陳述式"><span class="nav-number">1.2.</span> <span class="nav-text">表達式、陳述式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#測驗：請問結果為？-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">測驗：請問結果為？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#額外問題：y-是什麼？"><span class="nav-number">1.2.2.</span> <span class="nav-text">額外問題：y 是什麼？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#測驗：請問結果為？-2"><span class="nav-number">1.2.3.</span> <span class="nav-text">測驗：請問結果為？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#測驗：請問結果為？-3"><span class="nav-number">1.2.4.</span> <span class="nav-text">測驗：請問結果為？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#測驗：請問結果為？-4"><span class="nav-number">1.2.5.</span> <span class="nav-text">測驗：請問結果為？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#變數"><span class="nav-number">1.3.</span> <span class="nav-text">變數</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函式內的變數一定要宣告，才可以避免汙染到全域！"><span class="nav-number">1.3.1.</span> <span class="nav-text">函式內的變數一定要宣告，才可以避免汙染到全域！</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#測驗：請問結果為？-5"><span class="nav-number">1.3.2.</span> <span class="nav-text">測驗：請問結果為？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#額外補充"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">額外補充</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#測驗：請問結果為？-6"><span class="nav-number">1.3.3.</span> <span class="nav-text">測驗：請問結果為？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ASI"><span class="nav-number">1.4.</span> <span class="nav-text">ASI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#測驗：請問結果為？-7"><span class="nav-number">1.4.1.</span> <span class="nav-text">測驗：請問結果為？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#測驗：請問結果為？-8"><span class="nav-number">1.4.2.</span> <span class="nav-text">測驗：請問結果為？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#測驗：請問結果為？-9"><span class="nav-number">1.4.3.</span> <span class="nav-text">測驗：請問結果為？</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Peter KU</p>
+  <div class="site-description" itemprop="description">刺蝟先生在 Github 上的部落格</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/HedgehogKUCC" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;HedgehogKUCC" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Peter KU</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
