@@ -7,7 +7,7 @@ title: Mr.Hedgehog KU           # 網站標題
 subtitle:           # 網站副標題
 keywords:           # 網站關鍵字
 author: Peter KU            # 作者名稱
-language:           # 網站語言
+language: zh-tw          # 網站語言
 timezone:           # 時區
 
 # custom Site settings

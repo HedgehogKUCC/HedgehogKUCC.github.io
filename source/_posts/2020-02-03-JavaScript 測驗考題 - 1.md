@@ -6,7 +6,7 @@ tags:
   - js
 ---
 
-<img src="https://upload.cc/i1/2020/02/03/LDxVlh.jpg" width="1024" alt="JavaScript 核心測驗考題" />
+<img src="https://i.imgur.com/GxBANhI.jpg" width="1024" alt="JavaScript 核心測驗考題" />
 
 <!-- more -->
 
