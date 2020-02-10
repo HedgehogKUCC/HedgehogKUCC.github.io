@@ -137,7 +137,7 @@ markdown:
     - markdown-it-emoji
 
 ## Themes: https://hexo.io/themes/
-theme: nextku
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
