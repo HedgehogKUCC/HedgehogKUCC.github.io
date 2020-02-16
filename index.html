@@ -15,36 +15,10 @@
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
-
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    hostname: new URL('https://hedgehogkucc.github.io').hostname,
-    root: '/',
-    scheme: 'Mist',
-    version: '7.7.0',
-    exturl: false,
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hedgehogkucc.github.io","root":"/","scheme":"Mist","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
   <meta name="description" content="刺蝟先生在 Github 上的部落格">
 <meta property="og:type" content="website">
@@ -107,6 +81,14 @@
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
   <div class="site-meta">
 
     <div>
@@ -118,13 +100,7 @@
     </div>
   </div>
 
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
+  <div class="site-nav-right"></div>
 </div>
 
 
@@ -204,7 +180,7 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2020-02-10-JavaScript%20%E6%B8%AC%E9%A9%97%E8%80%83%E9%A1%8C%20-%202/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/2020-02-10-JavaScript%20%E6%B8%AC%E9%A9%97%E8%80%83%E9%A1%8C%20-%202/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020-02-10-JavaScript 測驗考題 - 2/" itemprop="commentCount"></span>
     </a>
   </span>
@@ -290,7 +266,7 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2020-02-03-JavaScript%20%E6%B8%AC%E9%A9%97%E8%80%83%E9%A1%8C%20-%201/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/2020-02-03-JavaScript%20%E6%B8%AC%E9%A9%97%E8%80%83%E9%A1%8C%20-%201/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020-02-03-JavaScript 測驗考題 - 1/" itemprop="commentCount"></span>
     </a>
   </span>
@@ -376,7 +352,7 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2019-11-17-gulp%E9%80%B2%E9%9A%8E/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/2019-11-17-gulp%E9%80%B2%E9%9A%8E/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019-11-17-gulp進階/" itemprop="commentCount"></span>
     </a>
   </span>
@@ -463,7 +439,7 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2019-11-16-gulp/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/2019-11-16-gulp/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019-11-16-gulp/" itemprop="commentCount"></span>
     </a>
   </span>
@@ -555,7 +531,7 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2019-11-12-localStorage/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/2019-11-12-localStorage/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019-11-12-localStorage/" itemprop="commentCount"></span>
     </a>
   </span>
@@ -644,7 +620,7 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2019-11-11-JS-Events/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/2019-11-11-JS-Events/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019-11-11-JS-Events/" itemprop="commentCount"></span>
     </a>
   </span>
@@ -734,7 +710,7 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2019-11-09-BOM-DOM-innerHTML-createElement/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/2019-11-09-BOM-DOM-innerHTML-createElement/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019-11-09-BOM-DOM-innerHTML-createElement/" itemprop="commentCount"></span>
     </a>
   </span>
@@ -824,7 +800,7 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2019-11-06-%E5%BB%BA%E7%BD%AE%E9%83%A8%E8%90%BD%E6%A0%BC/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/2019-11-06-%E5%BB%BA%E7%BD%AE%E9%83%A8%E8%90%BD%E6%A0%BC/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019-11-06-建置部落格/" itemprop="commentCount"></span>
     </a>
   </span>
@@ -979,7 +955,7 @@
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.1
   </div>
 
         
