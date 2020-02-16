@@ -1,9 +1,6 @@
-<% if (config.disqus_shortname){ %>
+<% if (theme.disqus_shortname){ %>
 <script>
-  var disqus_shortname = '<%= config.disqus_shortname %>';
-  <% if (page.permalink){ %>
-  var disqus_url = '<%= page.permalink %>';
-  <% } %>
+  var disqus_shortname = '<%= theme.disqus_shortname %>';
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
@@ -23,3 +20,7 @@
 
 <%- js('js/script') %>
 <%- partial('gauges-analytics') %>
+
+<% if (page.permalink){ %>
+  var disqus_url = '<%= page.permalink %>';
+<% } %>
