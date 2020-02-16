@@ -163,6 +163,9 @@ body {
 .mobile-nav-on {
   overflow: hidden;
 }
+.text-center {
+  text-align: center;
+}
 #wrap {
   height: 100%;
   width: 100%;
