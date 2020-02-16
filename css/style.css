@@ -721,6 +721,7 @@ a.article-title:hover {
 }
 .article-tag-list-link:before {
   content: "\f02b";
+  font-family: FontAwesome;
 }
 .article-comment-link {
   float: right;
