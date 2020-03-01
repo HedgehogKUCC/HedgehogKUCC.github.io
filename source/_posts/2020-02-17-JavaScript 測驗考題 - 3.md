@@ -6,7 +6,7 @@ tags:
   - js
 ---
 
-<img src="https://i.imgur.com/f928IC8.jpg" width="1024" alt="JavaScript 核心測驗考題" />
+<img src="https://i.imgur.com/m0EStr7.jpg" width="1024" alt="Meow Meow Picture" />
 
 <!-- more -->
 
