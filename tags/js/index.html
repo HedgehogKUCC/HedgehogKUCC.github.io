@@ -1,31 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  
-
-  
-  <title>Tag: js | Mr.Hedgehog KU</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="刺蝟先生在 Github 上的部落格">
+  <head>
+    <meta charset="utf-8" />
+    
+ 
+    <title>Tag: js | Mr.Hedgehog KU</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="description" content="刺蝟先生在 Github 上的部落格">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mr.Hedgehog KU">
 <meta property="og:url" content="https:&#x2F;&#x2F;hedgehogkucc.github.io&#x2F;tags&#x2F;js&#x2F;index.html">
 <meta property="og:site_name" content="Mr.Hedgehog KU">
 <meta property="og:description" content="刺蝟先生在 Github 上的部落格">
 <meta property="og:locale" content="zh-TW">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Mr.Hedgehog KU" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+<meta name="twitter:card" content="summary"> 
+    <link
+      rel="alternate"
+      href="/atom.xml"
+      title="Mr.Hedgehog KU"
+      type="application/atom+xml"
+    />
+     
+    <link rel="icon" href="/favicon.ico" />
+     
+    <link
+      href="//fonts.googleapis.com/css?family=Source+Code+Pro"
+      rel="stylesheet"
+      type="text/css"
+    />
+     <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Gitalk -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"
+    />
+  </head>
+</html>
 
 <body>
   <div id="container">
@@ -316,17 +330,6 @@
   
 </nav>
     
-<script>
-  var disqus_shortname = 'HedgehogKUCC-Blog';
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
@@ -342,5 +345,20 @@
   </div>
   <!-- 頁面點擊小紅心 -->
   <script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+  <!-- Gitalk -->
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      accessToken: 'b23206aa32b81089d39d674e2ae7cf32df58aff1',
+      id: window.location.pathname,
+      repo: 'hedgehogkucc.github.io',
+      owner: 'hedgehogkucc',
+      admin: 'hedgehogkucc',
+      distractionFreeMode: 'true'
+    })
+    gitalk.render('gitalk-container')
+  </script>
 </body>
 </html>
