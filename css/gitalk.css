@@ -1108,6 +1108,9 @@
 .gt-container .gt-comments-null {
   text-align: center;
 }
+..gt-comments-null {
+  margin-bottom: 50px;
+}
 .gt-container .gt-comments-controls {
   margin: 1.25em 0;
   text-align: center;
@@ -1129,6 +1132,9 @@
   overflow: auto;
   -webkit-transition: all ease 0.25s;
   transition: all ease 0.25s;
+}
+.gt-comment-content {
+  margin-bottom: 25px;
 }
 .gt-container .gt-comment-content:hover {
   -webkit-box-shadow: 0 0.625em 3.75em 0 #f4f4f4;
