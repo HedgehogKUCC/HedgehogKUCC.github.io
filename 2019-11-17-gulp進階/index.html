@@ -161,7 +161,7 @@ Error: File not found with singular glob: /Users/kucc/Desktop/DemoGulp/.tmp (if 
     <footer class="article-footer">
       <a
         data-url="https://hedgehogkucc.github.io/2019-11-17-gulp%E9%80%B2%E9%9A%8E/"
-        data-id="ck79wrs9w0008tlor3b0oh3ov"
+        data-id="ck79x7s3f00090corbj2o6od2"
         class="article-share-link"
         >Share</a
       >
@@ -194,6 +194,21 @@ Error: File not found with singular glob: /Users/kucc/Desktop/DemoGulp/.tmp (if 
 
  
 <div id="gitalk-container"></div>
+<script>
+  var title = location.pathname.substr(0, 50)
+  var gitalk = new Gitalk({
+    clientID: 'cfb3b74c9716664a32c4',
+    clientSecret: 'e198f41df0e17ff588bfcce4c0a9e02df33e66b1',
+    repo: 'hedgehogkucc.github.io',
+    owner: 'hedgehogkucc',
+    admin: ['hedgehogkucc'],
+    id: title,
+    distractionFreeMode: true,
+    labels: ['Gitalk'],
+    language: 'zh-TW'
+  })
+  gitalk.render('gitalk-container')
+</script>
 
 </section>
         
@@ -290,24 +305,6 @@ Error: File not found with singular glob: /Users/kucc/Desktop/DemoGulp/.tmp (if 
   
 </nav>
     
-<div id="gitalk-container"></div>
-<script>
-  var title = location.pathname.substr(0, 50)
-  var gitalk = new Gitalk({
-    clientID: 'cfb3b74c9716664a32c4',
-    clientSecret: 'e198f41df0e17ff588bfcce4c0a9e02df33e66b1',
-    repo: 'hedgehogkucc.github.io',
-    owner: 'hedgehogkucc',
-    admin: ['hedgehogkucc'],
-    id: title,
-    distractionFreeMode: true,
-    labels: ['Gitalk'],
-    language: 'zh-TW'
-  })
-  gitalk.render('gitalk-container')
-</script>
-
-
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 

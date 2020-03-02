@@ -392,7 +392,7 @@ can be used for Babel, Autoprefixer, postcss-normalize and other tools.
     <footer class="article-footer">
       <a
         data-url="https://hedgehogkucc.github.io/2019-11-16-gulp/"
-        data-id="ck79wrs9s0005tlor19nacxry"
+        data-id="ck79x7s3c00050cor0uinaem0"
         class="article-share-link"
         >Share</a
       >
@@ -425,6 +425,21 @@ can be used for Babel, Autoprefixer, postcss-normalize and other tools.
 
  
 <div id="gitalk-container"></div>
+<script>
+  var title = location.pathname.substr(0, 50)
+  var gitalk = new Gitalk({
+    clientID: 'cfb3b74c9716664a32c4',
+    clientSecret: 'e198f41df0e17ff588bfcce4c0a9e02df33e66b1',
+    repo: 'hedgehogkucc.github.io',
+    owner: 'hedgehogkucc',
+    admin: ['hedgehogkucc'],
+    id: title,
+    distractionFreeMode: true,
+    labels: ['Gitalk'],
+    language: 'zh-TW'
+  })
+  gitalk.render('gitalk-container')
+</script>
 
 </section>
         
@@ -521,24 +536,6 @@ can be used for Babel, Autoprefixer, postcss-normalize and other tools.
   
 </nav>
     
-<div id="gitalk-container"></div>
-<script>
-  var title = location.pathname.substr(0, 50)
-  var gitalk = new Gitalk({
-    clientID: 'cfb3b74c9716664a32c4',
-    clientSecret: 'e198f41df0e17ff588bfcce4c0a9e02df33e66b1',
-    repo: 'hedgehogkucc.github.io',
-    owner: 'hedgehogkucc',
-    admin: ['hedgehogkucc'],
-    id: title,
-    distractionFreeMode: true,
-    labels: ['Gitalk'],
-    language: 'zh-TW'
-  })
-  gitalk.render('gitalk-container')
-</script>
-
-
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 

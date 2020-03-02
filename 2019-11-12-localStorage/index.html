@@ -131,7 +131,7 @@
     <footer class="article-footer">
       <a
         data-url="https://hedgehogkucc.github.io/2019-11-12-localStorage/"
-        data-id="ck79wrs9r0004tlorhtwaa57t"
+        data-id="ck79x7s3800040cor20h2bidf"
         class="article-share-link"
         >Share</a
       >
@@ -164,6 +164,21 @@
 
  
 <div id="gitalk-container"></div>
+<script>
+  var title = location.pathname.substr(0, 50)
+  var gitalk = new Gitalk({
+    clientID: 'cfb3b74c9716664a32c4',
+    clientSecret: 'e198f41df0e17ff588bfcce4c0a9e02df33e66b1',
+    repo: 'hedgehogkucc.github.io',
+    owner: 'hedgehogkucc',
+    admin: ['hedgehogkucc'],
+    id: title,
+    distractionFreeMode: true,
+    labels: ['Gitalk'],
+    language: 'zh-TW'
+  })
+  gitalk.render('gitalk-container')
+</script>
 
 </section>
         
@@ -260,24 +275,6 @@
   
 </nav>
     
-<div id="gitalk-container"></div>
-<script>
-  var title = location.pathname.substr(0, 50)
-  var gitalk = new Gitalk({
-    clientID: 'cfb3b74c9716664a32c4',
-    clientSecret: 'e198f41df0e17ff588bfcce4c0a9e02df33e66b1',
-    repo: 'hedgehogkucc.github.io',
-    owner: 'hedgehogkucc',
-    admin: ['hedgehogkucc'],
-    id: title,
-    distractionFreeMode: true,
-    labels: ['Gitalk'],
-    language: 'zh-TW'
-  })
-  gitalk.render('gitalk-container')
-</script>
-
-
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
