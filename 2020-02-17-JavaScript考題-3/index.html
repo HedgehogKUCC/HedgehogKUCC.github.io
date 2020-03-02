@@ -9,16 +9,18 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
-    <meta name="description" content="物件 物件的基本運作 純值與物件的差異 物件的參考特性">
+    <meta name="description" content="物件">
 <meta name="keywords" content="js,w3HexSchool">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 考題 3">
 <meta property="og:url" content="https:&#x2F;&#x2F;hedgehogkucc.github.io&#x2F;2020-02-17-JavaScript%E8%80%83%E9%A1%8C-3&#x2F;index.html">
 <meta property="og:site_name" content="Mr.Hedgehog KU">
-<meta property="og:description" content="物件 物件的基本運作 純值與物件的差異 物件的參考特性">
+<meta property="og:description" content="物件">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2020-03-02T08:29:24.548Z">
-<meta name="twitter:card" content="summary"> 
+<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;m0EStr7.jpg">
+<meta property="og:updated_time" content="2020-03-02T08:39:18.978Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;m0EStr7.jpg"> 
     <link
       rel="alternate"
       href="/atom.xml"
@@ -101,13 +103,15 @@
     </header>
     
     <div class="article-entry" itemprop="articleBody">
-       <h2 id="物件"><a href="#物件" class="headerlink" title="物件"></a>物件</h2><ul>
+       <img src="https://i.imgur.com/m0EStr7.jpg" width="1024" alt="Meow Meow Picture" />
+
+<h2 id="物件"><a href="#物件" class="headerlink" title="物件"></a>物件</h2><a id="more"></a>
+
+<ul>
 <li>物件的基本運作</li>
 <li>純值與物件的差異</li>
 <li>物件的參考特性</li>
 </ul>
-<a id="more"></a>
-
 <br>
 
 <h3 id="原始碼是否正確呢？"><a href="#原始碼是否正確呢？" class="headerlink" title="原始碼是否正確呢？"></a>原始碼是否正確呢？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">'小明'</span>,</span><br><span class="line">  age: <span class="number">32</span>,</span><br><span class="line">  <span class="number">1</span>: <span class="string">'2'</span>,</span><br><span class="line">  gender: <span class="string">'male'</span>,</span><br><span class="line">  interests: [<span class="string">'吃飯'</span>, <span class="string">'睡覺'</span>, <span class="string">'打動動'</span>],</span><br><span class="line">  greeting: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Hi! I'm "</span> + <span class="keyword">this</span>.name[<span class="number">0</span>] + <span class="string">'.'</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  哈囉: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我是'</span> + <span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -257,7 +261,7 @@
     <footer class="article-footer">
       <a
         data-url="https://hedgehogkucc.github.io/2020-02-17-JavaScript%E8%80%83%E9%A1%8C-3/"
-        data-id="ck7a7dml3000chiorem298dnw"
+        data-id="ck7a7qgby000cnror5fff5fjy"
         class="article-share-link"
         >Share</a
       >
