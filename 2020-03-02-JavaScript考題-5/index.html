@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    
+ 
+    <title>JavaScript 考題 5 | Mr.Hedgehog KU</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="description" content="原型">
+<meta name="keywords" content="js,w3HexSchool">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 考題 5">
+<meta property="og:url" content="https:&#x2F;&#x2F;hedgehogkucc.github.io&#x2F;2020-03-02-JavaScript%E8%80%83%E9%A1%8C-5&#x2F;index.html">
+<meta property="og:site_name" content="Mr.Hedgehog KU">
+<meta property="og:description" content="原型">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;MQrYn5m.jpg">
+<meta property="og:updated_time" content="2020-03-02T11:31:50.318Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;MQrYn5m.jpg"> 
+    <link
+      rel="alternate"
+      href="/atom.xml"
+      title="Mr.Hedgehog KU"
+      type="application/atom+xml"
+    />
+     
+    <link rel="icon" href="/favicon.ico" />
+     
+    <link
+      href="//fonts.googleapis.com/css?family=Source+Code+Pro"
+      rel="stylesheet"
+      type="text/css"
+    />
+     <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Gitalk -->
+    <link rel="stylesheet" type="text/css" href="/css/gitalk.css" />
+    <script type="text/javascript" src="/js/src/gitalk.min.js"></script>
+  </head>
+</html>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Mr.Hedgehog KU</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首頁</a>
+        
+          <a class="main-nav-link" href="/archives">檔案</a>
+        
+      </nav>
+      <!-- <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜尋"></a>
+      </nav> -->
+      <!-- <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://hedgehogkucc.github.io"></form>
+      </div> -->
+    </div>
+    <a href="https://github.com/HedgehogKUCC" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article
+  id="post-2020-03-02-JavaScript考題-5"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+>
+  <div class="article-meta">
+    <a href="/2020-03-02-JavaScript%E8%80%83%E9%A1%8C-5/" class="article-date">
+  <time datetime="2020-03-01T16:00:00.000Z" itemprop="datePublished">2020-03-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+     
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript 考題 5
+    </h1>
+  
+
+    </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+       <img src="https://i.imgur.com/MQrYn5m.jpg" width="1024" alt="Meow Meow Picture" />
+
+<h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><a id="more"></a>
+
+<pre><code>實體 __proto__   =&gt;   陣列 (原型)   =&gt;   物件 (原型)</code></pre><ul>
+<li>哪裡可以看到原型<ul>
+<li>陣列</li>
+<li>包裹物件、建構函式</li>
+</ul>
+</li>
+<li>自定義原型</li>
+<li>原型鍊完整結構</li>
+<li>defineProperty</li>
+</ul>
+<br>
+
+<h3 id="從陣列看原型"><a href="#從陣列看原型" class="headerlink" title="從陣列看原型"></a>從陣列看原型</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> b = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>];</span><br><span class="line">a.__proto__.getLast = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>[<span class="keyword">this</span>.length <span class="number">-1</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a, b);</span><br><span class="line"><span class="built_in">console</span>.log(a.getLast(), b.getLast());</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="補充說明"><a href="#補充說明" class="headerlink" title="補充說明"></a>補充說明</h3><p><code>__proto__</code>： 實體後的路徑 ( 方便驗證原型使用 )</p>
+<p><code>prototype</code>： 建構函式下的方法 ( 實際上會使用這個來建立原型 )</p>
+<p><code>function</code> 會自帶 <code>this</code> 、 <code>arguments</code></p>
+<p><code>arguments</code>： 類陣列，沒有陣列的方法 ( EX: forEach )。且在箭頭函式內不能使用。</p>
+<br>
+
+<h3 id="陣列與類陣列"><a href="#陣列與類陣列" class="headerlink" title="陣列與類陣列"></a>陣列與類陣列</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">callArg</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a, <span class="built_in">arguments</span>);</span><br><span class="line">  <span class="built_in">arguments</span>.forEach(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">callArg();  <span class="comment">// Uncaught TypeError: arguments.forEach is not a function</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="包裹物件與建構函式"><a href="#包裹物件與建構函式" class="headerlink" title="包裹物件與建構函式"></a>包裹物件與建構函式</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'bcde'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(b);</span><br><span class="line"><span class="built_in">console</span>.dir(<span class="built_in">String</span>);</span><br><span class="line"><span class="built_in">String</span>.prototype.lastText = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>[<span class="keyword">this</span>.length - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(b.lastText());</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="原型範例"><a href="#原型範例" class="headerlink" title="原型範例"></a>原型範例</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dog</span>(<span class="params">name, color</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bibi = <span class="keyword">new</span> Dog(<span class="string">'bibi'</span>, <span class="string">'white'</span>);</span><br><span class="line"></span><br><span class="line">Dog.prototype.bark = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">' 汪汪'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bibi.bark();</span><br><span class="line"></span><br><span class="line">bibi.__proto__ === Dog.prototype;   <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">bibi.__proto__.constructor === Dog;   <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">bibi.__proto__.__proto__ === <span class="built_in">Object</span>.prototype;    <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">bibi.__proto__.__proto__.__proto__ === <span class="literal">null</span>;    <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="自定義原型"><a href="#自定義原型" class="headerlink" title="自定義原型"></a>自定義原型</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 建構函式 動物</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params">family</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.kingdom = <span class="string">'動物界'</span>;</span><br><span class="line">  <span class="keyword">this</span>.family = family || <span class="string">'人科'</span>;</span><br><span class="line">&#125;</span><br><span class="line">Animal.prototype.move = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">' 移動'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建構函式 狗</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dog</span>(<span class="params">name, color, size</span>) </span>&#123;</span><br><span class="line">  Animal.call(<span class="keyword">this</span>, <span class="string">'犬科'</span>)</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.color = color || <span class="string">'白色'</span>;</span><br><span class="line">  <span class="keyword">this</span>.size = size || <span class="string">'小'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 透過 Object.create 讓 Dog 繼承在 Animal 下</span></span><br><span class="line">Dog.prototype = <span class="built_in">Object</span>.create(Animal.prototype);</span><br><span class="line">Dog.prototype.constructor = Dog;</span><br><span class="line"></span><br><span class="line">Dog.prototype.bark = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">' 吠叫'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Bibi = <span class="keyword">new</span> Dog(<span class="string">'比比'</span>, <span class="string">'棕色'</span>, <span class="string">'小'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(Bibi);</span><br><span class="line">Bibi.bark();</span><br><span class="line">Bibi.move();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建構函式 貓</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name, color, size</span>) </span>&#123;</span><br><span class="line">  Animal.call(<span class="keyword">this</span>, <span class="string">'貓科'</span>);</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.color = color || <span class="string">'白色'</span>;</span><br><span class="line">  <span class="keyword">this</span>.size = size || <span class="string">'小'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 透過 Object.create 讓 Cat 繼承在 Animal 下</span></span><br><span class="line">Cat.prototype = <span class="built_in">Object</span>.create(Animal.prototype);</span><br><span class="line">Cat.prototype.constructor = Cat;</span><br><span class="line"></span><br><span class="line">Cat.prototype.meow = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">' 喵喵叫'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Kity = <span class="keyword">new</span> Cat(<span class="string">'凱蒂'</span>);</span><br><span class="line">Kity.meow();</span><br><span class="line">Kity.move();</span><br><span class="line">Kity.bark();</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="測驗：請問結果為？"><a href="#測驗：請問結果為？" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">firstName, lastName</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.firstName = firstName;</span><br><span class="line">  <span class="keyword">this</span>.lastName = lastName;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> member = <span class="keyword">new</span> Person(<span class="string">'Lydia'</span>, <span class="string">'Hallie'</span>);</span><br><span class="line">Person.getFullName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.firstName&#125;</span> <span class="subst">$&#123;<span class="keyword">this</span>.lastName&#125;</span>`</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(Person.getFullName());</span><br><span class="line"><span class="built_in">console</span>.log(member.getFullName());</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>Lydia Hallie</li>
+<li>error</li>
+</ol>
+</blockquote>
+<br>
+
+<h3 id="測驗：請問結果為？-1"><a href="#測驗：請問結果為？-1" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.make = <span class="string">'M'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> myCar = <span class="keyword">new</span> Car();</span><br><span class="line"><span class="built_in">console</span>.log(myCar.make);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>“M”</li>
+<li>undefined</li>
+<li>ReferenceError</li>
+<li>TypeError</li>
+</ol>
+</blockquote>
+<br>
+
+<h3 id="測驗：請問結果為？-2"><a href="#測驗：請問結果為？-2" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.make = <span class="string">'M'</span>;</span><br><span class="line">  <span class="keyword">return</span> &#123; <span class="attr">make</span>: <span class="string">'S'</span> &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> myCar = <span class="keyword">new</span> Car();</span><br><span class="line"><span class="built_in">console</span>.log(myCar.make);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li><code>&quot;M&quot;</code></li>
+<li><code>&quot;S&quot;</code></li>
+<li><code>ReferenceError</code></li>
+<li><code>TypeError</code></li>
+</ol>
+</blockquote>
+<pre><code>NOTE: 千萬不要在建構函式內 return ！！！</code></pre><br>
+
+<h3 id="defineProperty-屬性調整"><a href="#defineProperty-屬性調整" class="headerlink" title="defineProperty - 屬性調整"></a>defineProperty - 屬性調整</h3><pre><code>針對物件增加額外的屬性
+預設 writable、enumerable、configurable 為 true</code></pre><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  a: <span class="number">1</span>,</span><br><span class="line">  b: <span class="number">2</span>,</span><br><span class="line">  c: <span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(person, <span class="string">'a'</span>, &#123;</span><br><span class="line">  value: <span class="number">3</span>,</span><br><span class="line">  writable: <span class="literal">false</span>,  <span class="comment">// 可否被寫入</span></span><br><span class="line">  enumerable: <span class="literal">false</span>, <span class="comment">// 列舉 ( 使用 forin 時，能否取得物件裡面的值 )</span></span><br><span class="line">  configurable: <span class="literal">false</span> <span class="comment">// 可否刪除</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Getter-與-Setter"><a href="#Getter-與-Setter" class="headerlink" title="Getter 與 Setter"></a>Getter 與 Setter</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> wallet = &#123;</span><br><span class="line">  total: <span class="number">100</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(wallet, <span class="string">'save'</span>, &#123;</span><br><span class="line">  configurable: <span class="literal">true</span>,</span><br><span class="line">  enumerable: <span class="literal">true</span>,</span><br><span class="line">  <span class="keyword">set</span>: function(price) &#123;</span><br><span class="line">    <span class="keyword">this</span>.total = <span class="keyword">this</span>.total + price / <span class="number">2</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="keyword">get</span>: function() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.total / <span class="number">2</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">wallet.save = <span class="number">300</span>;</span><br><span class="line"><span class="built_in">console</span>.log(wallet);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyDescriptor(wallet, <span class="string">'save'</span>));</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="物件屬性擴增方法"><a href="#物件屬性擴增方法" class="headerlink" title="物件屬性擴增方法"></a>物件屬性擴增方法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  a: <span class="number">1</span>,</span><br><span class="line">  b: <span class="number">2</span>,</span><br><span class="line">  c: &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">Object</span>.freeze(person);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'是否被凍結'</span>, <span class="built_in">Object</span>.isFrozen(person)); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// writable: false 、 enumerable: true 、 configurable: false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'person a 的屬性特徵'</span>, <span class="built_in">Object</span>.getOwnPropertyDescriptor(person, <span class="string">'a'</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 調整屬性</span></span><br><span class="line">person.a = <span class="string">'a'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 新增屬性</span></span><br><span class="line">person.d = <span class="string">'d'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 巢狀屬性調整</span></span><br><span class="line"><span class="comment">// freeze 的是淺層，所以在深層是可以被賦予屬性和值！</span></span><br><span class="line">person.c.a = <span class="string">'ca'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 刪除</span></span><br><span class="line"><span class="keyword">delete</span> person.b;  <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'person 物件'</span>, person);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 弱點</span></span><br><span class="line"><span class="comment">// 給予新的物件就被改變了</span></span><br><span class="line"><span class="comment">// 因為 freeze 的是參考路徑</span></span><br><span class="line">person = &#123;&#125;;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="測驗：請問結果為？-3"><a href="#測驗：請問結果為？-3" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> box = &#123; <span class="attr">x</span>: <span class="number">10</span>, <span class="attr">y</span>: <span class="number">20</span> &#125;;</span><br><span class="line"><span class="built_in">Object</span>.freeze(box);</span><br><span class="line"><span class="keyword">var</span> shape = box;</span><br><span class="line">shape.x = <span class="number">100</span>;</span><br><span class="line"><span class="built_in">console</span>.log(shape);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>{ x: 10, y: 20 }</li>
+<li>{ x: 100, y: 20 }</li>
+<li>ReferenceError</li>
+<li>TypeError</li>
+</ol>
+</blockquote>
+<br>
+
+<h3 id="測驗：請問結果為？-4"><a href="#測驗：請問結果為？-4" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> box = &#123; <span class="attr">x</span>: <span class="number">10</span>, <span class="attr">y</span>: <span class="number">20</span> &#125;;</span><br><span class="line"><span class="built_in">Object</span>.freeze(box);</span><br><span class="line">box = &#123; <span class="attr">x</span>: <span class="number">10</span>, <span class="attr">y</span>: <span class="number">20</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> shape = box;</span><br><span class="line">shape.x = <span class="number">100</span>;</span><br><span class="line"><span class="built_in">console</span>.log(shape);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>{ x: 10, y: 20 }</li>
+<li>{ x: 100, y: 20 }</li>
+<li>ReferenceError</li>
+<li>TypeError</li>
+</ol>
+</blockquote>
+<br>
+
+<h3 id="測驗：請問結果為？-非常重要"><a href="#測驗：請問結果為？-非常重要" class="headerlink" title="測驗：請問結果為？ ( 非常重要 )"></a>測驗：請問結果為？ ( 非常重要 )</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> name = <span class="string">'Casper'</span>;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sayHi.__proto__.hello = <span class="function"><span class="keyword">function</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>(name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(sayHi.hello(name));</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">'Hello'</span>;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>Casper</li>
+<li>Hello</li>
+<li>hello is not defined</li>
+<li>undefined</li>
+<li>sayHi</li>
+</ol>
+</blockquote>
+<br>
+
+<h3 id="測驗：請問結果為？-非常重要-1"><a href="#測驗：請問結果為？-非常重要-1" class="headerlink" title="測驗：請問結果為？ ( 非常重要 )"></a>測驗：請問結果為？ ( 非常重要 )</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> name = <span class="string">'Casper'</span>;</span><br><span class="line">  <span class="keyword">return</span> name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sayHi.name = <span class="string">'Mark'</span>;</span><br><span class="line"></span><br><span class="line">sayHi.__proto__.hello = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sayHi.hello();</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>Casper</li>
+<li>Mark</li>
+<li>sayHi</li>
+<li>hello</li>
+</ol>
+</blockquote>
+<br>
+
+<h3 id="測驗：請問結果為？-5"><a href="#測驗：請問結果為？-5" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">'爸爸'</span>,</span><br><span class="line">  age: <span class="number">28</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> family = <span class="built_in">Object</span>.create(person);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(family);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>{ name: ‘爸爸’, age: 28 }</li>
+<li>{ }</li>
+<li>undefined</li>
+<li>以上皆非</li>
+</ol>
+</blockquote>
+<br>
+
+<h3 id="測驗：請問結果為？-承上題"><a href="#測驗：請問結果為？-承上題" class="headerlink" title="測驗：請問結果為？ ( 承上題 )"></a>測驗：請問結果為？ ( 承上題 )</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">'爸爸'</span>,</span><br><span class="line">  age: <span class="number">28</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> family = <span class="built_in">Object</span>.create(person);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(family.name);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>爸爸</li>
+<li>undefined</li>
+<li>name is not define</li>
+<li>{ }</li>
+</ol>
+</blockquote>
+<br>
+
+<p>圖片來源： <a href="https://pngtree.com/free-backgrounds" target="_blank" rel="noopener">free background photos from pngtree.com</a></p>
+ 
+    </div>
+    <footer class="article-footer">
+      <a
+        data-url="https://hedgehogkucc.github.io/2020-03-02-JavaScript%E8%80%83%E9%A1%8C-5/"
+        data-id="ck7adxa3l000gzdor7e4fatzb"
+        class="article-share-link"
+        >Share</a
+      >
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/" rel="tag">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/w3HexSchool/" rel="tag">w3HexSchool</a></li></ul>
+
+    </footer>
+  </div>
+   
+<nav id="article-nav">
+  
+  
+    <a href="/2020-02-24-JavaScript%E8%80%83%E9%A1%8C-4/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavaScript 考題 4</div>
+    </a>
+  
+</nav>
+ 
+</article>
+
+ 
+<div id="gitalk-container"></div>
+<script>
+  var title = location.pathname.substr(0, 50)
+  var gitalk = new Gitalk({
+    clientID: 'cfb3b74c9716664a32c4',
+    clientSecret: 'e198f41df0e17ff588bfcce4c0a9e02df33e66b1',
+    repo: 'hedgehogkucc.github.io',
+    owner: 'hedgehogkucc',
+    admin: ['hedgehogkucc'],
+    id: title,
+    distractionFreeMode: true,
+    labels: ['Gitalk'],
+    language: 'zh-TW'
+  })
+  gitalk.render('gitalk-container')
+</script>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">標籤</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/" rel="tag">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/" rel="tag">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/w3HexSchool/" rel="tag">w3HexSchool</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">標籤雲</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/gulp/" style="font-size: 13.33px;">gulp</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/w3HexSchool/" style="font-size: 16.67px;">w3HexSchool</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">彙整</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020-03-02-JavaScript%E8%80%83%E9%A1%8C-5/">JavaScript 考題 5</a>
+          </li>
+        
+          <li>
+            <a href="/2020-02-24-JavaScript%E8%80%83%E9%A1%8C-4/">JavaScript 考題 4</a>
+          </li>
+        
+          <li>
+            <a href="/2020-02-17-JavaScript%E8%80%83%E9%A1%8C-3/">JavaScript 考題 3</a>
+          </li>
+        
+          <li>
+            <a href="/2020-02-10-JavaScript%E8%80%83%E9%A1%8C-2/">JavaScript 考題 2</a>
+          </li>
+        
+          <li>
+            <a href="/2020-02-03-JavaScript%E8%80%83%E9%A1%8C-1/">JavaScript 考題 1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer text-center">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Peter KU<br>
+      <span id="busuanzi_container_site_uv">
+        本站訪客數&nbsp;<span id="busuanzi_value_site_uv"></span>&nbsp;人次&nbsp;&nbsp;|&nbsp;&nbsp;
+      </span>
+      <span id="busuanzi_container_site_pv">
+        本站總訪問量&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;次
+      </span>
+    </div>
+  </div>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首頁</a>
+  
+    <a href="/archives" class="mobile-nav-link">檔案</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+ <link rel="stylesheet" href="/fancybox/jquery.fancybox.css"> <script src="/fancybox/jquery.fancybox.pack.js"></script>  <script src="/js/script.js"></script> 
+
+
+  </div>
+  <!-- 頁面點擊小紅心 -->
+  <script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
