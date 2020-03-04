@@ -1,5 +1,5 @@
 ---
-title: JavaScript 測驗考題 - 1
+title: JavaScript 考題 1
 date: 2020-02-03
 tags: 
   - w3HexSchool
@@ -8,9 +8,9 @@ tags:
 
 <img src="https://i.imgur.com/MG4BszO.jpg" width="1024" alt="Meow Meow Picture" />
 
-<!-- more -->
-
 ## 變數、作用域、提升
+
+<!-- more -->
 
 ### 測驗：請問結果為？
 

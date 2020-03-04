@@ -1,5 +1,5 @@
 ---
-title: JavaScript 測驗考題 - 4
+title: JavaScript 考題 4
 date: 2020-02-24
 tags: 
   - w3HexSchool
@@ -8,9 +8,9 @@ tags:
 
 <img src="https://i.imgur.com/FKw6UDW.jpg" width="1024" alt="Meow Meow Picture" />
 
-<!-- more -->
-
 ## 函式
+
+<!-- more -->
 
 - 函式陳述式、具名函式、匿名函式、函式表達式
 - 函式與參數

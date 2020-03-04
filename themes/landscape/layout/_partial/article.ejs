@@ -1,44 +1,70 @@
-<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
+<article
+  id="<%= post.layout %>-<%= post.slug %>"
+  class="article article-type-<%= post.layout %>"
+  itemscope
+  itemprop="blogPost"
+>
   <div class="article-meta">
     <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
     <%- partial('post/category') %>
   </div>
   <div class="article-inner">
-    <%- partial('post/gallery') %>
-    <% if (post.link || post.title){ %>
-      <header class="article-header">
-        <%- partial('post/title', {class_name: 'article-title'}) %>
-      </header>
+    <%- partial('post/gallery') %> <% if (post.link || post.title){ %>
+    <header class="article-header">
+      <%- partial('post/title', {class_name: 'article-title'}) %>
+    </header>
     <% } %>
     <div class="article-entry" itemprop="articleBody">
-      <% if (post.excerpt && index){ %>
-        <%- post.excerpt %>
-        <% if (theme.excerpt_link){ %>
-          <p class="article-more-link">
-            <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
-          </p>
-        <% } %>
-      <% } else { %>
-        <%- post.content %>
-      <% } %>
+      <% if (post.excerpt && index){ %> <%- post.excerpt %> <% if
+      (theme.excerpt_link){ %>
+      <p class="article-more-link">
+        <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+      </p>
+      <% } %> <% } else { %> <%- post.content %> <% } %>
     </div>
     <footer class="article-footer">
-      <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link"><%= __('share') %></a>
+      <a
+        data-url="<%- post.permalink %>"
+        data-id="<%= post._id %>"
+        class="article-share-link"
+        ><%= __('share') %></a
+      >
       <% if (post.comments && theme.disqus_shortname){ %>
-        <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link"><%= __('comment') %></a>
-      <% } %>
-      <%- partial('post/tag') %>
+      <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link"
+        ><%= __('comment') %></a
+      >
+      <% } %> <%- partial('post/tag') %>
     </footer>
   </div>
-  <% if (!index){ %>
-    <%- partial('post/nav') %>
-  <% } %>
+  <% if (!index){ %> <%- partial('post/nav') %> <% } %>
 </article>
 
 <% if (!index && post.comments && theme.disqus_shortname){ %>
 <section id="comments">
   <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <noscript
+      >Please enable JavaScript to view the
+      <a href="//disqus.com/?ref_noscript"
+        >comments powered by Disqus.</a
+      ></noscript
+    >
   </div>
 </section>
+<% } %> <% if (!index && theme.gitalk['enable']==true){ %>
+<div id="gitalk-container"></div>
+<script>
+  var title = location.pathname.substr(0, 50)
+  var gitalk = new Gitalk({
+    clientID: 'cfb3b74c9716664a32c4',
+    clientSecret: 'e198f41df0e17ff588bfcce4c0a9e02df33e66b1',
+    repo: 'hedgehogkucc.github.io',
+    owner: 'hedgehogkucc',
+    admin: ['hedgehogkucc'],
+    id: title,
+    distractionFreeMode: true,
+    labels: ['Gitalk'],
+    language: 'zh-TW'
+  })
+  gitalk.render('gitalk-container')
+</script>
 <% } %>

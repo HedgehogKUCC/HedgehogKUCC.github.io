@@ -1,5 +1,5 @@
 ---
-title: JavaScript 測驗考題 - 3
+title: JavaScript 考題 3
 date: 2020-02-17
 tags: 
   - w3HexSchool
@@ -8,9 +8,9 @@ tags:
 
 <img src="https://i.imgur.com/m0EStr7.jpg" width="1024" alt="Meow Meow Picture" />
 
-<!-- more -->
-
 ## 物件
+
+<!-- more -->
 
 - 物件的基本運作
 - 純值與物件的差異

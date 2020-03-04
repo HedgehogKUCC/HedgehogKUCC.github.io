@@ -37,5 +37,9 @@ fb_admins:
 fb_app_id:
 
 # DISQUS comments
-disqus_shortname: HedgehogKUCC-Blog
-comments: true
+# disqus_shortname: HedgehogKUCC-Blog
+# comments: true
+
+# Gitalk
+gitalk:
+  enable: true

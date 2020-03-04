@@ -1,5 +1,5 @@
 ---
-title: JavaScript 測驗考題 - 2
+title: JavaScript 考題 2
 date: 2020-02-10
 tags: 
   - w3HexSchool
@@ -8,9 +8,9 @@ tags:
 
 <img src="https://i.imgur.com/Dz33wHu.jpg" width="1024" alt="Meow Meow Picture" />
 
-<!-- more -->
-
 ## 型別
+
+<!-- more -->
 
 - 六個原始型別以及一個物件型別 （沒有其它了）
 
