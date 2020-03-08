@@ -9,18 +9,18 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
-    <meta name="description" content="變數、作用域、提升">
+    <meta name="description" content="目錄 作用域、提升 表達式、陳述式 變數 ASI">
 <meta name="keywords" content="js,w3HexSchool">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 考題 1">
 <meta property="og:url" content="https:&#x2F;&#x2F;hedgehogkucc.github.io&#x2F;2020-02-03-JavaScript%E8%80%83%E9%A1%8C-1&#x2F;index.html">
 <meta property="og:site_name" content="Mr.Hedgehog KU">
-<meta property="og:description" content="變數、作用域、提升">
+<meta property="og:description" content="目錄 作用域、提升 表達式、陳述式 變數 ASI">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;MG4BszO.jpg">
-<meta property="og:updated_time" content="2020-03-02T08:38:26.115Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;0F9EHda.jpg">
+<meta property="og:updated_time" content="2020-03-08T04:57:59.884Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;MG4BszO.jpg"> 
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;0F9EHda.jpg"> 
     <link
       rel="alternate"
       href="/atom.xml"
@@ -103,9 +103,26 @@
     </header>
     
     <div class="article-entry" itemprop="articleBody">
-       <img src="https://i.imgur.com/MG4BszO.jpg" width="1024" alt="Meow Meow Picture" />
+       <img src="https://i.imgur.com/0F9EHda.jpg" width="1024" alt="Meow Meow Picture" />
 
-<h2 id="變數、作用域、提升"><a href="#變數、作用域、提升" class="headerlink" title="變數、作用域、提升"></a>變數、作用域、提升</h2><a id="more"></a>
+<h2 id="目錄"><a href="#目錄" class="headerlink" title="目錄"></a>目錄</h2><ul>
+<li><a href="#hoisting">作用域、提升</a></li>
+<li><a href="#expression-declarative">表達式、陳述式</a></li>
+<li><a href="#variable">變數</a></li>
+<li><a href="#asi">ASI</a></li>
+</ul>
+<a id="more"></a>
+
+<br>
+
+<h2 id="hoisting">作用域、提升</h2>
+
+<p><code>Hoisting</code></p>
+<ol>
+<li>函式陳述式優先</li>
+<li>var 變數</li>
+</ol>
+<br>
 
 <h3 id="測驗：請問結果為？"><a href="#測驗：請問結果為？" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">a();</span><br></pre></td></tr></table></figure>
 
@@ -123,7 +140,92 @@
 
 <br>
 
-<h2 id="表達式、陳述式"><a href="#表達式、陳述式" class="headerlink" title="表達式、陳述式"></a>表達式、陳述式</h2><h3 id="測驗：請問結果為？-1"><a href="#測驗：請問結果為？-1" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = (y = <span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(x);</span><br></pre></td></tr></table></figure>
+<h3 id="測驗：請問結果為？-1"><a href="#測驗：請問結果為？-1" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line">b();</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>f() {}</li>
+<li>undefined</li>
+<li>3</li>
+</ol>
+</blockquote>
+<br>
+
+<h3 id="測驗：請問結果為？-2"><a href="#測驗：請問結果為？-2" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line">b();</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>f() {}</li>
+<li>undefined</li>
+<li>3</li>
+</ol>
+</blockquote>
+<br>
+
+<h3 id="測驗：請問結果為？-3"><a href="#測驗：請問結果為？-3" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line">b();</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>f() {}</li>
+<li>undefined</li>
+<li>3</li>
+</ol>
+</blockquote>
+<br>
+
+<h3 id="測驗：請問結果為？-4"><a href="#測驗：請問結果為？-4" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> b;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = b = <span class="number">3</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">fn();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(a), <span class="keyword">typeof</span>(b));</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>undefined, undefined</li>
+<li>undefined, number</li>
+<li>number, number</li>
+</ol>
+</blockquote>
+<br>
+
+<p>解答：</p>
+<p><code>typeof</code></p>
+<p>會將 <code>is not defined</code> 回傳 <code>undefined</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> b;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = b = <span class="number">3</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">// 3</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">fn();</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// a is not defined</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(a), <span class="keyword">typeof</span>(b));</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="測驗：請問結果為？-5"><a href="#測驗：請問結果為？-5" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  a = <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line">fn();</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+</ol>
+</blockquote>
+<br>
+
+<h3 id="測驗：請問結果為？-6"><a href="#測驗：請問結果為？-6" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  a = <span class="number">2</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line">fn();</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+</ol>
+</blockquote>
+<br>
+
+<h2 id="expression-declarative">表達式、陳述式</h2>
+
+<p><code>函式陳述式</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><code>函式表達式</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="測驗：請問結果為？-7"><a href="#測驗：請問結果為？-7" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = (y = <span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(x);</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <ol>
@@ -146,7 +248,7 @@
 <pre><code>y 沒有用 var 宣告，所以不是被宣告變數。
 () 不是一個函式，所以不是區域變數。</code></pre><br>
 
-<h3 id="測驗：請問結果為？-2"><a href="#測驗：請問結果為？-2" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">  a: <span class="number">10</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = a.a = a.a * a.a;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b)</span><br></pre></td></tr></table></figure>
+<h3 id="測驗：請問結果為？-8"><a href="#測驗：請問結果為？-8" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">  a: <span class="number">10</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = a.a = a.a * a.a;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b)</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <ol>
@@ -161,7 +263,7 @@
 
 <br>
 
-<h3 id="測驗：請問結果為？-3"><a href="#測驗：請問結果為？-3" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">  a: <span class="number">10</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(a, <span class="string">'a'</span>, &#123;</span><br><span class="line">  writable: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = a.a = a.a * a.a;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b)</span><br></pre></td></tr></table></figure>
+<h3 id="測驗：請問結果為？-9"><a href="#測驗：請問結果為？-9" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">  a: <span class="number">10</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(a, <span class="string">'a'</span>, &#123;</span><br><span class="line">  writable: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = a.a = a.a * a.a;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b)</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <ol>
@@ -176,7 +278,7 @@
 
 <br>
 
-<h3 id="測驗：請問結果為？-4"><a href="#測驗：請問結果為？-4" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> newList = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].push(<span class="number">4</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newList.push(<span class="number">5</span>));</span><br></pre></td></tr></table></figure>
+<h3 id="測驗：請問結果為？-10"><a href="#測驗：請問結果為？-10" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> newList = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].push(<span class="number">4</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newList.push(<span class="number">5</span>));</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <ol>
@@ -195,7 +297,9 @@
 
 <br>
 
-<h2 id="變數"><a href="#變數" class="headerlink" title="變數"></a>變數</h2><ul>
+<h2 id="variable">變數</h2>
+
+<ul>
 <li>未宣告的變數會成為全域變數</li>
 <li><strong>屬性</strong> 可以被刪除，<strong>變數</strong> 則無法</li>
 </ul>
@@ -209,7 +313,7 @@
 
 <br>
 
-<h3 id="測驗：請問結果為？-5"><a href="#測驗：請問結果為？-5" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = b = <span class="number">3</span>;</span><br><span class="line">&#125;());</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> b);</span><br></pre></td></tr></table></figure>
+<h3 id="測驗：請問結果為？-11"><a href="#測驗：請問結果為？-11" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = b = <span class="number">3</span>;</span><br><span class="line">&#125;());</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> b);</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <ol>
@@ -231,7 +335,7 @@
 
 <br>
 
-<h3 id="測驗：請問結果為？-6"><a href="#測驗：請問結果為？-6" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="keyword">var</span> b;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  a = b = <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">var</span> b;</span><br><span class="line">&#125;());</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> b);</span><br></pre></td></tr></table></figure>
+<h3 id="測驗：請問結果為？-12"><a href="#測驗：請問結果為？-12" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="keyword">var</span> b;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  a = b = <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">var</span> b;</span><br><span class="line">&#125;());</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> b);</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <ol>
@@ -242,12 +346,14 @@
 </blockquote>
 <br>
 
-<h2 id="ASI"><a href="#ASI" class="headerlink" title="ASI"></a>ASI</h2><p>ASI：自動插入分號</p>
+<h2 id="asi">ASI</h2>
+
+<p>ASI：自動插入分號</p>
 <p>ex: <code>continue</code>, <code>return</code>, <code>break</code>, <code>throw</code> 後方自動補上分號</p>
 <p><a href="https://www.udemy.com/course/javascript-adv/learn/lecture/15793656#questions" target="_blank" rel="noopener">不會發生 ASI</a></p>
 <br>
 
-<h3 id="測驗：請問結果為？-7"><a href="#測驗：請問結果為？-7" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line">  ,b = <span class="number">2</span></span><br><span class="line"><span class="keyword">delete</span> a;</span><br><span class="line"><span class="keyword">delete</span> b;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a,<span class="keyword">typeof</span> b);</span><br></pre></td></tr></table></figure>
+<h3 id="測驗：請問結果為？-13"><a href="#測驗：請問結果為？-13" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line">  ,b = <span class="number">2</span></span><br><span class="line"><span class="keyword">delete</span> a;</span><br><span class="line"><span class="keyword">delete</span> b;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a,<span class="keyword">typeof</span> b);</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <ol>
@@ -258,7 +364,7 @@
 </blockquote>
 <br>
 
-<h3 id="測驗：請問結果為？-8"><a href="#測驗：請問結果為？-8" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a)</span><br><span class="line">&#125;())</span><br></pre></td></tr></table></figure>
+<h3 id="測驗：請問結果為？-14"><a href="#測驗：請問結果為？-14" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a)</span><br><span class="line">&#125;())</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <ol>
@@ -277,7 +383,7 @@
 
 <br>
 
-<h3 id="測驗：請問結果為？-9"><a href="#測驗：請問結果為？-9" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">nums</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span></span><br><span class="line">  (a &gt; b)</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'a is bigger'</span>)</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'b is bigger'</span>)</span><br><span class="line">  <span class="keyword">return</span></span><br><span class="line">  a + b</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(nums(<span class="number">4</span>, <span class="number">2</span>))</span><br><span class="line"><span class="built_in">console</span>.log(nums(<span class="number">1</span>, <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+<h3 id="測驗：請問結果為？-15"><a href="#測驗：請問結果為？-15" class="headerlink" title="測驗：請問結果為？"></a>測驗：請問結果為？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">nums</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span></span><br><span class="line">  (a &gt; b)</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'a is bigger'</span>)</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'b is bigger'</span>)</span><br><span class="line">  <span class="keyword">return</span></span><br><span class="line">  a + b</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(nums(<span class="number">4</span>, <span class="number">2</span>))</span><br><span class="line"><span class="built_in">console</span>.log(nums(<span class="number">1</span>, <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <ol>
@@ -295,7 +401,7 @@
     <footer class="article-footer">
       <a
         data-url="https://hedgehogkucc.github.io/2020-02-03-JavaScript%E8%80%83%E9%A1%8C-1/"
-        data-id="ck7aeedfo000beoorh9st7uze"
+        data-id="ck7ikfz9n00092qor3mf1fp2x"
         class="article-share-link"
         >Share</a
       >
@@ -442,7 +548,13 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
- <link rel="stylesheet" href="/fancybox/jquery.fancybox.css"> <script src="/fancybox/jquery.fancybox.pack.js"></script>  <script src="/js/script.js"></script> 
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
 
 
   </div>
