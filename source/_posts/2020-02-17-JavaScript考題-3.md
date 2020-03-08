@@ -6,11 +6,18 @@ tags:
   - js
 ---
 
-<img src="https://i.imgur.com/m0EStr7.jpg" width="1024" alt="Meow Meow Picture" />
+<img src="https://i.imgur.com/0F9EHda.jpg" width="1024" alt="Meow Meow Picture" />
 
-## 物件
+## 目錄
+
+  - [物件](#object)
+  - [純值與物件的差異](#difference)
 
 <!-- more -->
+
+<br>
+
+<h2 id="object">物件</h2>
 
 - 物件的基本運作
 - 純值與物件的差異
@@ -65,9 +72,9 @@ person['哈囉']()
 
 <br>
 
-## 純值與物件的差異
+<h2 id="difference">純值與物件的差異</h2>
 
-- 物件可以自由擴增 “屬性”，純值則無法。
+> 物件可以自由擴增 “屬性”，純值則無法。
 
 <br>
 

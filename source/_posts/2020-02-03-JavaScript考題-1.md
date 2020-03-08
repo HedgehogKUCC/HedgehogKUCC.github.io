@@ -6,11 +6,27 @@ tags:
   - js
 ---
 
-<img src="https://i.imgur.com/MG4BszO.jpg" width="1024" alt="Meow Meow Picture" />
+<img src="https://i.imgur.com/0F9EHda.jpg" width="1024" alt="Meow Meow Picture" />
 
-## 變數、作用域、提升
+## 目錄
+
+  - [作用域、提升](#hoisting)
+  - [表達式、陳述式](#expression-declarative)
+  - [變數](#variable)
+  - [ASI](#asi)
 
 <!-- more -->
+
+<br>
+
+<h2 id="hoisting">作用域、提升</h2>
+
+`Hoisting`
+
+  1.  函式陳述式優先
+  2.  var 變數
+
+<br>
 
 ### 測驗：請問結果為？
 
@@ -40,7 +56,152 @@ a();    // 這裡其實是 a = 0
 
 <br>
 
-## 表達式、陳述式
+### 測驗：請問結果為？
+
+```js
+function b() {
+  console.log(a);
+  function a() {};
+  var a = 3;
+}
+b();
+```
+
+> 1. f() {}
+> 2. undefined
+> 3. 3
+
+<br>
+
+### 測驗：請問結果為？
+
+```js
+function b() {
+  console.log(a);
+  var a = 3;
+  function a() {};
+}
+b();
+```
+
+> 1. f() {}
+> 2. undefined
+> 3. 3
+
+<br>
+
+### 測驗：請問結果為？
+
+```js
+function b() {
+  var a = 3;
+  console.log(a);
+  function a() {};
+}
+b();
+```
+
+> 1. f() {}
+> 2. undefined
+> 3. 3
+
+<br>
+
+### 測驗：請問結果為？
+
+```js
+var b;
+
+function fn() {
+  var a = b = 3;
+};
+
+fn();
+
+console.log(typeof(a), typeof(b));
+```
+
+> 1. undefined, undefined
+> 2. undefined, number
+> 3. number, number
+
+<br>
+
+解答：
+
+`typeof`
+
+會將 `is not defined` 回傳 `undefined`
+
+```js
+var b;
+
+function fn() {
+  var a = b = 3;
+  console.log(a); // 3
+};
+
+fn();
+console.log(a); // a is not defined
+console.log(typeof(a), typeof(b));
+```
+
+<br>
+
+### 測驗：請問結果為？
+
+```js
+function fn() {
+  a = 2;
+  var a = 1;
+};
+
+var a = 3;
+fn();
+console.log(a);
+```
+
+> 1. 1
+> 2. 2
+> 3. 3
+
+<br>
+
+### 測驗：請問結果為？
+
+```js
+function fn() {
+  a = 2;
+};
+
+var a = 3;
+fn();
+console.log(a);
+```
+
+> 1. 1
+> 2. 2
+> 3. 3
+
+<br>
+
+<h2 id="expression-declarative">表達式、陳述式</h2>
+
+`函式陳述式`
+
+```js
+function foo() {}
+```
+
+<br>
+
+`函式表達式`
+
+```js
+var fn = function() {}
+```
+
+<br>
 
 ### 測驗：請問結果為？
 
@@ -167,7 +328,7 @@ console.log(newList);           // [1, 2, 3, 4, 5]
 
 <br>
 
-## 變數
+<h2 id="variable">變數</h2>
 
 - 未宣告的變數會成為全域變數
 - **屬性** 可以被刪除，**變數** 則無法
@@ -266,7 +427,7 @@ console.log(typeof b);
 
 <br>
 
-## ASI
+<h2 id="asi">ASI</h2>
 
 ASI：自動插入分號
 

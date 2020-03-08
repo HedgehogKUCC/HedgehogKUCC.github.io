@@ -6,11 +6,19 @@ tags:
   - js
 ---
 
-<img src="https://i.imgur.com/FKw6UDW.jpg" width="1024" alt="Meow Meow Picture" />
+<img src="https://i.imgur.com/0F9EHda.jpg" width="1024" alt="Meow Meow Picture" />
 
-## 函式
+## 目錄
+
+  - [函式](#function)
+  - [閉包 Closure](#closure)
+  - [This](#this)
 
 <!-- more -->
+
+<br>
+
+<h2 id="function">函式</h2>
 
 - 函式陳述式、具名函式、匿名函式、函式表達式
 - 函式與參數
@@ -219,7 +227,7 @@ var obj = {
 
 <br>
 
-## 閉包 Closure
+<h2 id="closure">閉包 Closure</h2>
 
 > JS 的記憶體釋放特性：當變數無法再被關聯時就會釋放記憶體
 
@@ -345,7 +353,7 @@ console.log(MingEasyCard());
 
 <br>
 
-## This
+<h2 id="this">This</h2>
 
 ### 影響 This 的方法
 

@@ -6,11 +6,22 @@ tags:
   - js
 ---
 
-<img src="https://i.imgur.com/Dz33wHu.jpg" width="1024" alt="Meow Meow Picture" />
+<img src="https://i.imgur.com/0F9EHda.jpg" width="1024" alt="Meow Meow Picture" />
 
-## 型別
+## 目錄
+
+  - [型別](#type)
+  - [包裹物件建構函式](#wrapper-object)
+  - [運算子](#operator)
+  - [優先性、相依性](#priority)
+  - [判斷式](#determine)
+  - [數字型別運算的技巧](#skills)
 
 <!-- more -->
+
+<br>
+
+<h2 id="type">型別</h2>
 
 - 六個原始型別以及一個物件型別 （沒有其它了）
 
@@ -120,7 +131,7 @@ console.log(Number(a = 10));
 
 <br>
 
-## 包裹物件建構函式
+<h2 id="wrapper-object">包裹物件建構函式</h2>
 
 - 使用 new + 包裹物件建立的會是物件型別，而不是原始型別。
 - 盡可能不使用此方式建立
@@ -194,7 +205,7 @@ console.log(a.a);
 
 <br>
 
-## 運算子
+<h2 id="operator">運算子</h2>
 
 [運算式與運算子](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Expressions_and_Operators)
 
@@ -301,7 +312,7 @@ console.log(fn(3));
 
 <br>
 
-## 優先性、相依性
+<h2 id="priority">優先性、相依性</h2>
 
 [運算子優先序](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
 
@@ -352,7 +363,7 @@ console.log(a);
 
 <br>
 
-## 判斷式
+<h2 id="determine">判斷式</h2>
 
 ### 測驗：請問結果為？
 
@@ -411,7 +422,7 @@ console.log(10 === 10n);
 
 <br>
 
-## 數字型別運算的技巧
+<h2 id="skills">數字型別運算的技巧</h2>
 
 - 只有 **加法** 不太一樣，因為他有 "字串相接" 的功能，所以遇到字串、物件型別會有不同結果
 - 減乘除都可以使用 Number 來轉型 ( 看是否能正確轉型 )

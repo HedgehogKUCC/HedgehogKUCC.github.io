@@ -6,7 +6,7 @@ tags:
   - js
 ---
 
-<img src="https://i.imgur.com/MQrYn5m.jpg" width="1024" alt="Meow Meow Picture" />
+<img src="https://i.imgur.com/0F9EHda.jpg" width="1024" alt="Meow Meow Picture" />
 
 ## 原型
 
