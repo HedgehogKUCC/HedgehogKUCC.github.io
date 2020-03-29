@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    
+ 
+    <title>前端面試問題集-2 | Mr.Hedgehog KU</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="description" content="目錄 CSS 的 class 和 ID 兩者有何差異 描述 Reset 和 Normalize 的差異性？你會選擇哪一種，為什麼選擇它？ 描述 Floats 並解釋如何運作 描述 z-index 並且描述堆疊內容如何形成？ 解釋 BFC 是什麼、如何運作的。 有什麼方法來隱藏網頁的內容？ 請說明 relative、fixed、absolute 和 static 元件差異性？ 寫高效的 CSS">
+<meta name="keywords" content="w3HexSchool,interview">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端面試問題集-2">
+<meta property="og:url" content="https:&#x2F;&#x2F;hedgehogkucc.github.io&#x2F;2020-03-30-%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%A9%A6%E5%95%8F%E9%A1%8C%E9%9B%86-2&#x2F;index.html">
+<meta property="og:site_name" content="Mr.Hedgehog KU">
+<meta property="og:description" content="目錄 CSS 的 class 和 ID 兩者有何差異 描述 Reset 和 Normalize 的差異性？你會選擇哪一種，為什麼選擇它？ 描述 Floats 並解釋如何運作 描述 z-index 並且描述堆疊內容如何形成？ 解釋 BFC 是什麼、如何運作的。 有什麼方法來隱藏網頁的內容？ 請說明 relative、fixed、absolute 和 static 元件差異性？ 寫高效的 CSS">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;c459Rqm.jpg">
+<meta property="og:updated_time" content="2020-03-29T04:00:31.139Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;c459Rqm.jpg"> 
+    <link
+      rel="alternate"
+      href="/atom.xml"
+      title="Mr.Hedgehog KU"
+      type="application/atom+xml"
+    />
+     
+    <link rel="icon" href="/favicon.ico" />
+     
+    <link
+      href="//fonts.googleapis.com/css?family=Source+Code+Pro"
+      rel="stylesheet"
+      type="text/css"
+    />
+     <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Gitalk -->
+    <link rel="stylesheet" type="text/css" href="/css/gitalk.css" />
+    <script type="text/javascript" src="/js/src/gitalk.min.js"></script>
+  </head>
+</html>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Mr.Hedgehog KU</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首頁</a>
+        
+          <a class="main-nav-link" href="/archives">檔案</a>
+        
+      </nav>
+      <!-- <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜尋"></a>
+      </nav> -->
+      <!-- <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://hedgehogkucc.github.io"></form>
+      </div> -->
+    </div>
+    <a href="https://github.com/HedgehogKUCC" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article
+  id="post-2020-03-30-前端面試問題集-2"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+>
+  <div class="article-meta">
+    <a href="/2020-03-30-%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%A9%A6%E5%95%8F%E9%A1%8C%E9%9B%86-2/" class="article-date">
+  <time datetime="2020-03-29T16:00:00.000Z" itemprop="datePublished">2020-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+     
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      前端面試問題集-2
+    </h1>
+  
+
+    </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+       <img src="https://i.imgur.com/c459Rqm.jpg" width="1024" alt="Meow Meow Picture" />
+
+<h2 id="目錄"><a href="#目錄" class="headerlink" title="目錄"></a>目錄</h2><ul>
+<li><a href="#css-q1">CSS 的 class 和 ID 兩者有何差異</a></li>
+<li><a href="#css-q2">描述 Reset 和 Normalize 的差異性？你會選擇哪一種，為什麼選擇它？</a></li>
+<li><a href="#css-q3">描述 Floats 並解釋如何運作</a></li>
+<li><a href="#css-q4">描述 z-index 並且描述堆疊內容如何形成？</a></li>
+<li><a href="#css-q5">解釋 BFC 是什麼、如何運作的。</a></li>
+<li><a href="#css-q6">有什麼方法來隱藏網頁的內容？</a></li>
+<li><a href="#css-q7">請說明 relative、fixed、absolute 和 static 元件差異性？</a></li>
+<li><a href="#css-q8">寫高效的 CSS 時，有什麼要注意的？</a></li>
+<li><a href="#css-q9">請列出您記憶中 display 屬性的全部值。</a></li>
+<li><a href="#css-q10">請說明 inline 和 inline-block 的差異性？</a></li>
+<li><a href="#css-q11">CSS 中代表層疊。樣式的優先級</a></li>
+<li><a href="#css-q12">為什麼會用 translate() 代替 absolute positioning</a></li>
+</ul>
+<a id="more"></a>
+
+<br>
+
+<h3 id="css-q1">CSS 的 class 和 ID 兩者有何差異</h3>
+
+<pre><code>ID是唯一性的、不可重覆的。好處是選擇器效率極佳。
+但是會自動變成全域變數。
+
+做到好維護  id 给 JS 用，class 给 CSS 用。</code></pre><br>
+
+<h3 id="css-q2">描述 Reset 和 Normalize 的差異性？你會選擇哪一種，為什麼選擇它？</h3>
+
+<pre><code>Reset 不管你有沒有用，統統重置成一樣的效果。
+
+Normalize保留有用的默認值，更正了常見的錯誤，擁有詳細的文檔。</code></pre><br>
+
+<h3 id="css-q3">描述 Floats 並解釋如何運作</h3>
+
+<pre><code>讓 block 元素無視 float 元素，讓 inline 元素像流水一樣圍繞著 float 元素實現浮動佈局。</code></pre><br>
+
+<h3 id="css-q4">描述 z-index 並且描述堆疊內容 (stacking context) 如何形成？</h3>
+
+<pre><code>當元素設置position值為relative / absolute / fixed後，z-index 才可使用。
+z-index 值大的在值小的元素上面。</code></pre><br>
+
+<h3 id="css-q5">解釋 BFC (Block Formatting Context) 是什麼、如何運作的。</h3>
+
+<pre><code>BFC（Block Formatting Context）直譯為「塊級格式化範圍」。</code></pre><br>
+
+<h4 id="觸發-BFC"><a href="#觸發-BFC" class="headerlink" title="觸發 BFC"></a>觸發 BFC</h4><ul>
+<li><p><code>html</code> 根元素</p>
+</li>
+<li><p><code>float</code> 的值不為 <code>none</code></p>
+</li>
+<li><p><code>overflow</code> 的值為 <code>auto</code>、<code>scroll</code> 或者 <code>hidden</code></p>
+</li>
+<li><p><code>display</code> 的值為 <code>table-cell</code>、<code>table-caption</code> 和 <code>inline-block</code> 中的任何一個</p>
+</li>
+<li><p><code>position</code> 的值不為 <code>relative</code> 和 <code>static</code></p>
+</li>
+</ul>
+<br>
+
+<h3 id="css-q6">有什麼方法來隱藏網頁的內容？</h3>
+
+<blockquote>
+<p>參考 <a href="https://kknews.cc/news/8onre.html" target="_blank" rel="noopener">https://kknews.cc/news/8onre.html</a></p>
+</blockquote>
+<br>
+
+<h4 id="Opacity"><a href="#Opacity" class="headerlink" title="Opacity"></a>Opacity</h4><pre><code>設為 0 只能從視覺上隱藏元素。
+而元素本身依然占據它自己的位置並對網頁的布局起作用。
+內容會被讀屏軟體閱讀</code></pre><br>
+
+<h4 id="Visibility"><a href="#Visibility" class="headerlink" title="Visibility"></a>Visibility</h4><pre><code>設為 hidden 將隱藏我們的元素。
+如同 opacity 屬性，被隱藏的元素依然會對我們的網頁布局起作用。
+元素在讀屏軟體中也會被隱藏。</code></pre><br>
+
+<h4 id="Display"><a href="#Display" class="headerlink" title="Display"></a>Display</h4><pre><code>設為 none 確保元素不可見並且連盒模型也不生成。
+使用這個屬性，被隱藏的元素不占據任何空間。
+讀屏軟體也不會讀到元素的內容。
+通過 DOM 依然可以訪問到這個元素。</code></pre><br>
+
+<h4 id="Position"><a href="#Position" class="headerlink" title="Position"></a>Position</h4><pre><code>假設有一個元素你想要與它交互，但是你又不想讓它影響你的網頁布局，沒有合適的屬性可以處理這種情況。
+
+（opacity 和 visibility 影響布局， display 不影響布局但又無法直接交互）。
+
+在這種情況下，你只能考慮將元素移出可視區域。這個辦法既不會影響布局，有能讓元素保持可以操作。</code></pre><p>採用的 CSS</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.hide</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: -<span class="number">9999px</span>;</span><br><span class="line">  <span class="attribute">left</span>: -<span class="number">9999px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<pre><code>這種方法的主要原理是通過將元素的 top 和 left 設置成足夠大的負數，使它在螢幕上不可見。
+
+採用這個技術的一個好處（或者潛在的缺點）是用它隱藏的元素的內容可以被讀屏軟體讀取。
+
+這完全可以理解，是因為你只是將元素移到可視區域外面讓用戶無法看到它。
+
+你得避免使用這個方法去隱藏任何可以獲得焦點的元素，因為如果那麼做，當用戶讓那個元素獲得焦點時，會導致一個不可預料的焦點切換。
+
+這個方法在創建自定義複選框和單選按鈕時經常被使用。
+
+（用 DOM 模擬複選框和單選按鈕，但用這個方法隱藏真正的 checkbox 和 radio 元素來「接收」焦點切換）</code></pre><br>
+
+<h3 id="css-q7">請說明 relative、fixed、absolute 和 static 元件差異性？</h3>
+
+<ul>
+<li><p><code>relative</code>: 可定義 top、left、bottom 與 right。</p>
+</li>
+<li><p><code>absolute</code>: 以上層非 static 的父元素為定位基準。</p>
+</li>
+<li><p><code>fixed</code>: 以目前瀏覽器視窗定位，固定在瀏覽視窗的固定位置，不隨滾動捲軸拉動。</p>
+</li>
+<li><p><code>static</code>: 預設定位，無法定義 top、left、bottom 與 right。</p>
+</li>
+</ul>
+<br>
+
+<h3 id="css-q8">寫高效的 CSS 時，有什麼要注意的？</h3>
+
+<ul>
+<li><p>良好的命名習慣</p>
+</li>
+<li><p>代碼縮寫</p>
+</li>
+<li><p>利用CSS繼承</p>
+</li>
+<li><p>使用多重選擇器</p>
+</li>
+<li><p>適當的代碼注釋</p>
+</li>
+<li><p>給你的CSS代碼排序</p>
+</li>
+<li><p>保持CSS的可讀性</p>
+</li>
+<li><p>選擇更優的樣式屬性值</p>
+<ul>
+<li><p>區別在於把 <code>border: 0px</code>，雖然在頁面上看不見，但按 border 預設值理解，瀏覽器依然對 <code>border-width</code> / <code>border-color</code> 進行了渲染，即已經佔用了<strong>記憶體</strong>。</p>
+</li>
+<li><p>而把 <code>border: none;</code> 即沒有，瀏覽器解析 none 時將不作出渲染動作，即不會消耗記憶體。所以<strong>建議使用 border:none;</strong>。</p>
+</li>
+<li><p>同樣的 <code>display:none</code> 隱藏物件瀏覽器不作渲染，不佔用記憶體。而<code>visibility:hidden</code> 則會。</p>
+</li>
+</ul>
+</li>
+<li><p>使用外部樣式表</p>
+<ul>
+<li>易於維護修改，更重要的是使用外部檔可以<strong>提高頁面速度</strong>，因為 CSS 檔都能在瀏覽器中產生緩存。</li>
+</ul>
+</li>
+<li><p>避免使用CSS運算式（Expression）</p>
+</li>
+<li><p>代碼壓縮</p>
+</li>
+</ul>
+<br>
+
+<h3 id="css-q9">請列出您記憶中 display 屬性的全部值。</h3>
+
+<ul>
+<li>block</li>
+<li>none</li>
+<li>flex</li>
+<li>grid</li>
+<li>table</li>
+<li>table-row</li>
+<li>table-column</li>
+<li>table-caption</li>
+<li>table-cell</li>
+<li>inline</li>
+<li>inline-block</li>
+<li>inline-table</li>
+<li>inline-flex</li>
+<li>inline-grid</li>
+</ul>
+<br>
+
+<h3 id="css-q10">請說明 inline 和 inline-block 的差異性？</h3>
+
+<p><code>inline</code></p>
+<pre><code>簡單來說就是兩個 inline 元素不會換行顯示，
+可以設定的 CSS 樣式僅有 `margin-left`、`margin-right`、`padding-left`、`padding-right`</code></pre><br>
+
+<p><code>inline-block</code></p>
+<pre><code>裡面是inline，外面是block。兩個inline-block元素不會換行，CSS樣式皆可以設定。</code></pre><br>
+
+<h3 id="css-q11">CSS 中代表層疊。樣式的優先級</h3>
+
+<blockquote>
+<p>參考 <a href="https://www.minwt.com/webdesign-dev/css/17118.html" target="_blank" rel="noopener">https://www.minwt.com/webdesign-dev/css/17118.html</a></p>
+</blockquote>
+<br>
+
+<pre><code>優先順序：
+
+    style(!important) &gt; ID &gt; Class &gt; 元素(Elements)
+
+    最後的會蓋掉前方</code></pre><br>
+
+<h3 id="css-q12">為什麼會用 translate() 代替 absolute positioning</h3>
+
+<pre><code>因為 absolute 會進行 CSS 計算 &gt; 佈局 &gt; 重繪過程，這個過程前兩步是消耗大量資源的。</code></pre><br>
+
+<h2 id="參考來源"><a href="#參考來源" class="headerlink" title="參考來源"></a>參考來源</h2><p><a href="https://h5bp.org/Front-end-Developer-Interview-Questions/translations/chinese-traditional/" target="_blank" rel="noopener">https://h5bp.org/Front-end-Developer-Interview-Questions/translations/chinese-traditional/</a></p>
+<p><a href="https://w3design.pixnet.net/blog/post/15210795-13%E5%80%8B%E8%AE%93css%E9%AB%98%E6%95%88%E6%95%B4%E6%BD%94%E7%9A%84%E6%96%B9%E6%B3%95" target="_blank" rel="noopener">https://w3design.pixnet.net/blog/post/15210795-13%E5%80%8B%E8%AE%93css%E9%AB%98%E6%95%88%E6%95%B4%E6%BD%94%E7%9A%84%E6%96%B9%E6%B3%95</a></p>
+ 
+    </div>
+    <footer class="article-footer">
+      <a
+        data-url="https://hedgehogkucc.github.io/2020-03-30-%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%A9%A6%E5%95%8F%E9%A1%8C%E9%9B%86-2/"
+        data-id="ck8d8jh0n000jh8orb23r7w33"
+        class="article-share-link"
+        >Share</a
+      >
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/interview/" rel="tag">interview</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/w3HexSchool/" rel="tag">w3HexSchool</a></li></ul>
+
+    </footer>
+  </div>
+   
+<nav id="article-nav">
+  
+  
+    <a href="/2020-03-23-%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%A9%A6%E5%95%8F%E9%A1%8C%E9%9B%86-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">前端面試問題集-1</div>
+    </a>
+  
+</nav>
+ 
+</article>
+
+ 
+<div id="gitalk-container"></div>
+<script>
+  var title = location.pathname.substr(0, 50)
+  var gitalk = new Gitalk({
+    clientID: 'cfb3b74c9716664a32c4',
+    clientSecret: 'e198f41df0e17ff588bfcce4c0a9e02df33e66b1',
+    repo: 'hedgehogkucc.github.io',
+    owner: 'hedgehogkucc',
+    admin: ['hedgehogkucc'],
+    id: title,
+    distractionFreeMode: true,
+    labels: ['Gitalk'],
+    language: 'zh-TW'
+  })
+  gitalk.render('gitalk-container')
+</script>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">標籤</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/" rel="tag">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interview/" rel="tag">interview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/" rel="tag">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/w3HexSchool/" rel="tag">w3HexSchool</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">標籤雲</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/gulp/" style="font-size: 15px;">gulp</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/interview/" style="font-size: 15px;">interview</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/w3HexSchool/" style="font-size: 20px;">w3HexSchool</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">彙整</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020-03-30-%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%A9%A6%E5%95%8F%E9%A1%8C%E9%9B%86-2/">前端面試問題集-2</a>
+          </li>
+        
+          <li>
+            <a href="/2020-03-23-%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%A9%A6%E5%95%8F%E9%A1%8C%E9%9B%86-1/">前端面試問題集-1</a>
+          </li>
+        
+          <li>
+            <a href="/2020-03-16-Hexo-landscape-%E6%B7%BB%E5%8A%A0%E6%A8%A3%E5%BC%8F/">landscape 添加樣式</a>
+          </li>
+        
+          <li>
+            <a href="/2020-03-09-JavaScript%E8%80%83%E9%A1%8C-6/">JavaScript 考題 6</a>
+          </li>
+        
+          <li>
+            <a href="/2020-03-02-JavaScript%E8%80%83%E9%A1%8C-5/">JavaScript 考題 5</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer text-center">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Peter KU<br>
+      <span id="busuanzi_container_site_uv">
+        本站訪客數&nbsp;<span id="busuanzi_value_site_uv"></span>&nbsp;人次&nbsp;&nbsp;|&nbsp;&nbsp;
+      </span>
+      <span id="busuanzi_container_site_pv">
+        本站總訪問量&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;次
+      </span>
+    </div>
+  </div>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首頁</a>
+  
+    <a href="/archives" class="mobile-nav-link">檔案</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+  <!-- 頁面點擊小紅心 -->
+  <script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160600246-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-160600246-1');
+  </script>
+</body>
+</html>
