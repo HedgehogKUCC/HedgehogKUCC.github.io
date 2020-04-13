@@ -4,20 +4,18 @@
     <meta charset="utf-8" />
     
  
-    <title>JS Events | Mr.Hedgehog KU</title>
+    <title>Tag: w3HexSchool | Mr.Hedgehog KU</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
-    <meta name="description" content="參考資源 HTML DOM Events  event 物件 - 告知你當下物件資訊clientX clientY : 使用者點擊時的座標，可以試著點擊右上角和左下角觀察變化。 EX">
-<meta name="keywords" content="js">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JS Events">
-<meta property="og:url" content="https:&#x2F;&#x2F;hedgehogkucc.github.io&#x2F;2019-11-11-JS-Events&#x2F;index.html">
+    <meta name="description" content="刺蝟先生在 Github 上的部落格">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mr.Hedgehog KU">
+<meta property="og:url" content="https:&#x2F;&#x2F;hedgehogkucc.github.io&#x2F;tags&#x2F;w3HexSchool&#x2F;page&#x2F;2&#x2F;index.html">
 <meta property="og:site_name" content="Mr.Hedgehog KU">
-<meta property="og:description" content="參考資源 HTML DOM Events  event 物件 - 告知你當下物件資訊clientX clientY : 使用者點擊時的座標，可以試著點擊右上角和左下角觀察變化。 EX">
+<meta property="og:description" content="刺蝟先生在 Github 上的部落格">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2020-01-10T02:11:21.205Z">
 <meta name="twitter:card" content="summary"> 
     <link
       rel="alternate"
@@ -76,149 +74,45 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article
-  id="post-2019-11-11-JS-Events"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
->
-  <div class="article-meta">
-    <a href="/2019-11-11-JS-Events/" class="article-date">
-  <time datetime="2019-11-10T16:00:00.000Z" itemprop="datePublished">2019-11-11</time>
-</a>
+        <section id="main">
+  
+  
     
-  </div>
-  <div class="article-inner">
-     
-    <header class="article-header">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2020-02-03-JavaScript%E8%80%83%E9%A1%8C-1/" class="archive-article-date">
+  <time datetime="2020-02-02T16:00:00.000Z" itemprop="datePublished">2月 3</time>
+</a>
       
   
-    <h1 class="article-title" itemprop="name">
-      JS Events
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020-02-03-JavaScript%E8%80%83%E9%A1%8C-1/">JavaScript 考題 1</a>
     </h1>
   
 
     </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-       <h1 id="參考資源"><a href="#參考資源" class="headerlink" title="參考資源"></a>參考資源</h1><ul>
-<li><a href="https://www.w3schools.com/jsref/dom_obj_event.asp" target="_blank" rel="noopener">HTML DOM Events</a></li>
-</ul>
-<h2 id="event-物件-告知你當下物件資訊"><a href="#event-物件-告知你當下物件資訊" class="headerlink" title="event 物件 - 告知你當下物件資訊"></a>event 物件 - 告知你當下物件資訊</h2><p><code>clientX</code> <code>clientY</code> : 使用者點擊時的座標，可以試著點擊<strong><em>右上角</em></strong>和<strong><em>左下角</em></strong>觀察變化。</p>
-<p><a href="https://codepen.io/hedgehogkucc/pen/OJJEexW" target="_blank" rel="noopener">EX</a></p>
-<a id="more"></a>
-
-<br>
-
-<h2 id="addEventListener"><a href="#addEventListener" class="headerlink" title="addEventListener"></a>addEventListener</h2><p><strong>addEventListener</strong>(1,2,3)</p>
-<ul>
-<li>1 : 選擇事件 <code>click</code> <code>change</code></li>
-<li>2 : <code>function</code></li>
-<li>3 : <code>boolean</code> - 預設是 false</li>
-</ul>
-<p><a href="https://codepen.io/hedgehogkucc/pen/JjjZQpQ" target="_blank" rel="noopener">EX-1</a></p>
-<br>
-
-<h2 id="綁定事件語法差異"><a href="#綁定事件語法差異" class="headerlink" title="綁定事件語法差異"></a>綁定事件語法差異</h2><p><code>onclick</code> : 同一個物件綁定多次，只會執行最後一次。</p>
-<p><code>addEventListener</code> : 同一個物件綁定多次，都會執行。</p>
-<p><a href="https://codepen.io/hedgehogkucc/pen/eYYKwMQ" target="_blank" rel="noopener">EX-2</a></p>
-<br>
-
-<h2 id="Bubbling-amp-Capturing"><a href="#Bubbling-amp-Capturing" class="headerlink" title="Bubbling &amp; Capturing"></a>Bubbling &amp; Capturing</h2><p><code>false</code> : 從指定元素往外層 — <strong><em>事件氣泡 (Event Bubbling)</em></strong></p>
-<p><code>true</code> : 從外層找到指定元素 — <strong><em>事件捕捉 (Event Capturing)</em></strong></p>
-<p><a href="https://codepen.io/hedgehogkucc/pen/vYYrqog" target="_blank" rel="noopener">EX-3</a></p>
-<br>
-
-<h2 id="stopPropagation"><a href="#stopPropagation" class="headerlink" title="stopPropagation"></a>stopPropagation</h2><p>解決元素重疊情況不在延伸尋找</p>
-<p><a href="https://codepen.io/hedgehogkucc/pen/qBBKeOb" target="_blank" rel="noopener">EX-4</a></p>
-<br>
-
-<h2 id="preventDefault"><a href="#preventDefault" class="headerlink" title="preventDefault"></a>preventDefault</h2><p>取消預設觸發行為</p>
-<p><a href="https://codepen.io/hedgehogkucc/pen/XWWYvdr" target="_blank" rel="noopener">EX-5</a></p>
-<br>
-
-<h2 id="event-target-nodeName"><a href="#event-target-nodeName" class="headerlink" title="event.target.nodeName"></a>event.target.nodeName</h2><p>抓取現在點擊了哪一個元素</p>
-<p><a href="https://codepen.io/hedgehogkucc/pen/BaaVXLx" target="_blank" rel="noopener">EX-6</a></p>
-<br>
-
-<h2 id="addEventListener-change"><a href="#addEventListener-change" class="headerlink" title="addEventListener - change"></a>addEventListener - change</h2><p>選單內容改變時，在下方秀出資料 ～</p>
-<p><a href="https://codepen.io/hedgehogkucc/pen/zYYagwG?editors=1111" target="_blank" rel="noopener">EX-7</a></p>
-<br>
-
-<h2 id="keydown、keyCode"><a href="#keydown、keyCode" class="headerlink" title="keydown、keyCode"></a>keydown、keyCode</h2><p>使用按鍵 1 2 3 4 5 來做到動畫效果</p>
-<p><a href="https://codepen.io/hedgehogkucc/pen/rNNKXJV" target="_blank" rel="noopener">Launch Rocket</a></p>
-<br>
-
-<h2 id="event-blur"><a href="#event-blur" class="headerlink" title="event - blur"></a>event - blur</h2><p><code>focus</code> : 所在焦點</p>
-<p><code>blur</code> : 離開焦點</p>
-<p>加入判斷出現 <code>空值</code> <code>中英字</code> <code>符號</code> 時給予 <code>alert</code> 提醒告知使用者</p>
-<p><a href="https://codepen.io/hedgehogkucc/pen/XWWYvPd" target="_blank" rel="noopener">顧客點餐</a></p>
-<br>
-
-<h2 id="event-mousemove"><a href="#event-mousemove" class="headerlink" title="event - mousemove"></a>event - mousemove</h2><p><code>querySelectorAll</code> : 傳回的是一個陣列</p>
-<p><a href="https://codepen.io/hedgehogkucc/pen/QWWBLQN" target="_blank" rel="noopener">Don’t touch square</a></p>
-<br>
-
-<h2 id="網頁座標-screen、page、client"><a href="#網頁座標-screen、page、client" class="headerlink" title="網頁座標 screen、page、client"></a>網頁座標 screen、page、client</h2><p><code>screen</code> : 整個螢幕解析度</p>
-<p><code>page</code> : 整個網頁的寬高</p>
-<p><code>client</code> : 瀏覽器視窗畫面的寬高</p>
-<p><a href="https://codepen.io/hedgehogkucc/pen/dyyjbQw" target="_blank" rel="noopener">EX-8</a></p>
-<br>
-
-<h2 id="事件監聽優化-從父元素來監聽子元素內容"><a href="#事件監聽優化-從父元素來監聽子元素內容" class="headerlink" title="事件監聽優化 - 從父元素來監聽子元素內容"></a>事件監聽優化 - 從父元素來監聽子元素內容</h2><p><a href="https://codepen.io/hedgehogkucc/pen/ZEEjpZb?editors=1111" target="_blank" rel="noopener">EX-9</a></p>
- 
-    </div>
-    <footer class="article-footer">
-      <a
-        data-url="https://hedgehogkucc.github.io/2019-11-11-JS-Events/"
-        data-id="ck8ygwefc00038wor2tki411b"
-        class="article-share-link"
-        >Share</a
-      >
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/" rel="tag">js</a></li></ul>
-
-    </footer>
   </div>
-   
-<nav id="article-nav">
-  
-    <a href="/2019-11-12-localStorage/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          localStorage
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019-11-09-BOM-DOM-innerHTML-createElement/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">BOM DOM innerHTML createElement</div>
-    </a>
-  
-</nav>
- 
 </article>
+  
+  
+    </div></section>
+  
 
- 
-<div id="gitalk-container"></div>
-<script>
-  var title = location.pathname.substr(0, 50)
-  var gitalk = new Gitalk({
-    clientID: 'cfb3b74c9716664a32c4',
-    clientSecret: 'e198f41df0e17ff588bfcce4c0a9e02df33e66b1',
-    repo: 'hedgehogkucc.github.io',
-    owner: 'hedgehogkucc',
-    admin: ['hedgehogkucc'],
-    id: title,
-    distractionFreeMode: true,
-    labels: ['Gitalk'],
-    language: 'zh-TW'
-  })
-  gitalk.render('gitalk-container')
-</script>
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/tags/w3HexSchool/">&lt;&lt; 上一頁</a><a class="page-number" href="/tags/w3HexSchool/">1</a><span class="page-number current">2</span>
+  </nav>
 
 </section>
         
