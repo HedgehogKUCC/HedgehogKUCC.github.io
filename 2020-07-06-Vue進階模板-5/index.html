@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    
+ 
+    <title>Vue進階模板-5 | Mr.Hedgehog KU</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="description" content="目錄 v-on 事件綁定  切換下方 box 的 className    帶入參數    事件修飾符     使用 stop 模式       使用 capture 模式       使用 self 模式       使用 once 模式      按鍵修飾符     keyCode       別名修飾       相應按鍵時才觸發的監聽器      滑鼠修飾符   作業練習：表格排序">
+<meta name="keywords" content="w3HexSchool,vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue進階模板-5">
+<meta property="og:url" content="https:&#x2F;&#x2F;hedgehogkucc.github.io&#x2F;2020-07-06-Vue%E9%80%B2%E9%9A%8E%E6%A8%A1%E6%9D%BF-5&#x2F;index.html">
+<meta property="og:site_name" content="Mr.Hedgehog KU">
+<meta property="og:description" content="目錄 v-on 事件綁定  切換下方 box 的 className    帶入參數    事件修飾符     使用 stop 模式       使用 capture 模式       使用 self 模式       使用 once 模式      按鍵修飾符     keyCode       別名修飾       相應按鍵時才觸發的監聽器      滑鼠修飾符   作業練習：表格排序">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;DSHd8fj.jpg">
+<meta property="og:updated_time" content="2020-07-06T12:29:37.109Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;DSHd8fj.jpg"> 
+    <link
+      rel="alternate"
+      href="/atom.xml"
+      title="Mr.Hedgehog KU"
+      type="application/atom+xml"
+    />
+     
+    <link rel="icon" href="/favicon.ico" />
+     
+    <link
+      href="//fonts.googleapis.com/css?family=Source+Code+Pro"
+      rel="stylesheet"
+      type="text/css"
+    />
+     <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Gitalk -->
+    <link rel="stylesheet" type="text/css" href="/css/gitalk.css" />
+    <script type="text/javascript" src="/js/src/gitalk.min.js"></script>
+  </head>
+</html>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Mr.Hedgehog KU</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首頁</a>
+        
+          <a class="main-nav-link" href="/archives">檔案</a>
+        
+      </nav>
+      <!-- <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜尋"></a>
+      </nav> -->
+      <!-- <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://hedgehogkucc.github.io"></form>
+      </div> -->
+    </div>
+    <a href="https://github.com/HedgehogKUCC" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article
+  id="post-2020-07-06-Vue進階模板-5"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+>
+  <div class="article-meta">
+    <a href="/2020-07-06-Vue%E9%80%B2%E9%9A%8E%E6%A8%A1%E6%9D%BF-5/" class="article-date">
+  <time datetime="2020-07-05T16:00:00.000Z" itemprop="datePublished">2020-07-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+     
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      Vue進階模板-5
+    </h1>
+  
+
+    </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+       <img src="https://i.imgur.com/DSHd8fj.jpg" width="1024" alt="Meow Meow Picture" />
+
+<h2 id="目錄"><a href="#目錄" class="headerlink" title="目錄"></a>目錄</h2><ul>
+<li><a href="#v-1">v-on 事件綁定</a></li>
+<li><ul>
+<li><a href="#v-1-1">切換下方 box 的 className</a></li>
+</ul>
+</li>
+<li><ul>
+<li><a href="#v-1-2">帶入參數</a></li>
+</ul>
+</li>
+<li><ul>
+<li><a href="#v-1-3">事件修飾符</a></li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li><a href="#v-1-3-1">使用 stop 模式</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li><a href="#v-1-3-2">使用 capture 模式</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li><a href="#v-1-3-3">使用 self 模式</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li><a href="#v-1-3-4">使用 once 模式</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><a href="#v-1-4">按鍵修飾符</a></li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li><a href="#v-1-4-1">keyCode</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li><a href="#v-1-4-2">別名修飾</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li><a href="#v-1-4-3">相應按鍵時才觸發的監聽器</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><a href="#v-1-5">滑鼠修飾符</a></li>
+</ul>
+</li>
+<li><a href="#v-2">作業練習：表格排序</a></li>
+<li><ul>
+<li><a href="#v-2-1">完成作業 - 表格排序</a></li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+
+<br>
+
+<h2 id="v-1">v-on 事件綁定</h2>
+
+<blockquote>
+<p>這章節會使用到的程式碼</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>請切換下方 box 的 className<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span> <span class="attr">:class</span>=<span class="string">"&#123;'rotate': isRotate &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-outline-primary"</span>&gt;</span>切換 box 樣式<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">h4</span>&gt;</span>帶入參數<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in arrayData"</span> <span class="attr">class</span>=<span class="string">"my-2"</span>&gt;</span></span><br><span class="line">      &#123;&#123; item.name &#125;&#125; 有 &#123;&#123; item.cash &#125;&#125; 元 </span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-sm btn-outline-primary"</span>&gt;</span>儲值<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">h4</span>&gt;</span>修飾符<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h5</span>&gt;</span>事件修飾符<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>.stop - 調用 event.stopPropagation()。<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>.prevent - 調用 event.preventDefault()。<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>.capture - 添加事件偵聽器時使用 capture 模式。<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>.self - 只當事件是從偵聽器綁定的元素本身觸發時才觸發回調。<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>.once - 只觸發一次回調。<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">h6</span>&gt;</span>將此範例加上 stopPropagation<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"p-3 bg-primary"</span> @<span class="attr">click</span>=<span class="string">"trigger('div')"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"box"</span> @<span class="attr">click</span>=<span class="string">"trigger('box')"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">h6</span> <span class="attr">class</span>=<span class="string">"mt-3"</span>&gt;</span>事件偵聽器時使用 capture 模式<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"p-3 bg-primary"</span> @<span class="attr">click</span>=<span class="string">"trigger('div')"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"box d-flex align-items-center justify-content-center"</span> @<span class="attr">click</span>=<span class="string">"trigger('box')"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-outline-secondary"</span> @<span class="attr">click</span>=<span class="string">"trigger('button')"</span>&gt;</span>按我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">h6</span> <span class="attr">class</span>=<span class="string">"mt-3"</span>&gt;</span>事件偵聽器時使用 self 模式<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"p-3 bg-primary"</span> @<span class="attr">click</span>=<span class="string">"trigger('div')"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"box d-flex align-items-center justify-content-center"</span> @<span class="attr">click</span>=<span class="string">"trigger('box')"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-outline-secondary"</span> @<span class="attr">click</span>=<span class="string">"trigger('button')"</span>&gt;</span>按我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">h6</span> <span class="attr">class</span>=<span class="string">"mt-3"</span>&gt;</span>事件偵聽器只觸發一次<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"p-3 bg-primary"</span> @<span class="attr">click</span>=<span class="string">"trigger('div')"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"box d-flex align-items-center justify-content-center"</span> @<span class="attr">click</span>=<span class="string">"trigger('box')"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-outline-secondary"</span> @<span class="attr">click</span>=<span class="string">"trigger('button')"</span>&gt;</span>按我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">h5</span>&gt;</span>按鍵修飾符<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>.&#123;keyCode | keyAlias&#125; - 只當事件是從特定鍵觸發時才觸發回調。<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>別名修飾 - .enter, .tab, .delete, .esc, .space, .up, .down, .left, .right<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>修飾符來實現僅在按下相應按鍵時才觸發鼠標或鍵盤事件的監聽器 - .ctrl, .alt, .shift, .meta<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">h6</span> <span class="attr">class</span>=<span class="string">"mt-3"</span>&gt;</span>keyCode<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">v-model</span>=<span class="string">"text"</span> @<span class="attr">keyup</span>=<span class="string">"trigger(13)"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">h6</span> <span class="attr">class</span>=<span class="string">"mt-3"</span>&gt;</span>別名修飾<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">v-model</span>=<span class="string">"text"</span> @<span class="attr">keyup</span>=<span class="string">"trigger('space')"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">h6</span> <span class="attr">class</span>=<span class="string">"mt-3"</span>&gt;</span>相應按鍵時才觸發的監聽器<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">v-model</span>=<span class="string">"text"</span> @<span class="attr">keyup</span>=<span class="string">"trigger('shift + Enter')"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">h5</span>&gt;</span>滑鼠修飾符<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>.left - (2.2.0) 只當點擊鼠標左鍵時觸發。<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>.right - (2.2.0) 只當點擊鼠標右鍵時觸發。<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>.middle - (2.2.0) 只當點擊鼠標中鍵時觸發。<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h6</span> <span class="attr">class</span>=<span class="string">"mt-3"</span>&gt;</span>滑鼠修飾符<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"p-3 bg-primary"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"box"</span> @<span class="attr">click</span>=<span class="string">"trigger('Right button')"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    arrayData: [</span><br><span class="line">      &#123;</span><br><span class="line">        name: <span class="string">'小明'</span>,</span><br><span class="line">        age: <span class="number">16</span>,</span><br><span class="line">        cash: <span class="number">500</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        name: <span class="string">'漂亮阿姨'</span>,</span><br><span class="line">        age: <span class="number">24</span>,</span><br><span class="line">        cash: <span class="number">1000</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        name: <span class="string">'杰倫'</span>,</span><br><span class="line">        age: <span class="number">20</span>,</span><br><span class="line">        cash: <span class="number">5000</span></span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    isRotate: <span class="literal">false</span>,</span><br><span class="line">    text: <span class="string">''</span></span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    changeRotate: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.isRotate = !<span class="keyword">this</span>.isRotate;</span><br><span class="line">    &#125;,</span><br><span class="line">    storeMoney: <span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">      item.cash = item.cash + <span class="number">500</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    trigger: <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(name, <span class="string">'此事件被觸發了'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">transition</span>: all .<span class="number">5s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box</span><span class="selector-class">.rotate</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(45deg)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="v-1-1">切換下方 box 的 className</h3>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">  v-on:click</span></span><br><span class="line"><span class="comment">  @click </span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span> <span class="attr">:class</span>=<span class="string">"&#123;'rotate': isRotate &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-outline-primary"</span> @<span class="attr">click</span>=<span class="string">"changeRotate"</span>&gt;</span></span><br><span class="line">  切換 box 樣式</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="v-1-2">帶入參數</h3>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">  @click="methods(parameter)" </span></span><br><span class="line"><span class="comment">  v-for 要搭配 :key</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in arrayData"</span> <span class="attr">class</span>=<span class="string">"my-2"</span> <span class="attr">:key</span>=<span class="string">"item.age"</span>&gt;</span></span><br><span class="line">    &#123;&#123; item.name &#125;&#125; 有 &#123;&#123; item.cash &#125;&#125; 元</span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span></span></span><br><span class="line"><span class="tag">      <span class="attr">class</span>=<span class="string">"btn btn-sm btn-outline-primary"</span></span></span><br><span class="line"><span class="tag">      @<span class="attr">click</span>=<span class="string">"storeMoney(item)"</span></span></span><br><span class="line"><span class="tag">    &gt;</span></span><br><span class="line">      儲值</span><br><span class="line">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="v-1-3">事件修飾符</h3>
+
+<ul>
+<li><code>.stop</code> - 調用 event.stopPropagation()</li>
+<li><code>.prevent</code> - 調用 event.preventDefault()</li>
+<li><code>.capture</code> - 添加事件偵聽器時使用 capture 模式</li>
+<li><code>.self</code> - 只當事件是從偵聽器綁定的元素本身觸發時才觸發回調</li>
+<li><code>.once</code> - 只觸發一次回調</li>
+</ul>
+<br>
+
+<h4 id="v-1-3-1">使用 stop 模式</h4>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">  點擊時會由內向外觸發</span></span><br><span class="line"><span class="comment">  加上 .stop 就不會了</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"p-3 bg-primary"</span> @<span class="attr">click.stop</span>=<span class="string">"trigger('div')"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"box"</span> @<span class="attr">click.stop</span>=<span class="string">"trigger('box')"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="v-1-3-2">使用 capture 模式</h4>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- capture 會變成由外向內 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"p-3 bg-primary"</span> @<span class="attr">click.capture</span>=<span class="string">"trigger('div')"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span></span></span><br><span class="line"><span class="tag">    <span class="attr">class</span>=<span class="string">"box d-flex align-items-center justify-content-center"</span></span></span><br><span class="line"><span class="tag">    @<span class="attr">click.capture</span>=<span class="string">"trigger('box')"</span></span></span><br><span class="line"><span class="tag">  &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span></span></span><br><span class="line"><span class="tag">      <span class="attr">class</span>=<span class="string">"btn btn-outline-secondary"</span></span></span><br><span class="line"><span class="tag">      @<span class="attr">click.capture</span>=<span class="string">"trigger('button')"</span></span></span><br><span class="line"><span class="tag">    &gt;</span></span><br><span class="line">      按我</span><br><span class="line">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="v-1-3-3">使用 self 模式</h4>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 只會觸發自己的元素 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"p-3 bg-primary"</span> @<span class="attr">click.self</span>=<span class="string">"trigger('div')"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span></span></span><br><span class="line"><span class="tag">    <span class="attr">class</span>=<span class="string">"box d-flex align-items-center justify-content-center"</span></span></span><br><span class="line"><span class="tag">    @<span class="attr">click.self</span>=<span class="string">"trigger('box')"</span></span></span><br><span class="line"><span class="tag">  &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span></span></span><br><span class="line"><span class="tag">      <span class="attr">class</span>=<span class="string">"btn btn-outline-secondary"</span></span></span><br><span class="line"><span class="tag">      @<span class="attr">click.self</span>=<span class="string">"trigger('button')"</span></span></span><br><span class="line"><span class="tag">    &gt;</span></span><br><span class="line">      按我</span><br><span class="line">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="v-1-3-4">使用 once 模式</h4>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 只會觸發一次 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"p-3 bg-primary"</span> @<span class="attr">click.once</span>=<span class="string">"trigger('div')"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span></span></span><br><span class="line"><span class="tag">    <span class="attr">class</span>=<span class="string">"box d-flex align-items-center justify-content-center"</span></span></span><br><span class="line"><span class="tag">    @<span class="attr">click.once</span>=<span class="string">"trigger('box')"</span></span></span><br><span class="line"><span class="tag">  &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span></span></span><br><span class="line"><span class="tag">      <span class="attr">class</span>=<span class="string">"btn btn-outline-secondary"</span></span></span><br><span class="line"><span class="tag">      @<span class="attr">click.once</span>=<span class="string">"trigger('button')"</span></span></span><br><span class="line"><span class="tag">    &gt;</span></span><br><span class="line">      按我</span><br><span class="line">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="v-1-4">按鍵修飾符</h3>
+
+<ul>
+<li><code>.{keyCode | keyAlias}</code> - 只當事件是從特定鍵觸發時才觸發回調</li>
+<li>別名修飾 - <code>.enter</code> <code>.tab</code> <code>.delete</code> <code>.esc</code> <code>.space</code> <code>.up</code> <code>.down</code> <code>.left</code> <code>.right</code></li>
+<li>修飾符來實現僅在按下相應按鍵時才觸發鼠標或鍵盤事件的監聽器 - <code>.ctrl</code> <code>.alt</code> <code>.shift</code> <code>.meta</code></li>
+</ul>
+<br>
+
+<h4 id="v-1-4-1">keyCode</h4>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span></span></span><br><span class="line"><span class="tag">  <span class="attr">type</span>=<span class="string">"text"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">class</span>=<span class="string">"form-control"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-model</span>=<span class="string">"text"</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">keyup.13</span>=<span class="string">"trigger(13)"</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="v-1-4-2">別名修飾</h4>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span></span></span><br><span class="line"><span class="tag">  <span class="attr">type</span>=<span class="string">"text"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">class</span>=<span class="string">"form-control"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-model</span>=<span class="string">"text"</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">keyup.space</span>=<span class="string">"trigger('space')"</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="v-1-4-3">相應按鍵時才觸發的監聽器</h4>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span></span></span><br><span class="line"><span class="tag">  <span class="attr">type</span>=<span class="string">"text"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">class</span>=<span class="string">"form-control"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-model</span>=<span class="string">"text"</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">keyup.shift.enter</span>=<span class="string">"trigger('shift + Enter')"</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="v-1-5">滑鼠修飾符</h3>
+
+<ul>
+<li><code>.left</code> - (2.2.0) 只當點擊鼠標<strong>左鍵</strong>時觸發</li>
+<li><code>.right</code> - (2.2.0) 只當點擊鼠標<strong>右鍵</strong>時觸發</li>
+<li><code>.middle</code> - (2.2.0) 只當點擊鼠標<strong>中鍵</strong>時觸發</li>
+</ul>
+<br>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"p-3 bg-primary"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"box"</span> @<span class="attr">click.right</span>=<span class="string">"trigger('Right button')"</span>&gt;</span> <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="v-2">作業練習：表格排序</h2>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"mt-0 text-muted"</span>&gt;</span>作業練習：表格排序<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>模板練習作業：透過點擊 th 方式，反轉表格的排序<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>僅需要排序價格、到期日。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"alert alert-secondary"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>提示：<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ol</span> <span class="attr">class</span>=<span class="string">"mb-0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>將資料排序改為使用 computed 輸出<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">      重新依據點擊排序內容，並透過 computed 輸出。</span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>反轉時，th 指標需給與正確方向。<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>加分題：第二次點擊時再次反轉資料<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">"table"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>品名<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">class</span>=<span class="string">"click"</span>&gt;</span></span><br><span class="line">          價格</span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span></span></span><br><span class="line"><span class="tag">            <span class="attr">class</span>=<span class="string">"icon"</span></span></span><br><span class="line"><span class="tag">          &gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">" fas fa-angle-up text-success"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">class</span>=<span class="string">"click"</span>&gt;</span></span><br><span class="line">          到期日</span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span></span></span><br><span class="line"><span class="tag">            <span class="attr">class</span>=<span class="string">"icon"</span></span></span><br><span class="line"><span class="tag">          &gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">" fas fa-angle-up text-success"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span> <span class="attr">v-for</span>=<span class="string">"item in data"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123; item.name &#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123; item.price &#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123; item.expiryDate &#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 參考語法</span></span><br><span class="line"><span class="comment">// // 使用 Sort 排序資料</span></span><br><span class="line"><span class="comment">// data = data.sort(function (a, b) &#123;</span></span><br><span class="line"><span class="comment">//   // 抓出排序資料的值</span></span><br><span class="line"><span class="comment">//   a = a[欄位]</span></span><br><span class="line"><span class="comment">//   b = b[欄位]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//   // 回傳 1, 0, -1 來進行排列</span></span><br><span class="line"><span class="comment">//   // 詳細規則可參考 https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/sort</span></span><br><span class="line"><span class="comment">//   return (a === b ? 0 : a &gt; b ? 1 : -1) * 正反排序數值</span></span><br><span class="line"><span class="comment">// &#125;)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    data: [</span><br><span class="line">      &#123;</span><br><span class="line">        name: <span class="string">'巧呼呼蘇打水'</span>,</span><br><span class="line">        price: <span class="number">30</span>,</span><br><span class="line">        expiryDate: <span class="number">90</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        name: <span class="string">'心驚膽跳羊肉飯'</span>,</span><br><span class="line">        price: <span class="number">65</span>,</span><br><span class="line">        expiryDate: <span class="number">2</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        name: <span class="string">'郭師傅武功麵包'</span>,</span><br><span class="line">        price: <span class="number">32</span>,</span><br><span class="line">        expiryDate: <span class="number">1</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        name: <span class="string">'不太會過期的新鮮牛奶'</span>,</span><br><span class="line">        price: <span class="number">75</span>,</span><br><span class="line">        expiryDate: <span class="number">600</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        name: <span class="string">'金殺 巧粒粒'</span>,</span><br><span class="line">        price: <span class="number">120</span>,</span><br><span class="line">        expiryDate: <span class="number">200</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 請在此撰寫 JavaScript</span></span><br><span class="line">  computed: &#123;</span><br><span class="line">  </span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.table</span> <span class="selector-tag">th</span><span class="selector-class">.click</span> &#123;</span><br><span class="line">  <span class="attribute">cursor</span>: pointer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.table</span> <span class="selector-tag">th</span><span class="selector-class">.click</span> &#123;</span><br><span class="line">  <span class="attribute">cursor</span>: pointer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.icon</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.icon</span><span class="selector-class">.inverse</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(180deg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="v-2-1">完成作業 - 表格排序</h3>
+
+<p><a href="https://github.com/HedgehogKUCC/sorttable" target="_blank" rel="noopener">GitHub</a></p>
+<p><a href="https://hedgehogkucc.github.io/sorttable/">gh-pages</a></p>
+ 
+    </div>
+    <footer class="article-footer">
+      <a
+        data-url="https://hedgehogkucc.github.io/2020-07-06-Vue%E9%80%B2%E9%9A%8E%E6%A8%A1%E6%9D%BF-5/"
+        data-id="ckcahfyw3001b60or8euxhqwj"
+        class="article-share-link"
+        >Share</a
+      >
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/w3HexSchool/" rel="tag">w3HexSchool</a></li></ul>
+
+    </footer>
+  </div>
+   
+<nav id="article-nav">
+  
+  
+    <a href="/2020-06-15-%E7%B6%B2%E9%A0%81%E5%88%87%E7%89%88%E7%9B%B4%E6%92%AD%E7%8F%AD%E5%BF%83%E5%BE%97/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">網頁切版直播班心得</div>
+    </a>
+  
+</nav>
+ 
+</article>
+
+ 
+<div id="gitalk-container"></div>
+<script>
+  var title = location.pathname.substr(0, 50)
+  var gitalk = new Gitalk({
+    clientID: 'cfb3b74c9716664a32c4',
+    clientSecret: 'e198f41df0e17ff588bfcce4c0a9e02df33e66b1',
+    repo: 'hedgehogkucc.github.io',
+    owner: 'hedgehogkucc',
+    admin: ['hedgehogkucc'],
+    id: title,
+    distractionFreeMode: true,
+    labels: ['Gitalk'],
+    language: 'zh-TW'
+  })
+  gitalk.render('gitalk-container')
+</script>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">標籤</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/" rel="tag">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interview/" rel="tag">interview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/" rel="tag">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/w3HexSchool/" rel="tag">w3HexSchool</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">標籤雲</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/gulp/" style="font-size: 12px;">gulp</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/interview/" style="font-size: 14px;">interview</a> <a href="/tags/js/" style="font-size: 18px;">js</a> <a href="/tags/vue/" style="font-size: 16px;">vue</a> <a href="/tags/w3HexSchool/" style="font-size: 20px;">w3HexSchool</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">彙整</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020-07-06-Vue%E9%80%B2%E9%9A%8E%E6%A8%A1%E6%9D%BF-5/">Vue進階模板-5</a>
+          </li>
+        
+          <li>
+            <a href="/2020-06-15-%E7%B6%B2%E9%A0%81%E5%88%87%E7%89%88%E7%9B%B4%E6%92%AD%E7%8F%AD%E5%BF%83%E5%BE%97/">網頁切版直播班心得</a>
+          </li>
+        
+          <li>
+            <a href="/2020-06-08-Vue%E9%80%B2%E9%9A%8E%E6%A8%A1%E6%9D%BF-4/">Vue進階模板-4</a>
+          </li>
+        
+          <li>
+            <a href="/2020-06-01-Vue%E9%80%B2%E9%9A%8E%E6%A8%A1%E6%9D%BF-3/">Vue進階模板-3</a>
+          </li>
+        
+          <li>
+            <a href="/2020-05-25-Vue%E9%80%B2%E9%9A%8E%E6%A8%A1%E6%9D%BF-2/">Vue進階模板-2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer text-center">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Peter KU<br>
+      <span id="busuanzi_container_site_uv">
+        本站訪客數&nbsp;<span id="busuanzi_value_site_uv"></span>&nbsp;人次&nbsp;&nbsp;|&nbsp;&nbsp;
+      </span>
+      <span id="busuanzi_container_site_pv">
+        本站總訪問量&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;次
+      </span>
+    </div>
+  </div>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首頁</a>
+  
+    <a href="/archives" class="mobile-nav-link">檔案</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+  <!-- 頁面點擊小紅心 -->
+  <script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160600246-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-160600246-1');
+  </script>
+</body>
+</html>
