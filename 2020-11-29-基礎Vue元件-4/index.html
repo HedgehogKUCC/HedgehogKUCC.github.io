@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    
+ 
+    <title>基礎Vue元件-4 | Mr.Hedgehog KU</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="description" content="目錄 Slot 插槽替換  沒有插槽可替換的狀態    slot 替換    具名插槽   使用 is 動態切換組件  使用 is 顯示單一組件    使用 is 動態切換組件   完成作業 - 城市空污">
+<meta name="keywords" content="w3HexSchool,vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基礎Vue元件-4">
+<meta property="og:url" content="https:&#x2F;&#x2F;hedgehogkucc.github.io&#x2F;2020-11-29-%E5%9F%BA%E7%A4%8EVue%E5%85%83%E4%BB%B6-4&#x2F;index.html">
+<meta property="og:site_name" content="Mr.Hedgehog KU">
+<meta property="og:description" content="目錄 Slot 插槽替換  沒有插槽可替換的狀態    slot 替換    具名插槽   使用 is 動態切換組件  使用 is 顯示單一組件    使用 is 動態切換組件   完成作業 - 城市空污">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;DSHd8fj.jpg">
+<meta property="og:updated_time" content="2020-11-29T12:55:48.338Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;DSHd8fj.jpg"> 
+    <link
+      rel="alternate"
+      href="/atom.xml"
+      title="Mr.Hedgehog KU"
+      type="application/atom+xml"
+    />
+     
+    <link rel="icon" href="/favicon.ico" />
+     
+    <link
+      href="//fonts.googleapis.com/css?family=Source+Code+Pro"
+      rel="stylesheet"
+      type="text/css"
+    />
+     <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Gitalk -->
+    <link rel="stylesheet" type="text/css" href="/css/gitalk.css" />
+    <script type="text/javascript" src="/js/src/gitalk.min.js"></script>
+  </head>
+</html>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Mr.Hedgehog KU</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首頁</a>
+        
+          <a class="main-nav-link" href="/archives">檔案</a>
+        
+      </nav>
+      <!-- <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜尋"></a>
+      </nav> -->
+      <!-- <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://hedgehogkucc.github.io"></form>
+      </div> -->
+    </div>
+    <a href="https://github.com/HedgehogKUCC" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article
+  id="post-2020-11-29-基礎Vue元件-4"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+>
+  <div class="article-meta">
+    <a href="/2020-11-29-%E5%9F%BA%E7%A4%8EVue%E5%85%83%E4%BB%B6-4/" class="article-date">
+  <time datetime="2020-11-28T16:00:00.000Z" itemprop="datePublished">2020-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+     
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      基礎Vue元件-4
+    </h1>
+  
+
+    </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+       <img src="https://i.imgur.com/DSHd8fj.jpg" width="1024" alt="Meow Meow Picture" />
+
+<h2 id="目錄"><a href="#目錄" class="headerlink" title="目錄"></a>目錄</h2><ul>
+<li><a href="#v-1">Slot 插槽替換</a></li>
+<li><ul>
+<li><a href="#v-1-1">沒有插槽可替換的狀態</a></li>
+</ul>
+</li>
+<li><ul>
+<li><a href="#v-1-2">slot 替換</a></li>
+</ul>
+</li>
+<li><ul>
+<li><a href="#v-1-3">具名插槽</a></li>
+</ul>
+</li>
+<li><a href="#v-2">使用 is 動態切換組件</a></li>
+<li><ul>
+<li><a href="#v-2-1">使用 is 顯示單一組件</a></li>
+</ul>
+</li>
+<li><ul>
+<li><a href="#v-2-2">使用 is 動態切換組件</a></li>
+</ul>
+</li>
+<li><a href="#v-3">完成作業 - 城市空污</a></li>
+</ul>
+<a id="more"></a>
+
+<br>
+
+<h2 id="v-1">Slot 插槽替換</h2>
+
+<blockquote>
+<p>這章節會使用到的程式碼</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>沒有插槽可替換的狀態<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">no-slot-component</span>&gt;</span><span class="tag">&lt;/<span class="name">no-slot-component</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Slot 基礎範例<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">single-slot-component</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>使用這段取代原本的 Slot。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">single-slot-component</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>具名插槽<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">named-slot-component</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">named-slot-component</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">named-slot-component</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">header</span>&gt;</span>替換的 Header<span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span>&gt;</span>替換的 Footer<span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span>&gt;</span>按鈕內容<span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>其餘的內容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">named-slot-component</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- no-slot-component --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-template"</span> <span class="attr">id</span>=<span class="string">"noSlotComponent"</span>&gt;</span></span><br><span class="line"><span class="javascript">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"alert alert-warning"</span>&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">  <span class="tag">&lt;<span class="name">h6</span>&gt;</span>我是一個元件<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></span></span></span><br><span class="line">    這沒有插槽。</span><br><span class="line"><span class="handlebars"><span class="xml">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">Vue.component(<span class="string">'no-slot-component'</span>, &#123;</span></span><br><span class="line"><span class="actionscript">  template: <span class="string">'#noSlotComponent'</span>,</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- single-slot-component --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-template"</span> <span class="attr">id</span>=<span class="string">"singleSlotComponent"</span>&gt;</span></span><br><span class="line"><span class="javascript">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"alert alert-warning"</span>&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">  <span class="tag">&lt;<span class="name">h6</span>&gt;</span>我是一個元件<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span></span><br><span class="line">    如果沒有內容，則會顯示此段落。</span><br><span class="line"><span class="handlebars"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">Vue.component(<span class="string">'single-slot-component'</span>, &#123;</span></span><br><span class="line"><span class="actionscript">  template: <span class="string">'#singleSlotComponent'</span>,</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- named-slot-component --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-template"</span> <span class="attr">id</span>=<span class="string">"namedSlotComponent"</span>&gt;</span></span><br><span class="line"><span class="javascript">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"card my-3"</span>&gt;</span></span><br><span class="line"><span class="javascript">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"card-header"</span>&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>這段是預設的文字<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="javascript">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"card-body"</span>&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="javascript">      &lt;h5 <span class="class"><span class="keyword">class</span></span>=<span class="string">"card-title"</span>&gt;Special title treatment&lt;<span class="regexp">/h5&gt;</span></span></span><br><span class="line"><span class="javascript">      &lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">"card-text"</span>&gt;With supporting text below <span class="keyword">as</span> a natural lead-<span class="keyword">in</span> to additional content.&lt;<span class="regexp">/p&gt;</span></span></span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="javascript">    &lt;a href=<span class="string">"#"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-primary"</span>&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>spanGo somewhere<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="javascript">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"card-footer"</span>&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>這是預設的 Footer<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">Vue.component(<span class="string">'named-slot-component'</span>, &#123;</span></span><br><span class="line"><span class="actionscript">  template: <span class="string">'#namedSlotComponent'</span>,</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="v-1-1">沒有插槽可替換的狀態</h3>
+
+<p>不會顯示出來 <code>&lt;p&gt;...&lt;/p&gt;</code> ，會被模板給替換掉。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">no-slot-component</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>這是一段另外插入的內容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">no-slot-component</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="v-1-2">slot 替換</h3>
+
+<blockquote>
+<p>如果就是有需求替換掉模板內的文字</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">single-slot-component</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>使用這段取代原本的 Slot。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">single-slot-component</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>這樣就會將 <code>&lt;p&gt;...&lt;/p&gt;</code> 顯示在 <code>slot</code> 裡面</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-template"</span> <span class="attr">id</span>=<span class="string">"singleSlotComponent"</span>&gt;</span></span><br><span class="line"><span class="javascript">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"alert alert-warning"</span>&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="tag">&lt;<span class="name">h6</span>&gt;</span>我是一個元件<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span></span><br><span class="line">      如果沒有內容，則會顯示此段落。</span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="tag">&lt;<span class="name">slot</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">      <span class="comment">&lt;!-- &lt;p&gt;使用這段取代原本的 Slot。&lt;/p&gt; --&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>另外一種方式，這樣模板的 <code>slot</code> 就是預設文字。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-template"</span> <span class="attr">id</span>=<span class="string">"singleSlotComponent"</span>&gt;</span></span><br><span class="line"><span class="javascript">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"alert alert-warning"</span>&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="tag">&lt;<span class="name">h6</span>&gt;</span>我是一個元件<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="tag">&lt;<span class="name">slot</span>&gt;</span></span></span></span><br><span class="line">      如果沒有內容，則會顯示此段落。</span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">single-slot-component</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- &lt;p&gt;使用這段取代原本的 Slot。&lt;/p&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">single-slot-component</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="v-1-3">具名插槽</h3>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">named-slot-component</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">    &lt;slot name="header"&gt;這段是預設的文字&lt;/slot&gt; </span></span><br><span class="line"><span class="comment">    這裡標籤使用 &lt;header&gt; 插入後也會是</span></span><br><span class="line"><span class="comment">  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">header</span> <span class="attr">slot</span>=<span class="string">"header"</span>&gt;</span>替換的 Header<span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">    &lt;slot </span></span><br><span class="line"><span class="comment">      name="content" </span></span><br><span class="line"><span class="comment">      class="card-title"</span></span><br><span class="line"><span class="comment">    &gt;</span></span><br><span class="line"><span class="comment">      Special title treatment</span></span><br><span class="line"><span class="comment">    &lt;/slot&gt; </span></span><br><span class="line"><span class="comment">  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"content"</span>&gt;</span>其餘的內容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">    &lt;slot name="btn"&gt;spanGo somewhere&lt;/slot&gt;</span></span><br><span class="line"><span class="comment">    使用標籤 &lt;template&gt; 就只會是純文字</span></span><br><span class="line"><span class="comment">    而且標籤 &lt;template&gt; 不會輸出</span></span><br><span class="line"><span class="comment">  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot</span>=<span class="string">"btn"</span>&gt;</span>按鈕內容<span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- &lt;slot name="footer"&gt;這是預設的 Footer&lt;/slot&gt; --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot</span>=<span class="string">"footer"</span>&gt;</span>替換的 Footer<span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">named-slot-component</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-template"</span> <span class="attr">id</span>=<span class="string">"namedSlotComponent"</span>&gt;</span></span><br><span class="line"><span class="javascript">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"card my-3"</span>&gt;</span></span><br><span class="line"><span class="javascript">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"card-header"</span>&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">      <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"header"</span>&gt;</span>這段是預設的文字<span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="javascript">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"card-body"</span>&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="javascript">        &lt;slot name=<span class="string">"content"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"card-title"</span>&gt;Special title treatment&lt;<span class="regexp">/slot&gt;</span></span></span><br><span class="line"><span class="javascript">        &lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">"card-text"</span>&gt;With supporting text below <span class="keyword">as</span> a natural lead-<span class="keyword">in</span> to additional content.&lt;<span class="regexp">/p&gt;</span></span></span><br><span class="line"><span class="handlebars"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="javascript">      &lt;a href=<span class="string">"#"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-primary"</span>&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">        <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"btn"</span>&gt;</span>spanGo somewhere<span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">      <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="javascript">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"card-footer"</span>&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">      <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"footer"</span>&gt;</span>這是預設的 Footer<span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="v-2">使用 is 動態切換組件</h2>
+
+<blockquote>
+<p>這章節會使用到的程式碼</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>使用 is 顯示單一組件<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">primary-component</span> <span class="attr">:data</span>=<span class="string">"item"</span>&gt;</span><span class="tag">&lt;/<span class="name">primary-component</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"mt-3"</span>&gt;</span>使用 is 動態切換組件<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"nav nav-pills"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"nav-item"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"nav-link"</span> <span class="attr">:class</span>=<span class="string">"&#123;'active': current == 'primary-component'&#125;"</span> <span class="attr">href</span>=<span class="string">"#"</span> @<span class="attr">click.prevent</span>=<span class="string">"current = 'primary-component'"</span>&gt;</span>藍綠色元件<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"nav-item"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"nav-link"</span> <span class="attr">:class</span>=<span class="string">"&#123;'active': current == 'danger-component'&#125;"</span> <span class="attr">href</span>=<span class="string">"#"</span> @<span class="attr">click.prevent</span>=<span class="string">"current = 'danger-component'"</span>&gt;</span>紅色元件<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mt-3"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">primary-component</span> <span class="attr">:data</span>=<span class="string">"item"</span> <span class="attr">v-if</span>=<span class="string">"current === 'primary-component'"</span>&gt;</span><span class="tag">&lt;/<span class="name">primary-component</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">danger-component</span> <span class="attr">:data</span>=<span class="string">"item"</span> <span class="attr">v-if</span>=<span class="string">"current === 'danger-component'"</span>&gt;</span><span class="tag">&lt;/<span class="name">danger-component</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-template"</span> <span class="attr">id</span>=<span class="string">"primaryComponent"</span>&gt;</span></span><br><span class="line"><span class="javascript">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"card text-white bg-primary mb-3"</span> style=<span class="string">"max-width: 18rem;"</span>&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-header"</span>&gt;</span></span><span class="template-variable">&#123;&#123; data.header &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="javascript">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"card-body"</span>&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">      <span class="tag">&lt;<span class="name">h5</span> <span class="attr">class</span>=<span class="string">"card-title"</span>&gt;</span></span><span class="template-variable">&#123;&#123; data.title &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">      <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"card-text"</span>&gt;</span></span><span class="template-variable">&#123;&#123; data.text &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-template"</span> <span class="attr">id</span>=<span class="string">"dangerComponent"</span>&gt;</span></span><br><span class="line"><span class="javascript">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"card text-white bg-danger mb-3"</span> style=<span class="string">"max-width: 18rem;"</span>&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-header"</span>&gt;</span></span><span class="template-variable">&#123;&#123; data.header &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="javascript">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"card-body"</span>&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">      <span class="tag">&lt;<span class="name">h5</span> <span class="attr">class</span>=<span class="string">"card-title"</span>&gt;</span></span><span class="template-variable">&#123;&#123; data.title &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">      <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"card-text"</span>&gt;</span></span><span class="template-variable">&#123;&#123; data.text &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Vue.component(<span class="string">'primary-component'</span>, &#123;</span><br><span class="line">  props: [<span class="string">'data'</span>],</span><br><span class="line">  template: <span class="string">'#primaryComponent'</span>,</span><br><span class="line">&#125;)</span><br><span class="line">Vue.component(<span class="string">'danger-component'</span>, &#123;</span><br><span class="line">  props: [<span class="string">'data'</span>],</span><br><span class="line">  template: <span class="string">'#dangerComponent'</span>,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    item: &#123;</span><br><span class="line">      header: <span class="string">'這裡是 header'</span>,</span><br><span class="line">      title: <span class="string">'這裡是 title'</span>,</span><br><span class="line">      text: <span class="string">'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim perferendis illo reprehenderit ex natus earum explicabo modi voluptas cupiditate aperiam, quasi quisquam mollitia velit ut odio vitae atque incidunt minus?'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    current: <span class="string">'primary-component'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="v-2-1">使用 is 顯示單一組件</h3>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- &lt;primary-component :data="item"&gt;&lt;/primary-component&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">is</span>=<span class="string">"primary-component"</span> <span class="attr">:data</span>=<span class="string">"item"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="v-2-2">使用 is 動態切換組件</h3>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"nav nav-pills"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"nav-item"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span></span></span><br><span class="line"><span class="tag">      <span class="attr">class</span>=<span class="string">"nav-link"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:class</span>=<span class="string">"&#123;'active': current == 'primary-component'&#125;"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">href</span>=<span class="string">"#"</span></span></span><br><span class="line"><span class="tag">      @<span class="attr">click.prevent</span>=<span class="string">"current = 'primary-component'"</span></span></span><br><span class="line"><span class="tag">      &gt;</span>藍綠色元件<span class="tag">&lt;/<span class="name">a</span></span></span><br><span class="line"><span class="tag">    &gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"nav-item"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span></span></span><br><span class="line"><span class="tag">      <span class="attr">class</span>=<span class="string">"nav-link"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:class</span>=<span class="string">"&#123;'active': current == 'danger-component'&#125;"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">href</span>=<span class="string">"#"</span></span></span><br><span class="line"><span class="tag">      @<span class="attr">click.prevent</span>=<span class="string">"current = 'danger-component'"</span></span></span><br><span class="line"><span class="tag">      &gt;</span>紅色元件<span class="tag">&lt;/<span class="name">a</span></span></span><br><span class="line"><span class="tag">    &gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mt-3"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">    現在是數量不多用 v-if 來做切換</span></span><br><span class="line"><span class="comment">    當數量變多時 v-if 就沒有這麼好用</span></span><br><span class="line"><span class="comment">  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">primary-component</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:data</span>=<span class="string">"item"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">v-if</span>=<span class="string">"current === 'primary-component'"</span></span></span><br><span class="line"><span class="tag">  &gt;</span><span class="tag">&lt;/<span class="name">primary-component</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">danger-component</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:data</span>=<span class="string">"item"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">v-if</span>=<span class="string">"current === 'danger-component'"</span></span></span><br><span class="line"><span class="tag">  &gt;</span><span class="tag">&lt;/<span class="name">danger-component</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- 可以使用 :is 來做切換 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">:is</span>=<span class="string">"current"</span> <span class="attr">:data</span>=<span class="string">"item"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="v-3">完成作業 - 城市空污</h2>
+
+<p><a href="https://github.com/HedgehogKUCC/citycomponent" target="_blank" rel="noopener">GitHub</a></p>
+<p><a href="https://hedgehogkucc.github.io/citycomponent/">gh-pages</a></p>
+<br>
+
+<p><a href="https://guahsu.io/2017/06/JavaScript-Duplicates-Array/" target="_blank" rel="noopener">JS 取出陣列重複 / 不重複值的方法</a></p>
+<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf" target="_blank" rel="noopener">indexOf</a></p>
+ 
+    </div>
+    <footer class="article-footer">
+      <a
+        data-url="https://hedgehogkucc.github.io/2020-11-29-%E5%9F%BA%E7%A4%8EVue%E5%85%83%E4%BB%B6-4/"
+        data-id="cki34n4b1001l2eor97oldwqr"
+        class="article-share-link"
+        >Share</a
+      >
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/w3HexSchool/" rel="tag">w3HexSchool</a></li></ul>
+
+    </footer>
+  </div>
+   
+<nav id="article-nav">
+  
+  
+    <a href="/2020-09-27-%E5%9F%BA%E7%A4%8EVue%E5%85%83%E4%BB%B6-3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">基礎Vue元件-3</div>
+    </a>
+  
+</nav>
+ 
+</article>
+
+ 
+<div id="gitalk-container"></div>
+<script>
+  var title = location.pathname.substr(0, 50)
+  var gitalk = new Gitalk({
+    clientID: 'cfb3b74c9716664a32c4',
+    clientSecret: 'e198f41df0e17ff588bfcce4c0a9e02df33e66b1',
+    repo: 'hedgehogkucc.github.io',
+    owner: 'hedgehogkucc',
+    admin: ['hedgehogkucc'],
+    id: title,
+    distractionFreeMode: true,
+    labels: ['Gitalk'],
+    language: 'zh-TW'
+  })
+  gitalk.render('gitalk-container')
+</script>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">標籤</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/" rel="tag">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interview/" rel="tag">interview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/" rel="tag">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/w3HexSchool/" rel="tag">w3HexSchool</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">標籤雲</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/gulp/" style="font-size: 12px;">gulp</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/interview/" style="font-size: 14px;">interview</a> <a href="/tags/js/" style="font-size: 16px;">js</a> <a href="/tags/vue/" style="font-size: 18px;">vue</a> <a href="/tags/w3HexSchool/" style="font-size: 20px;">w3HexSchool</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">彙整</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020-11-29-%E5%9F%BA%E7%A4%8EVue%E5%85%83%E4%BB%B6-4/">基礎Vue元件-4</a>
+          </li>
+        
+          <li>
+            <a href="/2020-09-27-%E5%9F%BA%E7%A4%8EVue%E5%85%83%E4%BB%B6-3/">基礎Vue元件-3</a>
+          </li>
+        
+          <li>
+            <a href="/2020-08-17-%E5%9F%BA%E7%A4%8EVue%E5%85%83%E4%BB%B6-2/">基礎Vue元件-2</a>
+          </li>
+        
+          <li>
+            <a href="/2020-07-27-%E5%9F%BA%E7%A4%8EVue%E5%85%83%E4%BB%B6-1/">基礎Vue元件-1</a>
+          </li>
+        
+          <li>
+            <a href="/2020-07-06-Vue%E9%80%B2%E9%9A%8E%E6%A8%A1%E6%9D%BF-5/">Vue進階模板-5</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer text-center">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Peter KU<br>
+      <span id="busuanzi_container_site_uv">
+        本站訪客數&nbsp;<span id="busuanzi_value_site_uv"></span>&nbsp;人次&nbsp;&nbsp;|&nbsp;&nbsp;
+      </span>
+      <span id="busuanzi_container_site_pv">
+        本站總訪問量&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;次
+      </span>
+    </div>
+  </div>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首頁</a>
+  
+    <a href="/archives" class="mobile-nav-link">檔案</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+  <!-- 頁面點擊小紅心 -->
+  <script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160600246-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-160600246-1');
+  </script>
+</body>
+</html>
