@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    
+ 
+    <title>Webpack-3 | Mr.Hedgehog KU</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="description" content="目錄 SassLoader  postcss-loader   webpack-dev-server Babel import and require  Node應用由模塊組成，採用 CommonJS 模塊規範">
+<meta name="keywords" content="w3HexSchool,webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Webpack-3">
+<meta property="og:url" content="https:&#x2F;&#x2F;hedgehogkucc.github.io&#x2F;2020-12-27-Webpack-3&#x2F;index.html">
+<meta property="og:site_name" content="Mr.Hedgehog KU">
+<meta property="og:description" content="目錄 SassLoader  postcss-loader   webpack-dev-server Babel import and require  Node應用由模塊組成，採用 CommonJS 模塊規範">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https:&#x2F;&#x2F;imgur.com&#x2F;PJ70Hkn.png">
+<meta property="og:updated_time" content="2020-12-27T10:02:54.477Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;imgur.com&#x2F;PJ70Hkn.png"> 
+    <link
+      rel="alternate"
+      href="/atom.xml"
+      title="Mr.Hedgehog KU"
+      type="application/atom+xml"
+    />
+     
+    <link rel="icon" href="/favicon.ico" />
+     
+    <link
+      href="//fonts.googleapis.com/css?family=Source+Code+Pro"
+      rel="stylesheet"
+      type="text/css"
+    />
+     <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Gitalk -->
+    <link rel="stylesheet" type="text/css" href="/css/gitalk.css" />
+    <script type="text/javascript" src="/js/src/gitalk.min.js"></script>
+  </head>
+</html>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Mr.Hedgehog KU</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首頁</a>
+        
+          <a class="main-nav-link" href="/archives">檔案</a>
+        
+      </nav>
+      <!-- <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜尋"></a>
+      </nav> -->
+      <!-- <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://hedgehogkucc.github.io"></form>
+      </div> -->
+    </div>
+    <a href="https://github.com/HedgehogKUCC" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article
+  id="post-2020-12-27-Webpack-3"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+>
+  <div class="article-meta">
+    <a href="/2020-12-27-Webpack-3/" class="article-date">
+  <time datetime="2020-12-26T16:00:00.000Z" itemprop="datePublished">2020-12-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+     
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      Webpack-3
+    </h1>
+  
+
+    </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+       <img src="https://imgur.com/PJ70Hkn.png" width="1024" alt="Webpack Picture" />
+
+<h2 id="目錄"><a href="#目錄" class="headerlink" title="目錄"></a>目錄</h2><ul>
+<li><a href="#v-1">SassLoader</a></li>
+<li><ul>
+<li><a href="#v-1-1">postcss-loader</a></li>
+</ul>
+</li>
+<li><a href="#v-2">webpack-dev-server</a></li>
+<li><a href="#v-3">Babel</a></li>
+<li><a href="#v-4">import and require</a></li>
+<li><ul>
+<li><a href="#v-4-1">Node應用由模塊組成，採用 CommonJS 模塊規範</a></li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+
+<br>
+
+<h2 id="v-1">SassLoader</h2>
+
+<p><a href="https://github.com/webpack-contrib/sass-loader" target="_blank" rel="noopener">https://github.com/webpack-contrib/sass-loader</a></p>
+<p><a href="https://github.com/postcss/postcss-loader" target="_blank" rel="noopener">https://github.com/postcss/postcss-loader</a></p>
+<p><a href="https://github.com/postcss/autoprefixer" target="_blank" rel="noopener">https://github.com/postcss/autoprefixer</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm i -D sass-loader node-sass</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><code>webpack.config.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.(sass|scss)$/</span>,</span><br><span class="line">        use: [</span><br><span class="line">          <span class="string">'style-loader'</span>,</span><br><span class="line">          <span class="string">'css-loader'</span>,</span><br><span class="line">          <span class="string">'sass-loader'</span></span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><code>index.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'../scss/index.scss'</span>;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="v-1-1">postcss-loader</h3>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm i -D postcss-loader postcss-cli autoprefixer</span><br></pre></td></tr></table></figure>
+
+<p><code>Autoprefixing</code>：可以幫我們加上前綴字</p>
+<br>
+
+<p>在根目錄新增 <code>postcss.config.js</code></p>
+<p><a href="https://cythilya.github.io/2018/08/10/postcss/" target="_blank" rel="noopener">https://cythilya.github.io/2018/08/10/postcss/</a></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  plugins: &#123;</span><br><span class="line">    autoprefixer: &#123;</span><br><span class="line">      <span class="comment">// 加入各家瀏覽器的前綴詞</span></span><br><span class="line">      overrideBrowserslist: [</span><br><span class="line">        <span class="comment">// 指定支援的瀏覽器版本</span></span><br><span class="line">        <span class="string">'Chrome &gt;= 52'</span>,</span><br><span class="line">        <span class="string">'FireFox &gt;= 44'</span>,</span><br><span class="line">        <span class="string">'Safari &gt;= 7'</span>,</span><br><span class="line">        <span class="string">'Explorer &gt;= 11'</span>,</span><br><span class="line">        <span class="string">'last 2 Edge versions'</span>,</span><br><span class="line">      ],</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<p><code>postcss.config.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="built_in">require</span>(<span class="string">'autoprefixer'</span>)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>將設定寫在 <code>package.json</code> ( <a href="https://github.com/postcss/autoprefixer#environment-variables" target="_blank" rel="noopener">官方推薦</a> )</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="string">"browserslist"</span>: </span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"production"</span>: [</span><br><span class="line">    <span class="string">"&gt;0.2%"</span>,</span><br><span class="line">    <span class="string">"not dead"</span>,</span><br><span class="line">    <span class="string">"not op_mini all"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"development"</span>: [</span><br><span class="line">    <span class="string">"last 1 chrome version"</span>,</span><br><span class="line">    <span class="string">"last 1 firefox version"</span>,</span><br><span class="line">    <span class="string">"last 1 safari version"</span>,</span><br><span class="line">    <span class="string">"last 1 ie version"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面兩種方法擇一使用即可</p>
+<br>
+
+<p><code>webpack.config.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.s[ac]ss$/i</span>,</span><br><span class="line">        use: [</span><br><span class="line">          <span class="string">'style-loader'</span>,</span><br><span class="line">          <span class="string">'css-loader'</span>,</span><br><span class="line">          <span class="string">'postcss-loader'</span>,</span><br><span class="line">          <span class="string">'sass-loader'</span></span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="v-2">webpack-dev-server</h2>
+
+<blockquote>
+<p>可以啟動 server 環境，透過 localhost 開啟開發中的網頁</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm i -D webpack-dev-server</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><code>webpack.config.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">devServer: &#123;</span><br><span class="line">  compress: <span class="literal">true</span>,</span><br><span class="line">  port: <span class="number">3000</span>,</span><br><span class="line">  stats: &#123;</span><br><span class="line">    assets: <span class="literal">true</span>,</span><br><span class="line">    cached: <span class="literal">false</span>,</span><br><span class="line">    chunkModules: <span class="literal">false</span>,</span><br><span class="line">    chunkOrigins: <span class="literal">false</span>,</span><br><span class="line">    chunks: <span class="literal">false</span>,</span><br><span class="line">    colors: <span class="literal">true</span>,</span><br><span class="line">    hash: <span class="literal">false</span>,</span><br><span class="line">    modules: <span class="literal">false</span>,</span><br><span class="line">    reasons: <span class="literal">false</span>,</span><br><span class="line">    source: <span class="literal">false</span>,</span><br><span class="line">    version: <span class="literal">false</span>,</span><br><span class="line">    warnings: <span class="literal">false</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><code>webpack-dev-server stats</code> 中英對照</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">stats: &#123;</span><br><span class="line">  <span class="comment">// 加入資源訊息</span></span><br><span class="line">  assets: <span class="literal">true</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 加入建構日期和建構時間</span></span><br><span class="line">  builtAt: <span class="literal">true</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 加入暫存（但未建構）模塊的信息</span></span><br><span class="line">  cached: <span class="literal">true</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 顯示暫存的資源（設置為 false 則僅顯示輸出的文件）</span></span><br><span class="line">  cachedAssets: <span class="literal">true</span>, </span><br><span class="line"></span><br><span class="line">  <span class="comment">// 加入 children 訊息</span></span><br><span class="line">  children: <span class="literal">true</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 加入 chunk 訊息（設置為 false 能允許較少的冗长輸出）</span></span><br><span class="line">  chunks: <span class="literal">true</span>,   </span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 將建構模塊信息加入到 chunk 信息</span></span><br><span class="line">  chunkModules: <span class="literal">true</span>, </span><br><span class="line"></span><br><span class="line">  <span class="comment">// 等同 webpack --colors</span></span><br><span class="line">  colors: <span class="literal">true</span>,  </span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 通過對應的 bundle 顯示入口起點</span></span><br><span class="line">  entrypoints: <span class="literal">false</span>,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 加入錯誤訊息</span></span><br><span class="line">  errors: <span class="literal">true</span>,    </span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 加入 compilation 的 hash </span></span><br><span class="line">  hash: <span class="literal">true</span>,       </span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 設置要顯示的模塊的最大數量</span></span><br><span class="line">  maxModules: <span class="number">15</span>,    </span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 加入建構模塊訊息</span></span><br><span class="line">  modules: <span class="literal">true</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 顯示警告/錯誤的依賴和來源（ webpack 2.5.0 開始 ）</span></span><br><span class="line">  moduleTrace: <span class="literal">true</span>,  </span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 當文件大小超过 performance.maxAssetSize 顯示性能提示</span></span><br><span class="line">  performance: <span class="literal">true</span>,  </span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 顯示模塊的輸出</span></span><br><span class="line">  providedExports: <span class="literal">false</span>,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 加入 public path 的訊息 </span></span><br><span class="line">  publicPath: <span class="literal">true</span>,    </span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 加入模塊被引入的原因</span></span><br><span class="line">  reasons: <span class="literal">true</span>,  </span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 加入模塊的源码</span></span><br><span class="line">  source: <span class="literal">false</span>,    </span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 顯示哪个模塊導出被用到</span></span><br><span class="line">  usedExports: <span class="literal">false</span>, </span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 加入 webpack 版本信息 </span></span><br><span class="line">  version: <span class="literal">true</span>,  </span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 加入警告 </span></span><br><span class="line">  warnings: <span class="literal">true</span>,       	 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><code>package.json</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"dev"</span>: <span class="string">"NODE_ENV=development webpack-dev-server --open"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm run dev</span><br></pre></td></tr></table></figure>
+
+<p>就會幫我們直接開啟網頁，並且直接修改程式後網頁馬上就會改變，不會產生出 <code>dist</code> 資料夾。</p>
+<p>雖然它沒有產生出檔案但是可以呈現在網頁上，是因為它都是在電腦記憶體上處理。</p>
+<p>當我們需要上線的檔案時，在執行 <code>npm run deploy</code> 就可以囉。</p>
+<br>
+
+<h2 id="v-3">Babel</h2>
+
+<p><a href="https://babeljs.io/" target="_blank" rel="noopener">https://babeljs.io/</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm i -D babel-loader @babel/core @babel/preset-env</span><br></pre></td></tr></table></figure>
+
+<p><code>@babel/core</code>：程式需要調用 Babel 的 API 進行編譯。</p>
+<p><code>@babel/preset-env</code>：可以使用最新版本的 JavaScript 然後去編譯，不用理會哪些語法需要轉換。</p>
+<br>
+
+<p><code>webpack.config.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      ...,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.(js)$/i</span>,</span><br><span class="line">        use: <span class="string">'babel-loader'</span></span><br><span class="line">      &#125;,</span><br><span class="line">    ],</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>根目錄新增 <code>.babelrc</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"presets"</span>: [<span class="string">"@babel/preset-env"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="v-4">import and require</h2>
+
+<p>新增 <code>tool.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><code>index.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'../index.html'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'../scss/index.scss'</span>;</span><br><span class="line"><span class="keyword">import</span> Tool <span class="keyword">from</span> <span class="string">'./tool.js'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line">arr.map(<span class="function"><span class="params">item</span> =&gt;</span> <span class="string">"a"</span> + item);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(Tool(<span class="number">1</span>, <span class="number">2</span>));</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="v-4-1">Node應用由模塊組成，採用 CommonJS 模塊規範</h3>
+
+<blockquote>
+<p>每個文件就是一個模塊，有自己的作用域。在一個文件裡面定義的變數、function、類別，都是私有的。</p>
+</blockquote>
+<br>
+
+<table>
+<thead>
+<tr>
+<th align="left">輸出</th>
+<th align="left">引入</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">module.exports = 模塊&nbsp;&nbsp;&nbsp;</td>
+<td align="left">var 名稱 = require(“模塊檔名”)</td>
+</tr>
+<tr>
+<td align="left">export default 模塊;&nbsp;&nbsp;&nbsp;</td>
+<td align="left">import 名稱 from “模塊檔名”</td>
+</tr>
+</tbody></table>
+<br>
+
+<p><code>require</code>：是在 ES6 出現前的模組化開發方式</p>
+<p><code>import</code>：是 ES6 出現後的模組化開發方式</p>
+ 
+    </div>
+    <footer class="article-footer">
+      <a
+        data-url="https://hedgehogkucc.github.io/2020-12-27-Webpack-3/"
+        data-id="ckj6yslt0001t1nor3w1e9whw"
+        class="article-share-link"
+        >Share</a
+      >
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/w3HexSchool/" rel="tag">w3HexSchool</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li></ul>
+
+    </footer>
+  </div>
+   
+<nav id="article-nav">
+  
+  
+    <a href="/2020-12-13-Webpack-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Webpack-2</div>
+    </a>
+  
+</nav>
+ 
+</article>
+
+ 
+<div id="gitalk-container"></div>
+<script>
+  var title = location.pathname.substr(0, 50)
+  var gitalk = new Gitalk({
+    clientID: 'cfb3b74c9716664a32c4',
+    clientSecret: 'e198f41df0e17ff588bfcce4c0a9e02df33e66b1',
+    repo: 'hedgehogkucc.github.io',
+    owner: 'hedgehogkucc',
+    admin: ['hedgehogkucc'],
+    id: title,
+    distractionFreeMode: true,
+    labels: ['Gitalk'],
+    language: 'zh-TW'
+  })
+  gitalk.render('gitalk-container')
+</script>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">標籤</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/" rel="tag">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interview/" rel="tag">interview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/" rel="tag">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/w3HexSchool/" rel="tag">w3HexSchool</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">標籤雲</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/gulp/" style="font-size: 11.67px;">gulp</a> <a href="/tags/hexo/" style="font-size: 11.67px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/interview/" style="font-size: 15px;">interview</a> <a href="/tags/js/" style="font-size: 16.67px;">js</a> <a href="/tags/vue/" style="font-size: 18.33px;">vue</a> <a href="/tags/w3HexSchool/" style="font-size: 20px;">w3HexSchool</a> <a href="/tags/webpack/" style="font-size: 13.33px;">webpack</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">彙整</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020-12-27-Webpack-3/">Webpack-3</a>
+          </li>
+        
+          <li>
+            <a href="/2020-12-13-Webpack-2/">Webpack-2</a>
+          </li>
+        
+          <li>
+            <a href="/2020-12-06-Webpack-1/">Webpack-1</a>
+          </li>
+        
+          <li>
+            <a href="/2020-11-29-%E5%9F%BA%E7%A4%8EVue%E5%85%83%E4%BB%B6-4/">基礎Vue元件-4</a>
+          </li>
+        
+          <li>
+            <a href="/2020-09-27-%E5%9F%BA%E7%A4%8EVue%E5%85%83%E4%BB%B6-3/">基礎Vue元件-3</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer text-center">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Peter KU<br>
+      <span id="busuanzi_container_site_uv">
+        本站訪客數&nbsp;<span id="busuanzi_value_site_uv"></span>&nbsp;人次&nbsp;&nbsp;|&nbsp;&nbsp;
+      </span>
+      <span id="busuanzi_container_site_pv">
+        本站總訪問量&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;次
+      </span>
+    </div>
+  </div>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首頁</a>
+  
+    <a href="/archives" class="mobile-nav-link">檔案</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+  <!-- 頁面點擊小紅心 -->
+  <script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160600246-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-160600246-1');
+  </script>
+</body>
+</html>
